@@ -1,1 +1,1 @@
-# ENG1003_Group3_aka_PolyU_Champion_Group
+Welcome everyone to join our Group 3!
