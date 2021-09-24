@@ -15,7 +15,7 @@ class AStarPlanner:
         resolution: grid resolution [m]
         rr: robot radius[m]
         """
-
+#這裏是在建立基礎的參數
         self.resolution = resolution
         self.rr = rr
         self.min_x, self.min_y = 0, 0
@@ -202,7 +202,7 @@ class AStarPlanner:
 
     @staticmethod
     def get_motion_model():
-        # dx, dy, cost
+        # dx, dy, cost 這裏指的是每次移動的嘗試方向以及步數
         motion = [[1, 0, 1],
                   [0, 1, 1],
                   [-1, 0, 1],
@@ -216,14 +216,15 @@ class AStarPlanner:
 
 
 def main():
-    print(__file__ + " start!!")
+    print(__file__ + "  Group3 Let's start!!")
 
-    # start and goal position
+    # start and goal position 起始點及終點坐標設定
     sx = 0.0  # [m]
     sy = 50.0  # [m]
     gx = 50.0  # [m]
     gy = -5.0  # [m]
-    grid_size = 2.0  # [m]
+    #把grid size改成了1.5來滿足斜綫作爲obstacle的要求
+    grid_size = 1.5  # [m]
     robot_radius = 1.0  # [m]
 
     # set obstacle positions
@@ -234,23 +235,24 @@ def main():
     for i in range(-10, 60):
         ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 60):
+    for i in range(-10, 61):
         ox.append(i)
         oy.append(60.0)
-    for i in range(-10, 60):
+    for i in range(-10, 61):
         ox.append(-10.0)
         oy.append(i)
     for i in range(-10, 30):
         ox.append(25.0)
         oy.append(i)
     for i in range(0, 50):
-        ox.append(40.0)
-        oy.append(50.0 - i)      
-    for i in range(0, 40):
-        ox.append(i)
-        oy.append(i + 20)
-
+        ox.append(40)
+        oy.append(50 - i)      
     
+    #This is for the Slash obstacle, it however does not work so well:(
+    for z in range(0, 40):
+        ox.append(z)
+        oy.append(z + 20)
+
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k")
         plt.plot(sx, sy, "og")
