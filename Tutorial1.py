@@ -1,10 +1,13 @@
 def function1():
-    print('This text represent the content of function 1') 
     print('Charles\nMarcus\nEdmond\nQin Qijun\nWai Ching Cheng')
     
 
 def function2():
-    print('This text represent the content of function 2')  #To be edited by member 2, Replace this line with your actual function code
+    a = int(input("Enter first number:"))
+    b = int(input("Enter second number:"))
+    c = int(input("Enter third number:"))
+    sum = a+b+c
+    print(a, b, c, sum)
 
 
 def function3():
