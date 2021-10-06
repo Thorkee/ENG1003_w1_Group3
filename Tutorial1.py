@@ -17,7 +17,16 @@ def function3():
 
 
 def function4():
-    print('This text represent the content of function 4')  #To be edited by member 4, Replace this line with your actual function code
+    a = int(input("Enter the first number:"))
+    b = int(input("Enter the second number:"))
+    if a>b:
+        print("a is larger than b.")
+    elif a==b:
+        print("a is equal to b")
+    elif a<b:
+        print("b is larger than a")
+    else:
+        print("Sorry my brother, I'm not that advanced to solve your input numbers. Have a nice day anyway!")
 
 
 #The Main function edited by Group leader
