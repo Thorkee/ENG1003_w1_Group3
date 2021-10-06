@@ -7,11 +7,13 @@ def function2():
     b = int(input("Enter second number:"))
     c = int(input("Enter third number:"))
     sum = a+b+c
-    print(a, b, c, sum)
+    print("The sum of", a,",", b, "and", c, "is", sum)
 
 
 def function3():
-    print('This text represent the content of function 3')  #To be edited by member 3, Replace this line with your actual function code
+    a = int(input("Enter the number that will be squared:"))
+    b = a**2
+    print("The square of", a, "is", b)
 
 
 def function4():
