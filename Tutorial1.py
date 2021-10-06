@@ -29,9 +29,8 @@ def function4():
         print("Sorry my brother, I'm not that advanced to solve your input numbers. Have a nice day anyway!")
 
 
-#The Main function edited by Group leader
 print('This is ENG1003'' Week 1 Tutorial Programming Task')
-inp = input('Enter the function number to be executed: ')   #Ask for an integer
+inp = input('Enter the function number (from 1 to 4) to be executed: ')
 
 if inp == '1':
     function1()
