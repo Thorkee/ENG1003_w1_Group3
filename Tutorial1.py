@@ -29,35 +29,48 @@ def function4():
         print("Sorry my brother, I'm not that advanced to solve your input numbers. Have a nice day anyway!")
 
 def extrafunction5():
+    print("pls replace this line with your code")
     
 
 def extrafunction6():
+    print("pls replace this line with your code")
 
 
 def extrafunction7():
+    print("pls replace this line with your code")
 
 
 def extrafunction8():
+    print("pls replace this line with your code")
 
 
-print('This is ENG1003'' Week 1 Tutorial Programming Task')
-inp = input('Enter the function number (from 1 to 4) to be executed: ')
+print("This is ENG1003'' Week 1 Tutorial Programming Task")
 
-if inp == '1':
-    function1()
-elif inp == '2':
-    function2()
-elif inp == '3':
-    function3()
-elif inp == '4':
-    function4()
-elif inp == '5':
-    extrafunction5()
-elif inp == '6':
-    extrafunction6()
-elif inp == '7':
-    extrafunction7()
-elif inp == '8':
-    extrafunction8()
+inp1 = input('Would you like to try the extra code(Y/N): ')
+if inp1 == "N":
+    inp = input('Enter the function number (from 1 to 4) to be executed: ')
+    if inp == '1':
+        function1()
+    elif inp == '2':
+        function2()
+    elif inp == '3':
+        function3()
+    elif inp == '4':
+        function4()
+    else:
+        print("There is no function", inp)
+
+elif inp1 == "Y":
+    inp2 = input('Enter the function number (from 1 to 4) to be executed: ')
+    if inp2 == '1':
+        extrafunction5()
+    elif inp2 == '2':
+        extrafunction6()
+    elif inp2 == '3':
+        extrafunction7()
+    elif inp2 == '4':
+        extrafunction8()
+    else:
+        print('There is no function', inp2)
 else:
-    print('There is no function', inp)
+    print("You can only answer Y for yes or N for no, thank you")
