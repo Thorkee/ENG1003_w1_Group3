@@ -1,5 +1,5 @@
 def function1():
-    print('Charles\nMarcus\nEdmond\nQin Qijun\nWai Ching Cheng')
+    print('Charles\nMarcus\nEdmond\nQuintinUmi\nMinnie')
     
 
 def function2():
