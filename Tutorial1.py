@@ -50,6 +50,10 @@ def extrafunction8():
 print("This is ENG1003'' Week 1 Tutorial Programming Task")
 
 inp1 = input('Would you like to try the extra code(Y/N): ')
+
+if ord(inp1) > 90 and len(inp1) == 1:
+    inp1 = chr(ord(inp1) ^ 0x20)
+
 if inp1 == "N":
     inp = input('Enter the function number (from 1 to 4) to be executed: ')
     if inp == '1':
