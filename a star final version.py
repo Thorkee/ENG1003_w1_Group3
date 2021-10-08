@@ -269,57 +269,38 @@ def main():
 
     # start and goal position
     sx = 0.0  # [m]
-    sy = 0.0  # [m]
+    sy = 50.0  # [m]
     gx = 50.0  # [m]
-    gy = 0.0  # [m]
+    gy = -5.0  # [m]
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
-    # set obstacle positions for group 8
-    # ox, oy = [], []
-    # for i in range(-10, 60): # draw the button border 
-    #     ox.append(i)
-    #     oy.append(-10.0)
-    # for i in range(-10, 60):
-    #     ox.append(60.0)
-    #     oy.append(i)
-    # for i in range(-10, 61):
-    #     ox.append(i)
-    #     oy.append(60.0)
-    # for i in range(-10, 61):
-    #     ox.append(-10.0)
-    #     oy.append(i)
-    # for i in range(-10, 40):
-    #     ox.append(20.0)
-    #     oy.append(i)
-    # for i in range(0, 40):
-    #     ox.append(40.0)
-    #     oy.append(60.0 - i)
-
-
-    # set obstacle positions for group 9
+    # set obstacle positions
     ox, oy = [], []
-    for i in range(-10, 60): # draw the button border 
+    for i in range(-10, 60):
         ox.append(i)
         oy.append(-10.0)
-    for i in range(-10, 60): # draw the right border
+    for i in range(-10, 60):
         ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 60): # draw the top border
+    for i in range(-10, 61):
         ox.append(i)
         oy.append(60.0)
-    for i in range(-10, 60): # draw the left border
+    for i in range(-10, 61):
         ox.append(-10.0)
         oy.append(i)
-
-    for i in range(-10, 30): # draw the free border
-        ox.append(20.0)
+    for i in range(-10, 30):
+        ox.append(25.0)
         oy.append(i)
+    for i in range(0, 50):
+        ox.append(40)
+        oy.append(50 - i)   
 
-    for i in range(0, 20):
-        ox.append(i)
-        oy.append(-1 * i + 10)
-    
+    for z in range(0, 40):
+        ox.append(z)
+        oy.append(z + 20)
+
+ 
     # for i in range(40, 45): # draw the button border 
     #     ox.append(i)
     #     oy.append(30.0)
@@ -327,17 +308,18 @@ def main():
     
     # set fuel consuming area
     fc_x, fc_y = [], []
-    for i in range(30, 35):
-        for j in range(0, 40):
+    for i in range(-10, 10):
+        for j in range(20, 30):
             fc_x.append(i)
             fc_y.append(j)
     
     # set time consuming area
     tc_x, tc_y = [], []
-    for i in range(10, 20):
-        for j in range(20, 50):
+    for i in range(25, 40):
+        for j in range(-10, 10):
             tc_x.append(i)
             tc_y.append(j)
+ 
 
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
