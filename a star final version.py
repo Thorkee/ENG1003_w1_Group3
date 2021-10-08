@@ -1,18 +1,3 @@
-"""
-
-A* grid planning
-
-author: Atsushi Sakai(@Atsushi_twi)
-        Nikos Kanargias (nkana@tee.gr)
-
-See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
-
-This is the simple code for path planning class
-
-"""
-
-
-
 import math
 
 import matplotlib.pyplot as plt
@@ -25,7 +10,6 @@ class AStarPlanner:
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
         """
         Initialize grid map for a star planning
-
         ox: x position list of Obstacles [m]
         oy: y position list of Obstacles [m]
         resolution: grid resolution [m]
@@ -45,7 +29,7 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
-#model
+
         ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
         self.C_F = 1
         self.Delta_F = 1
@@ -78,13 +62,11 @@ class AStarPlanner:
     def planning(self, sx, sy, gx, gy):
         """
         A star path search
-
         input:
             s_x: start x position [m]
             s_y: start y position [m]
             gx: goal x position [m]
             gy: goal y position [m]
-
         output:
             rx: x position list of the final path
             ry: y position list of the final path
@@ -206,7 +188,6 @@ class AStarPlanner:
     def calc_grid_position(self, index, min_position):
         """
         calc grid position
-
         :param index:
         :param min_position:
         :return:
@@ -267,7 +248,7 @@ class AStarPlanner:
                     if d <= self.rr:
                         self.obstacle_map[ix][iy] = True # the griid is is occupied by the obstacle
                         break
-#motion
+
     @staticmethod
     def get_motion_model(): # the cost of the surrounding 8 points
         # dx, dy, cost
@@ -282,16 +263,15 @@ class AStarPlanner:
 
         return motion
 
-#---------------------------------------------------------------------main---------------------------------------------------------------
 
 def main():
     print(__file__ + " start the A star algorithm demo !!") # print simple notes
 
     # start and goal position
     sx = 0.0  # [m]
-    sy = 50.0  # [m]
+    sy = 0.0  # [m]
     gx = 50.0  # [m]
-    gy = -5.0  # [m]
+    gy = 0.0  # [m]
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
@@ -332,21 +312,14 @@ def main():
         ox.append(-10.0)
         oy.append(i)
 
-#Start_draw boarder
-    for i in range(0, 40): # draw the free border
+    for i in range(-10, 30): # draw the free border
+        ox.append(20.0)
+        oy.append(i)
+
+    for i in range(0, 20):
         ox.append(i)
-        oy.append(20.0 + i)
-
-    for i in range(-10, 30):
-        ox.append(25)
-        oy.append(i)
-
-    for i in range(0, 50):
-        ox.append(40)
-        oy.append(i)
-
-#End_draw boarder    
-
+        oy.append(-1 * i + 10)
+    
     # for i in range(40, 45): # draw the button border 
     #     ox.append(i)
     #     oy.append(30.0)
@@ -354,15 +327,15 @@ def main():
     
     # set fuel consuming area
     fc_x, fc_y = [], []
-    for i in range(-10, 10):
-        for j in range(20, 30):
+    for i in range(30, 35):
+        for j in range(0, 40):
             fc_x.append(i)
             fc_y.append(j)
     
     # set time consuming area
     tc_x, tc_y = [], []
-    for i in range(25, 40):
-        for j in range(-10, 10):
+    for i in range(10, 20):
+        for j in range(20, 50):
             tc_x.append(i)
             tc_y.append(j)
 
