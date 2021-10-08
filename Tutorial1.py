@@ -60,6 +60,34 @@ def extrafunction8():
             print('[ ]', end = ' ')
         print()
 
+def eventualfunction():
+    import random
+    a = random.randint(50,200)
+    num = random.randint(1, a)
+    guess = None
+    attempt = 0
+    print("The range for this round is 1 -", a)
+
+    while guess != num:
+        guess = input('Make a guess:')     
+        guess = int(guess)
+        attempt+=1
+        if guess < num:
+            print("The range is now", guess, "-", a)
+            continue
+        elif guess > a:
+            print("You can not make the guessing exceeds", a)
+            continue
+        elif guess > num and guess < a+1:
+            print("The range is now", 1, "-", guess)
+        else:
+            if attempt == 1:
+                print("BINGO! You took 1 attempt to reach the answer!" )
+            else:
+                print("BINGO! You took", attempt, "attempts to reach the answer!" )
+            break
+            
+
 
 print("This is ENG1003'' Week 1 Tutorial Programming Task")
 
@@ -82,7 +110,7 @@ if inp1 == "N":
         print("There is no function", inp)
 
 elif inp1 == "Y":
-    inp2 = input('Enter the function number (from 1 to 4) to be executed: ')
+    inp2 = input('Enter the function number (from 1 to 5, 5 means the number guessing game) to be executed: ')
     if inp2 == '1':
         extrafunction5()
     elif inp2 == '2':
@@ -91,6 +119,8 @@ elif inp1 == "Y":
         extrafunction7()
     elif inp2 == '4':
         extrafunction8()
+    elif inp2 == '5':
+        eventualfunction()
     else:
         print('There is no function', inp2)
 else:
