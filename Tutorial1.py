@@ -40,7 +40,11 @@ def extrafunction6():
 
 
 def extrafunction7():
-    print("pls replace this line with your code")
+    n=input("List length:")
+    n=int(n)
+    while n>0:
+        print(n)
+        n-=1
 
 
 def extrafunction8():
