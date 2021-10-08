@@ -48,7 +48,14 @@ def extrafunction7():
 
 
 def extrafunction8():
-    print("pls replace this line with your code")
+    side = int(input("Square Size : "))
+
+    print("Square Number Pattern") 
+
+    for i in range(side):
+        for i in range(side):
+            print('[ ]', end = ' ')
+        print()
 
 
 print("This is ENG1003'' Week 1 Tutorial Programming Task")
