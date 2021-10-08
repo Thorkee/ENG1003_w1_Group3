@@ -1,87 +1,36 @@
 # ENG1003_Group3_aka_PolyU_Champion_Group
 
-<p align="center">
-
-  <h3 align="center">Waiting For Edit</h3>
-
-  <p align="center">
-    <br />
-    <a href="LT HSU ENG1003 Teaching Plan 2021-22 S1.pdf"><strong>Teaching Plan</strong></a>
-    <br />
-    <br />
-    <a href="Freshman Project Assessment Criteria.pdf"><strong>Assessment Criteria</strong></a>
-    <br />  
-  </p>
-</p>
-
-*Project Objective: To provide students with opportunities to develop creativity, problem-solving skills and team-work abilities through a group project. During this project, students will get not only the valuable practical experience to use computer programming language to design and develop a path planning algorithm for an aircraft operation from scratch but also practical skills of using online collaborating programming platform to work with group members remotely.*
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#lecture-materials">Lecture Materials</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-    <li>
-      <a href="#student-tasks">Student Tasks</a>
-    </li>
-    <li>
-      <a href="#acknowledgements">Acknowledgements</a>
-    </li>    
+    <li><a href="#Background-of-Path-Planning-to-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a></li>
+    <li><a href="#Theory-of-Path-Planning-Algorithm">Theory of Path Planning Algorithm</a></li>
+    <li><a href="#Introduction-of-the-Engineering-Tools ">Introduction of the Engineering Tools </a></li>
   </ol>
 </details>
 
 
 
-<!-- Lecture Materials -->
-## Lecture Materials
-<a href="Lecture%20Notes/"><strong>Lecture Notes</strong></a>
+<!-- ABOUT THE PROJECT -->
+# You can follow the source of this README to complete your README Report 
+### Smaller Title
+##### Even smaller title
 
-<a href="Lecture%20Videos/"><strong>Lecture Videos</strong></a>
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-<a href="Sample%20Codes/"><strong>Sample Codes</strong></a>
+![This is an image](https://www.researchgate.net/profile/Jan-Bieser/publication/333867743/figure/fig2/AS:771428257374208@1560934237674/Bar-chart-showing-the-number-of-observations-value-attribute-for-each-age-group-key.png)
 
-<!-- Student Tasks -->
-## Student Tasks
-<a href="ENG1003 Week 3 Tutorial.pdf"><strong>Tutorial Task</strong></a> - <a href="ENG1003 Week 3 Tutorial Walkthrough.pdf"><strong>Step-by-Step Instruction</strong></a>
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
 
-<a href="Lecture Notes/(Key slide) Week 6 Design goals (Compulsory).pdf"><strong>Compulsory Tasks</strong></a>  -  <strong>[Tutorial link](https://youtu.be/PRKLhcG2kB0)</strong>
+"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
 
-<a href="Lecture Notes/(Key slide) Week 6 Design goals (Compulsory).pdf"><strong>Additional Tasks</strong></a>
+# Theory of Path Planning Algorithm 
 
-<a href="Lecture Notes/Report template .pdf"><strong>Final Report Template</strong></a>  -  <strong>[Tutorial link](https://www.youtube.com/watch?v=ECuqb5Tv9qI)</strong>  -  **<a href="Lecture Notes/Week 6 Creating a README in GitHub.pdf"><strong>Readme.me Introduction</strong></a>**
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 
+# Introduction of the Engineering Tools 
 
-<!-- CONTACT -->
-## Contact
-**General Inquiry**
-
-Dr Li-Ta Hsu -  lt.hsu@polyu.edu.hk - https://github.com/qmohsu
-
-Dr Weisong Wen -  welson.wen@polyu.edu.hk - https://github.com/weisongwen
-
-
-**Assistance on Your Project**
-
-*Group 1-3*
-
-Miss Hui Yi (Queenie) HO - hiu-yi.ho@connect.polyu.hk - https://github.com/queenie-ho
-
-*Group 4-6*
-
-Miss Yan Tung (Nikkie) LEUNG - yan-tung.leung@connect.polyu.hk - https://github.com/tungtungyan
-
-*Group 7-10*
-
-Mr Man Hin (Melvin) CHENG - manhin.cheng@connect.polyu.hk - https://github.com/Melvincheng0830
-
-## Acknowledgements
-We use [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for readme organization and [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics) for demo A star path planning.
-
+"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
 
 
 
