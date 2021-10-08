@@ -2,7 +2,7 @@
 
 <p align="center">
 
-  <h3 align="center">PolyU ENG1003 AAE Freshman Project !</h3>
+  <h3 align="center">Waiting For Edit</h3>
 
   <p align="center">
     <br />
