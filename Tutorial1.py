@@ -63,8 +63,6 @@ def eventualfunction():
     attempt = 0
     print("The range for this round is 1 -", a)
 
-
-
     while guess != num:
         guess = input('Make a guess:')     
         guess = int(guess)
@@ -75,9 +73,9 @@ def eventualfunction():
         elif guess > a:
             print("You can not make the guessing exceeds", a)
             continue
-        else:
+        elif guess > num and guess < a+1:
             print("The range is now", 1, "-", guess)
-        if guess == num:
+        else:
             if attempt == 1:
                 print("BINGO! You took 1 attempt to reach the answer!" )
             else:
