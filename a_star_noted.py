@@ -333,13 +333,17 @@ def main():
         oy.append(i)
 
 #Start_draw boarder
-    for i in range(-10, 30): # draw the free border
-        ox.append(20.0)
+    for i in range(0, 40): # draw the free border
+        ox.append(i)
+        oy.append(20.0 + i)
+
+    for i in range(-10, 30):
+        ox.append(25)
         oy.append(i)
 
-    for i in range(0, 20):
-        ox.append(i)
-        oy.append(-1 * i + 10)
+    for i in range(0, 50):
+        ox.append(40)
+        oy.append(i)
 
 #End_draw boarder    
 
