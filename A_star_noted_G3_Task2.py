@@ -45,8 +45,10 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
-#model
+#model-S
         ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
+        
+        
         self.C_F = 1
         self.Delta_F = 1
         self.C_T = 2
@@ -56,7 +58,7 @@ class AStarPlanner:
         self.Delta_F_A = 2 # additional fuel
         self.Delta_T_A = 5 # additional time 
         
-        
+#model-F        
 
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
@@ -75,6 +77,7 @@ class AStarPlanner:
             return str(self.x) + "," + str(self.y) + "," + str(
                 self.cost) + "," + str(self.parent_index)
 
+#Route Algorithm - S
     def planning(self, sx, sy, gx, gy):
         """
         A star path search
@@ -119,7 +122,7 @@ class AStarPlanner:
                                              lambda event: [exit(
                                                  0) if event.key == 'escape' else None])
                 if len(closed_set.keys()) % 10 == 0:
-                    plt.pause(0.001)
+                    plt.pause(0.0001)
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
@@ -189,6 +192,8 @@ class AStarPlanner:
             parent_index = n.parent_index
 
         return rx, ry
+
+#Route Algorithm - E
 
     @staticmethod
     def calc_heuristic(self, n1, n2):
@@ -366,24 +371,25 @@ def main():
             tc_x.append(i)
             tc_y.append(j)
 
-    if show_animation:  # pragma: no cover
-        plt.plot(ox, oy, ".k") # plot the obstacle
-        plt.plot(sx, sy, "og") # plot the start position 
-        plt.plot(gx, gy, "xb") # plot the end position
-        
-        plt.plot(fc_x, fc_y, "oy") # plot the fuel consuming area
-        plt.plot(tc_x, tc_y, "or") # plot the time consuming area
+    for i in range(1,4):
+        if show_animation:  # pragma: no cover
+            plt.plot(ox, oy, ".k") # plot the obstacle
+            plt.plot(sx, sy, "og") # plot the start position 
+            plt.plot(gx, gy, "xb") # plot the end position
+            
+            plt.plot(fc_x, fc_y, "oy") # plot the fuel consuming area
+            plt.plot(tc_x, tc_y, "or") # plot the time consuming area
 
-        plt.grid(True) # plot the grid to the plot panel
-        plt.axis("equal") # set the same resolution for x and y axis 
+            plt.grid(True) # plot the grid to the plot panel
+            plt.axis("equal") # set the same resolution for x and y axis 
 
-    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-    rx, ry = a_star.planning(sx, sy, gx, gy)
+        a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+        rx, ry = a_star.planning(sx, sy, gx, gy)
 
-    if show_animation:  # pragma: no cover
-        plt.plot(rx, ry, "-r") # show the route 
-        plt.pause(0.001) # pause 0.001 seconds
-        plt.show() # show the plot
+        if show_animation:  # pragma: no cover
+            plt.plot(rx, ry, "-r") # show the route 
+            plt.pause(0.001) # pause 0.001 seconds
+            plt.show() # show the plot
 
 
 if __name__ == '__main__':
