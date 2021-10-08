@@ -45,7 +45,7 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
-
+#model
         ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
         self.C_F = 1
         self.Delta_F = 1
@@ -267,7 +267,7 @@ class AStarPlanner:
                     if d <= self.rr:
                         self.obstacle_map[ix][iy] = True # the griid is is occupied by the obstacle
                         break
-
+#motion
     @staticmethod
     def get_motion_model(): # the cost of the surrounding 8 points
         # dx, dy, cost
@@ -282,6 +282,7 @@ class AStarPlanner:
 
         return motion
 
+#---------------------------------------------------------------------main---------------------------------------------------------------
 
 def main():
     print(__file__ + " start the A star algorithm demo !!") # print simple notes
@@ -331,6 +332,7 @@ def main():
         ox.append(-10.0)
         oy.append(i)
 
+#Start_draw boarder
     for i in range(-10, 30): # draw the free border
         ox.append(20.0)
         oy.append(i)
@@ -338,7 +340,9 @@ def main():
     for i in range(0, 20):
         ox.append(i)
         oy.append(-1 * i + 10)
-    
+
+#End_draw boarder    
+
     # for i in range(40, 45): # draw the button border 
     #     ox.append(i)
     #     oy.append(30.0)
