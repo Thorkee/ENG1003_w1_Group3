@@ -289,7 +289,7 @@ def main():
 
     # start and goal position
     sx = 0.0  # [m]
-    sy = 0.0  # [m]
+    sy = 50.0  # [m]
     gx = 50.0  # [m]
     gy = -5.0  # [m]
     grid_size = 1  # [m]
