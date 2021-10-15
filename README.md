@@ -53,6 +53,21 @@
 <a id="Contributors"></a>
 ## 3.Contributors
 
+#### LIN Ju @Thorkee
+> Responsible part:
+
+#### Cheng PakHin @marcus2405
+> Responsible part:
+
+#### QIN Qijun @QuintinUmi
+> Responsible part:
+
+#### HUI CHIUMING @edmondhui04
+> Responsible part:
+
+#### CHENG Wai Ching @Chengmm565
+> Responsible part:
+
 
 
 
