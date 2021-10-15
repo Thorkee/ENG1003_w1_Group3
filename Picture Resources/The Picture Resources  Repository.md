@@ -1,1 +1,0 @@
-The Picture Resources Repository
