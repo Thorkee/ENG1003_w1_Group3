@@ -3,13 +3,13 @@
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-    <li><a href="#Background-of-Path-Planning-to-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a></li>
-    <li><a href="#Introduction-of-the-Engineering-Tools ">Path Planning Algorithm (Group Task)</a><li>
-      - <li><a href="#Introduction-of-the-Engineering-Tools ">Task title (Task1)</a>
-      - <li><a href="#Introduction-of-the-Engineering-Tools ">Task title (Task2)</a>
-      - <li><a href="#Introduction-of-the-Engineering-Tools ">Task title (Task3)</a>
-      - <li><a href="#Introduction-of-the-Engineering-Tools ">Task title (Task4)</a>
-    <li><a href="#Introduction-of-the-Engineering-Tools ">Introduction of the Engineering Tools </a></li>
+    <a href="#Background-of-Path-Planning-to-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a>
+    <a href="#Introduction-of-the-Engineering-Tools ">Path Planning Algorithm (Group Task)</a>
+      - <a href="#Introduction-of-the-Engineering-Tools ">Task title (Task1)</a>
+      - <a href="#Introduction-of-the-Engineering-Tools ">Task title (Task2)</a>
+      - <a href="#Introduction-of-the-Engineering-Tools ">Task title (Task3)</a>
+      - <a href="#Introduction-of-the-Engineering-Tools ">Task title (Task4)</a>
+    <a href="#Introduction-of-the-Engineering-Tools ">Introduction of the Engineering Tools </a>
   </ol>
 </details>
 
