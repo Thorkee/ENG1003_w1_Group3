@@ -29,7 +29,12 @@ def function4():
         print("Sorry my brother, I'm not that advanced to solve your input numbers. Have a nice day anyway!")
 
 def extrafunction5():
-    print("pls replace this line with your code")
+    i = input("Height:")
+    i = int(i)
+    j = 1
+    while j < i + 1:
+         print("xxx")
+         j = j + 1
     
 
 def extrafunction6():
