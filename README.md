@@ -44,9 +44,11 @@
 
 
 <a id="Task1"></a>
-#### i.Task title (Task1)
+#### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
+For the first step, we change the specific data from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. It is worth mentioning that we changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
 
 ![Animated gif demo](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
+
 
 <a id="Task2"></a>
 #### ii.Task title (Task2)
@@ -76,7 +78,7 @@
 #### CHENG Wai Ching @Chengmm565
 > Responsible part:
 
-
+## 4.References
 
 
 
