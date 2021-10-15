@@ -25,7 +25,7 @@
       </ol>
     </li>
     <li>
-      <a href="#student-tasks">Student Tasks</a>
+      <a href="#Contributors">Contributors</a>
     </li>
   </ol>
 </details>
@@ -36,11 +36,11 @@
 
 
 <a id="Background"></a>
-### 1.Background of Path Planning to Aviation Engineering
+## 1.Background of Path Planning to Aviation Engineering
 
 
 <a id="Task"></a>
-### 2.Path Planning Algorithm (Group Task)
+## 2.Path Planning Algorithm (Group Task)
 
 
 <a id="Task1"></a>
@@ -48,6 +48,10 @@
 
 
 ![This is an image](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Figure_1.png?raw=true)
+
+
+<a id="Contributors"></a>
+## 3.Contributors
 
 
 
