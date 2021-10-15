@@ -44,7 +44,7 @@ class AStarPlanner:
 
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-        print("The total cost of PolyU-A381 is", self.costPerGrid)
+        print("The total cost of PolyU-A380 is", self.costPerGrid)
 
         A380=self.costPerGrid
 
@@ -91,17 +91,32 @@ class AStarPlanner:
         
         self.Delta_F_A = 0.5 # additional fuel
         self.Delta_T_A = 0.1 # additional time 
+
+        print("PolyU-A380 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
+        print("PolyU-A380 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
+        print("PolyU-A380 cost part3-> ", self.C_C )
         
         
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-        print("The total cost of PolyU-A383 is", self.costPerGrid)   
+        #print("The total cost of PolyU-A383 is", self.costPerGrid)   
 
         A383=self.costPerGrid
 
         list1 = [A380,A381,A382,A383]
         smallest=min(list1)
-        print("The least cost is:", smallest)
+
+        if smallest == A380:
+            print("The aircraft model is PolyU-A380")
+        elif smallest == A381:
+            print("The aircraft model is PolyU-A381")
+        elif smallest == A382:
+            print("The aircraft model is PolyU-A382")
+        elif smallest == A383:
+            print("The aircraft model is PolyU-A383")
+        else:
+            print("ERROR!")
+        print("And the least cost is:", smallest)
             
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
