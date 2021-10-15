@@ -36,15 +36,15 @@
 
 
 <a id="Background"></a>
-### Background of Path Planning to Aviation Engineering
+### 1.Background of Path Planning to Aviation Engineering
 
 
 <a id="Task"></a>
-### Path Planning Algorithm (Group Task)
+### 2.Path Planning Algorithm (Group Task)
 
 
 <a id="Task1"></a>
-#### Task title (Task1)
+#### i.Task title (Task1)
 
 
 ![This is an image](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Figure_1.png?raw=true)
