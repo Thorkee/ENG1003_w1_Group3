@@ -14,3 +14,5 @@ plt.plot(C_T, 2*C_T - 20, color="g", linestyle="-", linewidth=1)
 plt.plot(C_T, -4*C_T + 220, color="b", linestyle="-", linewidth=1)
 
 plt.show()
+
+#ul
