@@ -71,7 +71,7 @@ def eventualfunction():
             print("The range is now", guess, "-", a)
             continue
         elif guess > a:
-            print("You can not make the guessing exceeds", a)
+            print("You can not make any guessing exceeding", a)
             continue
         elif guess > num and guess < a+1:
             print("The range is now", 1, "-", guess)

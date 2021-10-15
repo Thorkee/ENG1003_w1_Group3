@@ -31,7 +31,7 @@ class AStarPlanner:
         self.tc_y = tc_y
 
         ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
-        #PolyU-A380
+    #PolyU-A380
         self.C_F = 1
         self.Delta_F = 1
         self.C_T = 2
@@ -41,15 +41,14 @@ class AStarPlanner:
         self.Delta_F_A = 0.2 # additional fuel
         self.Delta_T_A = 0.2 # additional time 
         
-        
 
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-        print("PolyU-A380 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
-        print("PolyU-A380 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
-        print("PolyU-A380 cost part3-> ", self.C_C )
+        print("The total cost of PolyU-A381 is", self.costPerGrid)
 
-        #PolyU-A380
+        A380=self.costPerGrid
+
+    #PolyU-A381
         self.C_F = 1
         self.Delta_F = 1.5
         self.C_T = 3
@@ -60,13 +59,50 @@ class AStarPlanner:
         self.Delta_T_A = 0.4 # additional time 
         
         
-
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-        print("PolyU-A381 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
-        print("PolyU-A381 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
-        print("PolyU-A381 cost part3-> ", self.C_C )
+        print("The total cost of PolyU-A381 is", self.costPerGrid)
+
+        A381=self.costPerGrid
+
+    #PolyU-A382
+        self.C_F = 1
+        self.Delta_F = 2.0
+        self.C_T = 4
+        self.Delta_T = 5
+        self.C_C = 10
         
+        self.Delta_F_A = 0.4 # additional fuel
+        self.Delta_T_A = 0.5 # additional time 
+        
+        
+        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
+
+        print("The total cost of PolyU-A382 is", self.costPerGrid)
+
+        A382=self.costPerGrid
+        
+    #PolyU-A383
+        self.C_F = 1
+        self.Delta_F = 2.5
+        self.C_T = 5
+        self.Delta_T = 5
+        self.C_C = 10
+        
+        self.Delta_F_A = 0.5 # additional fuel
+        self.Delta_T_A = 0.1 # additional time 
+        
+        
+        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
+
+        print("The total cost of PolyU-A383 is", self.costPerGrid)   
+
+        A383=self.costPerGrid
+
+        list1 = [A380,A381,A382,A383]
+        smallest=min(list1)
+        print("The least cost is:", smallest)
+            
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
             self.x = x  # index of grid
