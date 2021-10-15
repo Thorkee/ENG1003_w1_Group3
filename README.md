@@ -46,7 +46,7 @@
 <a id="Task1"></a>
 #### i.Task title (Task1)
 
-
+![Animated gif demo](Image Resources/sample.gif)
 ![This is an image](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Figure_1.png?raw=true)
 
 <a id="Task2"></a>
