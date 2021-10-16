@@ -1,4 +1,4 @@
-# ENG1003_Group3_aka_PolyU_Champion_Group
+# Group3's Report on Compulsory Tasks
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -45,10 +45,17 @@
 
 <a id="Task1"></a>
 #### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
-For the first step, we change the specific data from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. It is worth mentioning that we changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
+For the first step, we changed the specific data from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
+
+It is worth mentioning that we also changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
 
 ![Animated gif demo](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
 
+Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model.
+
+After Task 1, we reflected on the content of the task and concluded the following issues that could be improved.
+  1. The code was not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
+  2. Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. 
 
 <a id="Task2"></a>
 #### ii.Task title (Task2)
