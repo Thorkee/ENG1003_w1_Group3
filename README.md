@@ -52,10 +52,10 @@ It is worth mentioning that we also changed the slash density inside the code in
 
 ![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
 
-Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model.
+Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model. The cost is 2396.23.
 
 After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
-  1. The code was not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
+  1. The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
   2. Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. 
   3. In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.
   4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
