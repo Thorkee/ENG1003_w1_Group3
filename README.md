@@ -62,6 +62,8 @@ After Task 1, we reflected on the content of the task and concluded the followin
 
 <a id="Task2"></a>
 #### ii.Task title (Task2)
+    
+![demo screenshot](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2.png)
 
 <a id="Task3"></a>
 #### iii.Task title (Task3)
