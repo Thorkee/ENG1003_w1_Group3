@@ -1,36 +1,97 @@
-# ENG1003_Group3_aka_PolyU_Champion_Group
+# Group 3's Report on Compulsory Tasks
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-    <li><a href="#Background-of-Path-Planning-to-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a></li>
-    <li><a href="#Theory-of-Path-Planning-Algorithm">Theory of Path Planning Algorithm</a></li>
-    <li><a href="#Introduction-of-the-Engineering-Tools ">Introduction of the Engineering Tools </a></li>
-  </ol>
-</details>
-
+  <ol>
+    <li>
+      <a href="#Background">Background of Path Planning to Aviation Engineering</a>
+    </li>
+    <li>
+      <a href="#Task">Path Planning Algorithm (Group Task)</a>
+      <ol>
+        <li>
+          <a href="#Task1">Task title (Task1)</a>
+        </li>
+        <li>
+          <a href="#Task2">Task title (Task2)</a>
+        </li>
+        <li>
+          <a href="#Task3">Task title (Task3)</a>
+        </li>
+        <li>
+          <a href="#Task4">Task title (Task4)</a>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#Contributors">Contributors</a>
+    </li>
+    <li>
+     <a href="#References">References</a>
+    </li>
+    
 
 
 <!-- ABOUT THE PROJECT -->
-# You can follow the source of this README to complete your README Report 
-### Smaller Title
-##### Even smaller title
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-![This is an image](https://www.researchgate.net/profile/Jan-Bieser/publication/333867743/figure/fig2/AS:771428257374208@1560934237674/Bar-chart-showing-the-number-of-observations-value-attribute-for-each-age-group-key.png)
+<a id="Background"></a>
+## Background of Path Planning to Aviation Engineering
 
-"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
 
-"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+<a id="Task"></a>
+## Path Planning Algorithm (Group Task)
 
-# Theory of Path Planning Algorithm 
 
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+<a id="Task1"></a>
+#### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
+For the first step, we changed the specific data from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
 
-# Introduction of the Engineering Tools 
+It is worth mentioning that we also changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
 
-"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
+
+Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model. The cost is 2396.23.
+
+After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
+  1. The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
+  2. Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. 
+  3. In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.
+  4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
+
+<a id="Task2"></a>
+#### ii.Task title (Task2)
+
+<a id="Task3"></a>
+#### iii.Task title (Task3)
+
+<a id="Task4"></a>
+#### iv.Task title (Task4)
+
+
+<a id="Contributors"></a>
+## Contributors
+
+#### LIN Ju @Thorkee
+> Responsible part:
+
+#### Cheng PakHin @marcus2405
+> Responsible part:
+
+#### QIN Qijun @QuintinUmi
+> Responsible part:
+
+#### HUI CHIUMING @edmondhui04
+> Responsible part:
+
+#### CHENG Wai Ching @Chengmm565
+> Responsible part:
+
+## References
+
+
+
 
 
 

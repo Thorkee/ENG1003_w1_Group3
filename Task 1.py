@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-
 class AStarPlanner:
 
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
@@ -81,6 +80,14 @@ class AStarPlanner:
         print("The total cost of PolyU-A382 is", self.costPerGrid)
 
         A382=self.costPerGrid
+
+        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
+
+
+        print("PolyU-A381 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
+        print("PolyU-A381 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
+        print("PolyU-A381 cost part3-> ", self.C_C )
+        main
         
     #PolyU-A383
         self.C_F = 1
@@ -142,6 +149,9 @@ class AStarPlanner:
             ry: y position list of the final path
         """
 
+#CTCF COUNTER INIT -----------
+        CT = CF = 0.0
+
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
                                self.calc_xy_index(sy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
         goal_node = self.Node(self.calc_xy_index(gx, self.min_x), # calculate the index based on given position
@@ -175,7 +185,11 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
+#Output Cost --------
                 print("Find goal with cost of -> ",current.cost )
+                plt.text(63, 61, "CTdT = " + str(CT), color = "r", fontsize = 10)
+                plt.text(63, 49, "CFdF = " + str(CF), color = "r", fontsize = 10)
+
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 break
@@ -193,6 +207,10 @@ class AStarPlanner:
                 node = self.Node(current.x + self.motion[i][0],
                                  current.y + self.motion[i][1],
                                  current.cost + self.motion[i][2] * self.costPerGrid, c_id)
+
+#CTCF COUNTER -----------
+                CT += self.motion[i][2] * (self.C_T * self.Delta_T)
+                CF += self.motion[i][2] * (self.C_F * self.Delta_F)
                 
                 ## add more cost in time-consuming area
                 if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
