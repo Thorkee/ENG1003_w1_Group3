@@ -28,7 +28,9 @@
       <a href="#Contributors">Contributors</a>
     </li>
     <li>
-     <a href="#4.References">References</a>
+     <a href="#References">References</a>
+    </li>
+    <li>
 
 
 <!-- ABOUT THE PROJECT -->
