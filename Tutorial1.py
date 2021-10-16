@@ -65,27 +65,47 @@ def eventualfunction():
     a = random.randint(50,200)
     num = random.randint(1, a)
     guess = None
-    attempt = 0
+    attempt = 1
     print("The range for this round is 1 -", a)
+    charles = a
 
+    while guess != num:
+        guess = input('Make a guess:')     
+        guess = int(guess)
+        if guess < num:
+            print("The range is now", guess, "-", a)
+            break
+        elif guess > a:
+            print("Wasssssup! You can not make any guessing exceeding", a)
+            break
+        elif guess > num and guess < a+1:
+            print("The range is now", 1, "-", guess)
+        else:
+            if attempt == 1:
+                print("BINGO! You took 1 attempt to reach the answer!" )
+        charles == guess
+    
     while guess != num:
         guess = input('Make a guess:')     
         guess = int(guess)
         attempt+=1
         if guess < num:
-            print("The range is now", guess, "-", a)
+            print("The range is now", guess, "-", charles)
+            charles == guess
             continue
         elif guess > a:
-            print("You can not make the guessing exceeds", a)
+            print("Wasssssup! You can not make any guessing exceeding", a)
             continue
         elif guess > num and guess < a+1:
             print("The range is now", 1, "-", guess)
+            charles == guess
         else:
             if attempt == 1:
                 print("BINGO! You took 1 attempt to reach the answer!" )
             else:
                 print("BINGO! You took", attempt, "attempts to reach the answer!" )
             break
+    
             
 
 
