@@ -30,7 +30,7 @@
     <li>
      <a href="#References">References</a>
     </li>
-    <li>
+    
 
 
 <!-- ABOUT THE PROJECT -->
