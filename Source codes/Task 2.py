@@ -1,17 +1,34 @@
+#################################################################################################
+#                                        Instructions
+# Developer: ENG1003_20211_A_FPAAE_G3
+#
+#A. Set an appropriate range for x and y -axis(This step may affect the result)
+#B. Set the data of the plane model
+#C. Set the amount of lines and the line function(except x and y -axis)
+#D. Set the '<', '>' to adjust the line area
+#E. Run the program
+#*If there is any problem, please contact us at __(Waiting for input)__
+#################################################################################################
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 from tkinter import messagebox
 import math
 
+#A. Set an appropriate range for x and y -axis  
 x_min = 0.0 
 x_max = 100.0
 y_min = 0.0 
 y_max = 100.0
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+#B. Set the data of the plane model
 C_T = np.arange(x_min, x_max, 0.02)
 d_T = 5.0
 C_F = 0.00
 d_F = 5.0
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 CLC = [[-1, 0, 0, 0, 0],
        [-1, -1, 0, 0, 0],
@@ -23,8 +40,11 @@ CP = []
 min_p = []
 min_cost = 3.4E38
 
-Line_Amount = 4                                                 #Set the amount of lines first(except x and y -axis)
-def line_func(inp, sel):                                        #Set the line function
+#C. Set the amount of lines and the line functions(except x and y -axis) in each sel
+#You may translate the function into C_F(C_T)=f(C_T) 
+#Example: -0.5C_T - C_F <= -30 ----> -0.5*inp + 30.0
+Line_Amount = 4                                                 
+def line_func(inp, sel):                                       
     if(sel == 1):
         return inp - 30.0
     elif(sel == 2):
@@ -36,12 +56,21 @@ def line_func(inp, sel):                                        #Set the line fu
     else:
         print("The Function is not exist")
         exit()
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+#D. Set the '<', '>' and CP to adjust the line area in each sel
+#Format:    yi:Point(xi,yi) > or < y=f(xi)
+#Example:   For function 3 which you have set (like 2C_T - C_F >= 20)
+#           You have to set "CP[p_no][1] > line_func(CP[p_no][0], sel)" in the "if" which means the point isn't in the area
+#                               ^                  ^ 
+#                  Point(xi,yi)_|                  |_y=f(xi)
 def line_area(p_no, sel):                                       #To tell whether the point is in the area or not
     if(CP[p_no][2][0] == sel or CP[p_no][2][1] == sel):
         print(CP[p_no])
         return 0
-    if(sel == 1):                                               #Just edit the '<', '>', '+/-0.01' to adjust the line area
+    if(sel == 1):                                               
         if(CP[p_no][1] < line_func(CP[p_no][0], sel)):   
             CP[p_no][3] = False
     elif(sel == 2):
@@ -55,12 +84,12 @@ def line_area(p_no, sel):                                       #To tell whether
             CP[p_no][3] = False
     
     return 0
-    
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
     
-def SfCP():                                                     #Search for cross point
+def SfCP():#Search for cross point
     x = 0.0
     CL = [' ',' ']
     global CP
@@ -134,7 +163,8 @@ def Init_Matplot():
     plt.grid(True)
 
     plt.axis([x_min, x_max, y_min, y_max])
-
+    
+    #Custom line drawing and the position of the legend
     plt.plot(C_T, line_func(C_T, 1), color = "r", linestyle = "-", linewidth = 1, label = "C_T - C_F <= 30")
     plt.plot(C_T, line_func(C_T, 2), color = "g", linestyle = "-", linewidth = 1, label = "-0.5C_T - C_F <= -30")
     plt.plot(C_T, line_func(C_T, 3), color = "b", linestyle = "-", linewidth = 1, label = "2C_T - C_F >= 20")
@@ -142,7 +172,7 @@ def Init_Matplot():
 
 
 
-def Show_Result():
+def Show_Result():#Show the result line with the value and lable
     plt.plot(C_T, t_line_func(C_T), color = "black", linewidth = 2, label = "Result")
 
     plt.legend(loc='upper left', bbox_to_anchor=(0.0, 0.95))
