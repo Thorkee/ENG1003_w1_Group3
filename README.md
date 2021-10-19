@@ -65,7 +65,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
     
 ![T2-42](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-42.png?raw=true)
 
-![T2-46](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46.png?raw=true)
+![T2-46](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46..png?raw=true)
 
 <a id="Task3"></a>
 #### iii.Task title (Task3)
