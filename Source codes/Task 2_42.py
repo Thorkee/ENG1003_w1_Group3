@@ -7,8 +7,7 @@
 #C. Set the amount of lines and the line function(except x and y -axis)
 #D. Set the '<', '>' to adjust the line area
 #E. Run the program
-#*If there is any problem, please contact us at __(Waiting for input)__
-#################################################################################################
+#*If there is any problem, please contact us at __(Waiting for input)__*
 
 
 import matplotlib.pyplot as plt
@@ -16,19 +15,21 @@ import numpy as np
 from tkinter import messagebox
 import math
 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #A. Set an appropriate range for x and y -axis  
 x_min = 0.0 
 x_max = 100.0
 y_min = 0.0 
 y_max = 100.0
-#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-#B. Set the data of the plane model
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#B. Set the data of the plane model(Only need to edit d_T and d_F)
 C_T = np.arange(x_min, x_max, 0.02)
 d_T = 5.0
 C_F = 0.00
 d_F = 5.0
-#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 CLC = [[-1, 0, 0, 0, 0],    #Check whether the two cross lines have been calculated 
        [-1, -1, 0, 0, 0],
@@ -40,6 +41,7 @@ CP = []                     #Store the cross points info: CP = [[x-axis, y-axis,
 min_p = []
 min_cost = 3.4E38
 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #C. Set the amount of lines and the line functions(except x and y -axis) in each sel
 #You may translate the function into C_F(C_T)=f(C_T) 
 #Example: -0.5C_T - C_F <= -30 ----> -0.5*inp + 30.0
@@ -54,12 +56,14 @@ def line_func(inp, sel):
     elif(sel == 4):
         return -4*inp + 220.0
     else:
-        print("The Function is not exist")
+        messagebox.showinfo("Error line_func()","The Function is not exist")
         exit()
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #D. Set the '<', '>' and CP to adjust the line area in each sel
 #Format:    yi:Point(xi,yi) > or < y=f(xi)
 #Example:   For function 3 which you have set (like 2C_T - C_F >= 20)
@@ -104,6 +108,8 @@ def SfCP():#Search for cross point
     while(x <= x_max and x >= 0.0):
         for i in range(1, Line_Amount + 1):
             for j in range(i + 1, Line_Amount + 1):
+                if(j > Line_Amount): 
+                    break
                 if(abs(line_func(x, i) - line_func(x, j)) <= 0.01 and CLC[i - 1][j - 1] != 1):  #Custom line
                     plt.plot(x, line_func(x, i), 'o', color = "black")
                     CL[0] = i
@@ -120,8 +126,6 @@ def SfCP():#Search for cross point
                     CL = [' ',' ']
 
         x += 0.005
-        #if(x >= 39 and x <= 41):
-        #    print(func(x, 1) , '\n' , func(x, 2) , '\n' , func(x, 3) , '\n' , func(x, 4) , '\n' , '*')
     
     return 0
 
@@ -148,8 +152,7 @@ def cal_t_line():
             Check = 1
 
     if(Check == 0):
-        messagebox.showinfo("Error","Minimum point is not exist")
-        exit()
+        messagebox.showinfo("Error cal_t_line()","Minimum point is not exist")
     
     return 0
 
