@@ -173,11 +173,13 @@ def Init_Matplot():
 
 
 def Show_Result():#Show the result line with the value and lable
-    plt.plot(C_T, t_line_func(C_T), color = "black", linewidth = 2, label = "Result")
+    global min_p
+
+    outp = "Result " + "C_T=" + str(round(min_p[0], 2)) + " C_F=" + str(round(min_p[1], 2))
+    plt.plot(C_T, t_line_func(C_T), color = "black", linewidth = 2, label = outp)
 
     plt.legend(loc='upper left', bbox_to_anchor=(0.0, 0.95))
 
-    global min_p
     plt.annotate("C_T =" + str(round(min_p[0], 2)) + "\n" + "C_T =" + str(round(min_p[1], 2)), xy=(min_p[0], min_p[1]), xytext=(4, 60), arrowprops=dict(facecolor='k', headwidth=5, width=1))
 
     plt.show()
