@@ -32,7 +32,7 @@ def func(inp, sel):
         exit()
 
 def cal_line(inp, CP):
-    
+
     CTnCF = d_T * CP[0][0] + d_F * CP[0][1]
     return (CTnCF - d_T * inp) / d_F
     
