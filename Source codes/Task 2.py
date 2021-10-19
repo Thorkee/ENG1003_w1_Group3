@@ -38,18 +38,21 @@ def line_func(inp, sel):                                        #Set the line fu
         exit()
 
 def line_area(p_no, sel):                                       #To tell whether the point is in the area or not
+    if(CP[p_no][2][0] == sel or CP[p_no][2][1] == sel):
+        print(CP[p_no])
+        return 0
     if(sel == 1):                                               #Just edit the '<', '>', '+/-0.01' to adjust the line area
-        if(CP[p_no][1] < line_func(CP[p_no][0], sel)):   #0.01 is for the deviation
-            CP[p_no][2] = False
+        if(CP[p_no][1] < line_func(CP[p_no][0], sel)):   
+            CP[p_no][3] = False
     elif(sel == 2):
         if(CP[p_no][1] < line_func(CP[p_no][0], sel)):
-            CP[p_no][2] = False
+            CP[p_no][3] = False
     elif(sel == 3):
         if(CP[p_no][1] > line_func(CP[p_no][0], sel)):
-            CP[p_no][2] = False
+            CP[p_no][3] = False
     elif(sel == 4):
         if(CP[p_no][1] > line_func(CP[p_no][0], sel)):
-            CP[p_no][2] = False
+            CP[p_no][3] = False
     
     return 0
     
@@ -60,13 +63,15 @@ def line_area(p_no, sel):                                       #To tell whether
 def SfCP():                                                     #Search for cross point
     x = 0.0
     CL = [' ',' ']
+    global CP
 
     for i in range(1,Line_Amount + 1):    
         if(y_min <= line_func(0, i) <= y_max):                                            #y-axis
             plt.plot(0, line_func(0, i), 'o', color = "black")
             CL[0] = i
             CL[1] = 'y'
-            CP.append([0, line_func(0, i), True])
+            CP.append([0, line_func(0, i), CL, True])
+            CL = [' ',' ']
     while(x <= x_max and x >= 0.0):
         for i in range(1, Line_Amount + 1):
             for j in range(i + 1, Line_Amount + 1):
@@ -74,14 +79,16 @@ def SfCP():                                                     #Search for cros
                     plt.plot(x, line_func(x, i), 'o', color = "black")
                     CL[0] = i
                     CL[1] = j
-                    CP.append([x, min(line_func(x, i), line_func(x, j)), True])
+                    CP.append([x, min(line_func(x, i), line_func(x, j)), CL, True])
                     CLC[i - 1][j - 1] = 1
+                    CL = [' ',' ']
             if(abs(line_func(x, i) - 0.0) <= 0.01 and CLC[i - 1][4] != 1):                  #x-axis
                     plt.plot(x, 0, 'o', color = "black")
                     CL[0] = i
                     CL[1] = 'x'
-                    CP.append([x, 0, True])
+                    CP.append([x, 0, CL, True])
                     CLC[i - 1][4] = 1
+                    CL = [' ',' ']
 
         x += 0.005
         #if(x >= 39 and x <= 41):
@@ -98,7 +105,7 @@ def t_line_func(CT):
 
 def cal_t_line():
     P_len = len(CP)
-    for sel in range(1, Line_Amount + 1):
+    for sel in range(1, Line_Amount + 2):
         for p_no in range(0, P_len):
             line_area(p_no, sel)
     
@@ -106,7 +113,7 @@ def cal_t_line():
     global min_p
     Check = 0
     for p_no in range(0, P_len):
-        if(CP[p_no][2] and min_cost > cost(CP[p_no][0], CP[p_no][1])):
+        if(CP[p_no][3] and min_cost > cost(CP[p_no][0], CP[p_no][1])):
             min_cost =  cost(CP[p_no][0], CP[p_no][1])
             min_p = [CP[p_no][0], CP[p_no][1]]
             Check = 1
