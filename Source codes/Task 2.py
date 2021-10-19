@@ -30,12 +30,12 @@ C_F = 0.00
 d_F = 5.0
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-CLC = [[-1, 0, 0, 0, 0],
+CLC = [[-1, 0, 0, 0, 0],    #Check whether the two cross lines have been calculated 
        [-1, -1, 0, 0, 0],
        [-1, -1, -1, 0, 0],
        [-1, -1, -1, -1, 0]]
 CLC = np.array(CLC)
-CP = []
+CP = []                     #Store the cross points info: CP = [[x-axis, y-axis, [line1, line2], bool whether-in-area], ...]
 
 min_p = []
 min_cost = 3.4E38
