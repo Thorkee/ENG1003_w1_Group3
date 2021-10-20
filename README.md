@@ -37,11 +37,11 @@
 
 
 <a id="Background"></a>
-## Background of Path Planning to Aviation Engineering
+## 1. Background of Path Planning to Aviation Engineering
 
 
 <a id="Task"></a>
-## Path Planning Algorithm (Group Task)
+## 2. Path Planning Algorithm (Group Task)
 
 
 <a id="Task1"></a>
@@ -214,7 +214,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
 
 
 <a id="Contributors"></a>
-## Contributors
+## 3. Contributors
 
 #### LIN Ju @Thorkee
 > Responsible part:
@@ -231,7 +231,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
 #### CHENG Wai Ching @Chengmm565
 > Responsible part:
 
-## References
+## 4. References
 
 
 
