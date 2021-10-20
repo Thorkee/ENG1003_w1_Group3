@@ -61,12 +61,12 @@ After Task 1, we reflected on the content of the task and concluded the followin
   4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
 
 <a id="Task2"></a>
-### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)
+### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2) 
 <dl>
   <dt>
     a) Introduction 
     <dd>
-      In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-     cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrains.
+      In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-     cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrains.(<a href="#T2_result">See the result directly</a>)
     </dd>
   </dt>
   <dt>
@@ -139,6 +139,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
       </ul>
   </dt>
   <dt>
+  <a id="T2_result"></a>
       d) Result
       <dd>
         Through computing, we got following model and data:       
