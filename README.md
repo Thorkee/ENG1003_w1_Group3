@@ -138,6 +138,65 @@ After Task 1, we reflected on the content of the task and concluded the followin
         </li>
       </ul>
   </dt>
+  <dt>
+      d) Result
+      <dd>
+        Through computing, we got following model and data:
+        <table border="1">
+            <tr>
+              <th, colspan="8">4 Constraints with 2 Variables</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td>𝐶_𝐹</td>
+              <td>d_𝐹</td>
+              <td>𝐶_T</td>
+              <td>d_T</td>
+              <td>C_C</td>
+              <td>d_F_A</td>
+              <td>d_T_A</td>
+            </tr>
+            <tr>
+              <th>Group 1 Aircraft Model</th>
+              <td>20</td>
+              <td>5</td>
+              <td>20</td>
+              <td>5</td>
+              <td>10</td>
+              <td>5</td>
+              <td>5</td>
+            </tr>
+          
+            <tr>
+              <th, colspan="8">4 Constraints with 6 Variables</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td>𝐶_𝐹</td>
+              <td>d_𝐹</td>
+              <td>𝐶_T</td>
+              <td>d_T</td>
+              <td>C_C</td>
+              <td>d_F_A</td>
+              <td>d_T_A</td>
+            </tr>
+            <tr>
+              <th>Group 1 Aircraft Model</th>
+              <td>9</td>
+              <td>2</td>
+              <td>1</td>
+              <td>8</td>
+              <td>10</td>
+              <td>9</td>
+              <td>1</td>
+            </tr>
+          
+            <tr>
+              <th, colspan="8">Total Cost: 4223.323302152471</th>
+            </tr>
+        </table>
+      </dd>
+  </dt>
 </dl>
     
     
