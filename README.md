@@ -206,7 +206,6 @@ After Task 1, we reflected on the content of the task and concluded the followin
 </dl>
     
 
-
 <a id="Task3"></a>
 ### iii.Task title (Task3)
 
