@@ -11,10 +11,10 @@
       <a href="#Task">Path Planning Algorithm (Group Task)</a>
       <ol>
         <li>
-          <a href="#Task1">Task title (Task1)</a>
+          <a href="#Task1">Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)</a>
         </li>
         <li>
-          <a href="#Task2">Task title (Task2)</a>
+          <a href="#Task2">Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)</a>
         </li>
         <li>
           <a href="#Task3">Task title (Task3)</a>
@@ -45,7 +45,7 @@
 
 
 <a id="Task1"></a>
-#### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
+### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
 For the first step, we changed the specific data from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
 
 It is worth mentioning that we also changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
@@ -61,17 +61,26 @@ After Task 1, we reflected on the content of the task and concluded the followin
   4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
 
 <a id="Task2"></a>
-#### ii.Task title (Task2)
+### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)
+<dl>
+  <dt>
+    <p size = "4">a) Introduction</p>
+    <dd>
+    In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrain.
+    </dd>
+  </li>
+</dl>
+    
     
 ![T2-42](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/task2_1.png)
 
 ![T2-46](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46..png?raw=true)
 
 <a id="Task3"></a>
-#### iii.Task title (Task3)
+### iii.Task title (Task3)
 
 <a id="Task4"></a>
-#### iv.Task title (Task4)
+### iv.Task title (Task4)
 
 
 <a id="Contributors"></a>
