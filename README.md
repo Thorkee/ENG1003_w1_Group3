@@ -30,7 +30,7 @@
     <li>
      <a href="#References">References</a>
     </li>
-    
+</details>
 
 
 <!-- ABOUT THE PROJECT -->
@@ -64,11 +64,26 @@ After Task 1, we reflected on the content of the task and concluded the followin
 ### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)
 <dl>
   <dt>
-    <p size = "4">a) Introduction</p>
+    a) Introduction 
     <dd>
-    In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrain.
-    </dd>
-  </li>
+      In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-     cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrain.
+     </dd>
+    </dt>
+    <dt>
+      b) Designing scheme
+      <dd>
+        <p>Through the research, we found that the parameters of the model do not affect the minimum-cost except the time and fuel consuming area. </p>       
+        (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant !=0, the shortest Distance will not change) 
+        <p>With this idea, 
+          <ul>
+            <li>
+              For 4 constraints with 2 variables, there is no need to consider the path. We can use the "Linear programming(LP)" to compute the approximate paramaters.
+            </li>
+            <li>
+              For 4 constraints with 6 variables, we have to use A* algorithm to compute the best path due to the changeable T/F_Consuming Area. However, in consideration of the paramaters which are integer and the simplification of the constrains, we can easily use Enumeration Method to find C_T, d_T, C_F, d_F, and then use A* algorithm to enumerate all eligible value of T/F_Consuming Area.
+          </ul>
+      </dd>
+    </dt>
 </dl>
     
     
