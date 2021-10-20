@@ -196,7 +196,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
         <p>Figure 1: The Result of 4 Constraints with 2 Variables</p>
         This is the result computed by LP Algorithm shown as figure.
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/task2_1.png" alt="4 Constraints with 2 Variables Result">
-        <p>Figure 1: The Progress & Result of 4 Constraints with 2 Variables</p>
+        <p>Figure 2: The Progress & Result of 4 Constraints with 2 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true" alt="4 Constraints with 6 Variables Result">
