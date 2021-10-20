@@ -66,11 +66,11 @@ After Task 1, we reflected on the content of the task and concluded the followin
   <dt>
     a) Introduction 
     <dd>
-      In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-     cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrain.
-     </dd>
-    </dt>
-    <dt>
-      b) Designing scheme
+      In this part, our group aimed to find the model that costs least in specific map. To do this, we designed two programs for different targets including time-cost, fuel-     cost, time-comsuming area cost and fuel-comsuming area cost. In addition, one of the programs, which is improved by our group from A*_search_algorithm whose author is Atsushi Sakai Nikos Kanargias, is to calculate the minimum cost route, and the other one which is entirely programmed by us is to calculate the parameters of the model within the constrains.
+    </dd>
+  </dt>
+  <dt>
+      b) Designing Scheme
       <dd>
         <p>Through the research, we found that the parameters of the model do not affect the minimum-cost except the time and fuel consuming area. </p>       
         (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant !=0, the shortest Distance will not change) 
@@ -81,15 +81,69 @@ After Task 1, we reflected on the content of the task and concluded the followin
             </li>
             <li>
               For 4 constraints with 6 variables, we have to use A* algorithm to compute the best path due to the changeable T/F_Consuming Area. However, in consideration of the paramaters which are integer and the simplification of the constrains, we can easily use Enumeration Method to find C_T, d_T, C_F, d_F, and then use A* algorithm to enumerate all eligible value of T/F_Consuming Area.
+            </li>
           </ul>
       </dd>
-    </dt>
+  </dt>
+  <dt>
+      c) Algorithm Implementation
+      <ul>
+        <li>
+          <p>LP Algorithm</p>
+          <ul>
+            <li>List of key function:</li>
+            <ul>
+              <li>Search for Cross Point</li>
+              <li>Calculate Target Line</li>
+              <li>Display</li>  
+            </ul>
+            <li>
+              <p>-->Search for Cross Point</p>
+              Substitute every x in domain into every Line Equation. If |f(x) - g(x)| --> 0, then mark the point(x, f(x)) and store it into list A. Adjusting the precision to ensure the efficiency and accuracy is the key point. The accuracy will decrease if the slops of the two lines are too similar.
+            </li>
+            <li>
+              <p>-->Calculate Target Line</p>
+              First, determine whether the point in A is in the spacific area between certain line and xy-aixs and store the results of every line into list B. Take the intersection of the B, and then we can get the possible points.</br>
+              Second, find the minimum point using the equation C_F = (C_T * d_T) / d_F(i.e. f(x) = (a * x) / b. However, there may be some BUGs like no appropriate point or the result which goes to infinity. We just consider general condition and there is considerable scope for improvement.
+            </li>
+            <li>
+              <p>-->Display</p>
+              Show the result with pattern and figure.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>A* Path Algorithm</p>
+          <ul>
+            <li>List of key function:</li>
+            <ul>
+              <li>Basic Path-Computing Function</li>
+              <li>Enumeration and Comparation Function</li>
+              <li>Display Result</li>  
+            </ul>
+            <li>
+              <p>-->Basic Path-Computing Function</p>
+              Theory: Start at a curtain point, retrieve every direction to find the next minimum point (The direction closest to the goal will be the first to be retrieve), move to next point and repeat above step.</br>
+              Actually, this algorithm is based on Breadth-First Search, but will firstly search the point that has the shortest distance to the goal. That can improve the efficiency in some cases.
+            </li>
+            <li>
+              <p>-->Enumeration and Comparation Function</p>
+              Enumerate all possible value within the constrains and find the minimum value for the paramaters.
+            </li>
+            <li>
+              <p>-->Display Result</p>
+              In this part, we will show all the infomation including computing process, approximate paramaters, the minimum cost, the new and origin route.
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </dt>
 </dl>
     
     
 ![T2-42](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/task2_1.png)
 
-![T2-46](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46..png?raw=true)
+![T2-46](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true)
 
 <a id="Task3"></a>
 ### iii.Task title (Task3)
