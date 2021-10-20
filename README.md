@@ -198,7 +198,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
         This is the result computed by LP Algorithm shown as figure.
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/task2_1.png" alt="4 Constraints with 2 Variables Result">
         <br>
-        <p>-----------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <p>-------------------------------------------------------------------:P--------------------------------------------------------------------------</p>
         </br>
         <p>Figure 2: The Progress & Result of 4 Constraints with 2 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
