@@ -142,57 +142,56 @@ After Task 1, we reflected on the content of the task and concluded the followin
       d) Result
       <dd>
         Through computing, we got following model and data:
-        <table border="1">
+        
+        <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
             <tr>
-              <th, colspan="8">4 Constraints with 2 Variables</th>
+              <th colspan="8">4 Constraints with 2 Variables</th>
             </tr>
             <tr>
-              <td></td>
-              <td>𝐶_𝐹</td>
-              <td>d_𝐹</td>
-              <td>𝐶_T</td>
-              <td>d_T</td>
-              <td>C_C</td>
-              <td>d_F_A</td>
-              <td>d_T_A</td>
+              <td>&nbsp;</td>
+              <td width="8%" class="btbg font-center">𝐶_𝐹</td>
+              <td width="8%" class="btbg font-center">d_𝐹</td>
+              <td width="8%" class="btbg font-center">𝐶_T</td>
+              <td width="8%" class="btbg font-center">d_T</td>
+              <td width="8%" class="btbg font-center">C_C</td>
+              <td width="8%" class="btbg font-center">d_F_A</td>
+              <td width="8%" class="btbg font-center">d_T_A</td>
             </tr>
             <tr>
-              <th>Group 1 Aircraft Model</th>
-              <td>20</td>
-              <td>5</td>
-              <td>20</td>
-              <td>5</td>
-              <td>10</td>
-              <td>5</td>
-              <td>5</td>
-            </tr>
-          
+              <th width="8%" class="btbg font-center">Group 1 Aircraft Model</th>
+              <td width="8%" class="btbg font-center">20</td>
+              <td width="8%" class="btbg font-center">5</td>
+              <td width="8%" class="btbg font-center">20</td>
+              <td width="8%" class="btbg font-center">5</td>
+              <td width="8%" class="btbg font-center">10</td>
+              <td width="8%" class="btbg font-center">5</td>
+              <td width="8%" class="btbg font-center">5</td>
+            </tr>        
             <tr>
-              <th, colspan="8">4 Constraints with 6 Variables</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td>𝐶_𝐹</td>
-              <td>d_𝐹</td>
-              <td>𝐶_T</td>
-              <td>d_T</td>
-              <td>C_C</td>
-              <td>d_F_A</td>
-              <td>d_T_A</td>
+              <th width="8%" class="btbg font-center" colspan="8">4 Constraints with 6 Variables</th>
             </tr>
             <tr>
-              <th>Group 1 Aircraft Model</th>
-              <td>9</td>
-              <td>2</td>
-              <td>1</td>
-              <td>8</td>
-              <td>10</td>
-              <td>9</td>
-              <td>1</td>
+              <td width="8%" class="btbg font-center"></td>
+              <td width="8%" class="btbg font-center">𝐶_𝐹</td>
+              <td width="8%" class="btbg font-center">d_𝐹</td>
+              <td width="8%" class="btbg font-center">𝐶_T</td>
+              <td width="8%" class="btbg font-center">d_T</td>
+              <td width="8%" class="btbg font-center">C_C</td>
+              <td width="8%" class="btbg font-center">d_F_A</td>
+              <td width="8%" class="btbg font-center">d_T_A</td>
             </tr>
-          
             <tr>
-              <th, colspan="8">Total Cost: 4223.323302152471</th>
+              <th width="8%" class="btbg font-center">Group 1 Aircraft Model</th>
+              <td width="8%" class="btbg font-center">9</td>
+              <td width="8%" class="btbg font-center">2</td>
+              <td width="8%" class="btbg font-center">1</td>
+              <td width="8%" class="btbg font-center">8</td>
+              <td width="8%" class="btbg font-center">10</td>
+              <td width="8%" class="btbg font-center">9</td>
+              <td width="8%" class="btbg font-center">1</td>
+            </tr>         
+            <tr>
+              <th width="8%" class="btbg font-center" colspan="8">Total Cost: 4223.323302152471</th>
             </tr>
         </table>
       </dd>
