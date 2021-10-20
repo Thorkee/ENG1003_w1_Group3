@@ -141,8 +141,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
   <dt>
       d) Result
       <dd>
-        Through computing, we got following model and data:
-        
+        Through computing, we got following model and data:       
         <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
             <tr>
               <th colspan="8">4 Constraints with 2 Variables</th>
