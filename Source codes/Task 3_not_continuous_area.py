@@ -26,12 +26,8 @@ Delta_T_A = 0.2
 #You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-<<<<<<< HEAD
-M_A_Count = 10      #You can modify the minus-cost area here
-=======
-M_A_Count = 16
+M_A_Count = 16     
 #--------------------------------------    
->>>>>>> c8b015346f30d1ced73e829fa80509daa5163d5e
 
 C_T = 2
 d_T = 5
@@ -72,8 +68,8 @@ class AStarPlanner:
         self.Delta_T = d_T
         self.C_C = 10
         
-#        self.Delta_F_A = 2 # additional fuel
-#        self.Delta_T_A = 5 # additional time 
+        self.Delta_F_A = Delta_F_A # additional fuel
+        self.Delta_T_A = Delta_F_A # additional time 
         
         
 
@@ -116,7 +112,7 @@ class AStarPlanner:
 
         open_set, closed_set = dict(), dict() # open_set: node not been tranversed yet. closed_set: node have been tranversed already
         open_set[self.calc_grid_index(start_node)] = start_node # node index is the grid index
-
+        
         while 1:
             if len(open_set) == 0:
                 print("Open set is empty..")
@@ -138,10 +134,11 @@ class AStarPlanner:
                                                  0) if event.key == 'escape' else None])
                 if len(closed_set.keys()) % 10 == 0:
                     plt.pause(0.001)
-
+            # if(1000 <= len(closed_set) <= 1300):
+            #     print(current.cost)
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                # print("Find goal with cost of -> ",current.cost )
+                #print("Find goal with cost of -> ", current.cost)
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 break
@@ -164,13 +161,13 @@ class AStarPlanner:
                 if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
                         # print("time consuming area!!")
-                        node.cost = node.cost + Delta_T_A * self.motion[i][2]
+                        node.cost = node.cost + self.Delta_T_A * self.motion[i][2]
                 
                 # add more cost in fuel-consuming area
                 if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
                         # print("fuel consuming area!!")
-                        node.cost = node.cost + Delta_F_A * self.motion[i][2]
+                        node.cost = node.cost + self.Delta_F_A * self.motion[i][2]
                     # print()
                 
                 n_id = self.calc_grid_index(node)
@@ -330,7 +327,7 @@ def cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y):
             cost_temp += (C_M_A * d_M_A) * 1
             M_A_Count -= 1
     
-    return x_M_A, y_M_A 
+    return x_M_A, y_M_A, cost_temp
 
 
 
@@ -385,29 +382,29 @@ def main():
 
     # set obstacle positions for group 3
     ox, oy = [], []
-    for i in range(-10, 60): # draw the button border 
+    for i in range(-10, 61): # draw the button border 
         ox.append(i)
         oy.append(-10.0)
-    for i in range(-10, 60): # draw the right border
+    for i in range(-10, 61): # draw the right border
         ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 60): # draw the top border
+    for i in range(-10, 61): # draw the top border
         ox.append(i)
         oy.append(60.0)
-    for i in range(-10, 60): # draw the left border
+    for i in range(-10, 61): # draw the left border
         ox.append(-10.0)
         oy.append(i)
 
 #Start_draw boarder
-    for i in range(0, 40): # draw the free border
+    for i in range(0, 41): # draw the free border
         ox.append(i)
         oy.append(20.0 + i)
 
-    for i in range(-10, 30):
+    for i in range(-10, 31):
         ox.append(25)
         oy.append(i)
 
-    for i in range(0, 50):
+    for i in range(0, 51):
         ox.append(40)
         oy.append(i)
 
@@ -425,8 +422,6 @@ def main():
     global Delta_F_A
     global Delta_T_A
 #    global show_animation
-    Delta_F_A = 9
-    Delta_T_A = 1
     cost = []
     min_cost = 3.4E38
     cost_temp = 0.0
@@ -447,41 +442,12 @@ def main():
     rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
     
     # decrease the cost in minus-cost area
-<<<<<<< HEAD
-    global M_A_Count
-    straightLine = []   
-    x_M_A = []
-    y_M_A = []
-    for pos in range(len(rx) - 1, 0, -1):
-        if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2 and 
-        not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y) and
-        not(rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
-            x_M_A.append(rx[pos - 1])
-            y_M_A.append(ry[pos - 1])
-            cost_temp   -= (C_M_A * d_M_A) * math.sqrt(2)
-            M_A_Count -= 1
-        else:
-            straightLine.append([rx[pos - 1], ry[pos - 1]])
-        
-        if(M_A_Count <= 0):
-            break
-    
-    while(M_A_Count > 0):
-        if(M_A_Count >= len(straightLine)):
-            M_A_Count -= 1
-        else:
-            x_M_A.append(straightLine[M_A_Count][0])
-            y_M_A.append(straightLine[M_A_Count][1])
-            cost_temp -= (C_M_A * d_M_A) * 1
-            M_A_Count -= 1
-=======
-    x_M_A, y_M_A = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
->>>>>>> c8b015346f30d1ced73e829fa80509daa5163d5e
+    x_M_A, y_M_A, cost_final = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
 
     plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
     plt.plot(0, 0, color = "blue", linewidth = 1, alpha = 1, label = "Minus-cost Area")
     plt.plot(x_M_A, y_M_A, 'o', color = "blue", alpha = 0.7) # show the minus-cost area
-    plt.plot(0, 0, color = "black", alpha = 0, label = "Total Cost:{0}".format(cost_temp))
+    plt.plot(0, 0, color = "black", alpha = 0, label = "Total Cost:\n{0} - {1} \n= {2}".format(cost_temp, cost_temp - cost_final, cost_final))
     plt.legend(loc='upper left', bbox_to_anchor=(-0.15, 1.15))
     plt.pause(0.001) # pause 0.001 seconds
     plt.show() # show the plot

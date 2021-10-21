@@ -228,6 +228,9 @@
 
 <a id="Task3"></a>
 ### iii.Task title (Task3)
+<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/not%20continous%20area.png" alt="not continous area">
+<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/continous%20area.png" alt="continous area">
+
 
 <a id="Task4"></a>
 ### iv.Task title (Task4)
