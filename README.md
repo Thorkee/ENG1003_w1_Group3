@@ -182,7 +182,7 @@
               <td width="8%" class="btbg font-center">5</td>
             </tr>     
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24023.52559935244</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24448.52559935244</th>
             </tr>
             <tr>
               <th width="8%" class="btbg font-center" colspan="8">4 Constraints with 6 Variables</th>
@@ -208,7 +208,7 @@
               <td width="8%" class="btbg font-center">1</td>
             </tr>         
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4223.323302152471</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4274.2349903979</th>
             </tr>
         </table>
         <p>Figure 1: The Result of 4 Constraints with 2 Variables</p>
@@ -220,7 +220,7 @@
         <p>Figure 2: The Progress & Result of 4 Constraints with 6 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true" alt="4 Constraints with 6 Variables Result">
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/af85185020bca6497db33ecd4020a62654ab06d0/Image%20Resources/T2-46....png" alt="4 Constraints with 6 Variables Result">
       </dd>
   </dt>
 </dl>
