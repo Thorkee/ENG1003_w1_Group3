@@ -23,9 +23,11 @@ show_animation = True
 Delta_F_A = 9
 Delta_T_A = 1
 
+#You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-M_A_Count = 16      #You can modify the minus-cost area here
+M_A_Count = 16 
+#--------------------------------------    
 
 C_T = 5
 d_T = 5
@@ -418,15 +420,15 @@ def main():
     x_M_A = []
     y_M_A = []
     for pos in range(len(rx) - 1, 0, -1):
-        if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2 and 
-        not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y) and
-        not(rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
-            x_M_A.append(rx[pos - 1])
-            y_M_A.append(ry[pos - 1])
-            cost_temp -= (C_M_A * d_M_A) * math.sqrt(2)
-            M_A_Count -= 1
-        else:
-            straightLine.append([rx[pos - 1], ry[pos - 1]])
+        if(not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y or
+            rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
+            if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2):
+                x_M_A.append(rx[pos - 1])
+                y_M_A.append(ry[pos - 1])
+                cost_temp -= (C_M_A * d_M_A) * math.sqrt(2)
+                M_A_Count -= 1
+            else:
+                straightLine.append([rx[pos - 1], ry[pos - 1]])
         
         if(M_A_Count <= 0):
             break
