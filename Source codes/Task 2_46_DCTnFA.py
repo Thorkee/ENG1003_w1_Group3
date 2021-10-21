@@ -301,7 +301,7 @@ def Find_TnF():
 
     for i in range(1, 10):
         for j in range(1, 10):
-            if(i * j + (10 - i) * (10 - j) < min_cost_temp):
+            if(i * j + (10 - i) * (10 - j) < min_cost_temp and i * j + (10 - i) * (10 - j) >= 25):
                 min_cost_temp, C_T, d_T, C_F, d_F = i * j + (10 - i) * (10 - j), i, j, 10 - i, 10 - j
     
     print("The Min-Cost Parameters:")
@@ -399,7 +399,10 @@ def main():
     #     ox.append(i)
     #     oy.append(30.0)
 
-
+    global C_T
+    global d_T
+    global C_F
+    global d_F
     
     global Delta_F_A
     global Delta_T_A
@@ -413,6 +416,7 @@ def main():
 
     Find_TnF()
 
+    route_compare = []
     while(True):
         print("Time Cost Area:", Delta_T_A)
         print("Fuel Cost Area:", Delta_F_A)
@@ -438,7 +442,17 @@ def main():
             ry.clear()
 
         if show_animation:  # pragma: no cover
-            plt.plot(rx, ry, "-g") # show the route 
+            C_T = 2
+            d_T = 5
+            C_F = 1
+            d_F = 1
+            Delta_F_A = 0.2
+            Delta_T_A = 0.2
+            a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+            rx_og, ry_og, cost_temp = a_star.planning(sx, sy, gx, gy)
+            plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
+            plt.plot(rx_og, ry_og, color = "gray", linewidth = 1, alpha = 0.7, label = "Origin Route (Task1 A380)") # show the origin route 
+            plt.legend(loc='upper left', bbox_to_anchor=(0.0, 1))
             plt.pause(0.001) # pause 0.001 seconds
             plt.show() # show the plot
 
