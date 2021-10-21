@@ -20,17 +20,17 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-Delta_F_A = 9
-Delta_T_A = 1
+Delta_F_A = 0.2
+Delta_T_A = 0.2
 
 C_M_A = -2
 d_M_A = 2
-M_A_Count = 16      #You can modify the minus-cost area here
+M_A_Count = 10      #You can modify the minus-cost area here
 
-C_T = 5
+C_T = 2
 d_T = 5
-C_F = 5
-d_F = 5
+C_F = 1
+d_F = 1
 
 class AStarPlanner:
 
@@ -423,7 +423,7 @@ def main():
         not(rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
             x_M_A.append(rx[pos - 1])
             y_M_A.append(ry[pos - 1])
-            cost_temp -= (C_M_A * d_M_A) * math.sqrt(2)
+            cost_temp   -= (C_M_A * d_M_A) * math.sqrt(2)
             M_A_Count -= 1
         else:
             straightLine.append([rx[pos - 1], ry[pos - 1]])

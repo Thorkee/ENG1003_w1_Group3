@@ -29,7 +29,6 @@ class AStarPlanner:
         self.tc_x = tc_x
         self.tc_y = tc_y
 
-        ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
     #PolyU-A380
         self.C_F = 1
         self.Delta_F = 1
@@ -43,87 +42,6 @@ class AStarPlanner:
 
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-        print("The total cost of PolyU-A380 is", self.costPerGrid)
-
-        A380=self.costPerGrid
-
-    #PolyU-A381
-        self.C_F = 1
-        self.Delta_F = 1.5
-        self.C_T = 3
-        self.Delta_T = 5
-        self.C_C = 10
-        
-        self.Delta_F_A = 0.3 # additional fuel
-        self.Delta_T_A = 0.4 # additional time 
-        
-        
-        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
-
-        print("The total cost of PolyU-A381 is", self.costPerGrid)
-
-        A381=self.costPerGrid
-
-    #PolyU-A382
-        self.C_F = 1
-        self.Delta_F = 2.0
-        self.C_T = 4
-        self.Delta_T = 5
-        self.C_C = 10
-        
-        self.Delta_F_A = 0.4 # additional fuel
-        self.Delta_T_A = 0.5 # additional time 
-        
-        
-        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
-
-        print("The total cost of PolyU-A382 is", self.costPerGrid)
-
-        A382=self.costPerGrid
-
-        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
-
-
-        print("PolyU-A381 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
-        print("PolyU-A381 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
-        print("PolyU-A381 cost part3-> ", self.C_C )
-        main
-        
-    #PolyU-A383
-        self.C_F = 1
-        self.Delta_F = 2.5
-        self.C_T = 5
-        self.Delta_T = 5
-        self.C_C = 10
-        
-        self.Delta_F_A = 0.5 # additional fuel
-        self.Delta_T_A = 0.1 # additional time 
-
-        print("PolyU-A380 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
-        print("PolyU-A380 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
-        print("PolyU-A380 cost part3-> ", self.C_C )
-        
-        
-        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
-
-        #print("The total cost of PolyU-A383 is", self.costPerGrid)   
-
-        A383=self.costPerGrid
-
-        list1 = [A380,A381,A382,A383]
-        smallest=min(list1)
-
-        if smallest == A380:
-            print("The aircraft model is PolyU-A380")
-        elif smallest == A381:
-            print("The aircraft model is PolyU-A381")
-        elif smallest == A382:
-            print("The aircraft model is PolyU-A382")
-        elif smallest == A383:
-            print("The aircraft model is PolyU-A383")
-        else:
-            print("ERROR!")
-        print("And the least cost is:", smallest)
             
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
@@ -413,9 +331,13 @@ def main():
         plt.plot(ox, oy, ".k") # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
+
+    #plot must-go spots
+        plt.plot(-5, 25, "ob")
+        plt.plot(30, 0, "ob")
         
-        plt.plot(fc_x, fc_y, "oy") # plot the fuel consuming area
-        plt.plot(tc_x, tc_y, "or") # plot the time consuming area
+        plt.plot(fc_x, fc_y, "y") # plot the fuel consuming area
+        plt.plot(tc_x, tc_y, "r") # plot the time consuming area
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
