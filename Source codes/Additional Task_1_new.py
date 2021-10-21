@@ -6,7 +6,7 @@ show_animation = True
 
 class AStarPlanner:
 
-    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
+    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y, kc_x, kc_y):
         """
         Initialize grid map for a star planning
         ox: x position list of Obstacles [m]
@@ -28,6 +28,8 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
+        self.kc_x = kc_x
+        self.kc_y = kc_y
 
         ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
     #Airplane Model
@@ -39,11 +41,13 @@ class AStarPlanner:
         
         self.Delta_F_A = 0.2 # additional fuel
         self.Delta_T_A = 0.2 # additional time 
+
+        self.C_P = -2
+        self.Delta_P =2
         
 
-        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
+        self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C + self.C_P * self.Delta_P
 
-        print("The total cost of PolyU-A380 is", self.costPerGrid)
 
         A380=self.costPerGrid
 
@@ -146,6 +150,12 @@ class AStarPlanner:
                     if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
                         # print("fuel consuming area!!")
                         node.cost = node.cost + self.Delta_F_A * self.motion[i][2]
+
+                # add minus cost area
+                if self.calc_grid_position(node.x, self.min_x) in self.kc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.kc_y:
+                        # print("fuel saving area!!")
+                        node.cost = node.cost + self.Delta_P * self.motion[i][2]
                     # print()
                 
                 n_id = self.calc_grid_index(node)
@@ -330,7 +340,13 @@ def main():
         for j in range(-10, 10):
             tc_x.append(i)
             tc_y.append(j)
- 
+
+    # set minus cost area_not yet decided the position
+    kc_x, kc_y = [], []
+    for i in range(-10, 10):
+        for j in range(30, 40):
+            kc_x.append(i)
+            kc_y.append(j)
 
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
@@ -340,10 +356,12 @@ def main():
         plt.plot(fc_x, fc_y, "oy") # plot the fuel consuming area
         plt.plot(tc_x, tc_y, "or") # plot the time consuming area
 
+        plt.plot(kc_x, kc_y, "ob")
+
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
-    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, kc_x, kc_y)
     rx, ry = a_star.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
@@ -354,4 +372,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
