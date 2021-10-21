@@ -17,7 +17,7 @@
           <a href="#Task2">Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)</a>
         </li>
         <li>
-          <a href="#Task3">Task title (Task3)</a>
+          <a href="#Task3">Design a minus-cost for the route (Task3)</a>
         </li>
         <li>
           <a href="#Task4">Task title (Task4)</a>
@@ -227,7 +227,7 @@
     
 
 <a id="Task3"></a>
-### iii.Task title (Task3)
+### iii.Design a minus-cost for the route (Task3)
 <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/not%20continous%20area.png" alt="not continous area">
 <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/continous%20area.png" alt="continous area">
 
