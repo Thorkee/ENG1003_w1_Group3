@@ -223,8 +223,8 @@ def main():
     sy = 50.0  # [m]
     gx = 50.0  # [m]
     gy = -5.0  # [m]
-    #把grid size改成了1.5來滿足斜綫作爲obstacle的要求
-    grid_size = 1.5  # [m]
+   
+    grid_size = 1.0  # [m]
     robot_radius = 1.0  # [m]
 
     # set obstacle positions
