@@ -297,8 +297,36 @@ class AStarPlanner:
         return motion
 
 
-
-
+# decrease the cost in minus-cost area
+def cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y):
+    global M_A_Count
+    straightLine = []   
+    x_M_A = []
+    y_M_A = []
+    for pos in range(len(rx) - 2, -1, -1):
+        if(not((rx[pos] in fc_x and ry[pos] in fc_y) or
+            (rx[pos] in tc_x and ry[pos] in tc_y))):
+            if(abs(rx[pos] - rx[pos + 1]) + abs(ry[pos] - ry[pos + 1]) == 2):
+                x_M_A.append(rx[pos])
+                y_M_A.append(ry[pos])
+                cost_temp += (C_M_A * d_M_A) * math.sqrt(2)
+                M_A_Count -= 1
+            else:
+                straightLine.append([rx[pos], ry[pos]])
+        
+        if(M_A_Count <= 0):
+            break
+    
+    while(M_A_Count > 0):
+        if(M_A_Count >= len(straightLine)):
+            M_A_Count -= 1
+        else:
+            x_M_A.append(straightLine[M_A_Count][0])
+            y_M_A.append(straightLine[M_A_Count][1])
+            cost_temp += (C_M_A * d_M_A) * 1
+            M_A_Count -= 1
+    
+    return x_M_A, y_M_A 
 
 
 
@@ -415,32 +443,7 @@ def main():
     rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
     
     # decrease the cost in minus-cost area
-    global M_A_Count
-    straightLine = []   
-    x_M_A = []
-    y_M_A = []
-    for pos in range(len(rx) - 1, 0, -1):
-        if(not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y or
-            rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
-            if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2):
-                x_M_A.append(rx[pos - 1])
-                y_M_A.append(ry[pos - 1])
-                cost_temp += (C_M_A * d_M_A) * math.sqrt(2)
-                M_A_Count -= 1
-            else:
-                straightLine.append([rx[pos - 1], ry[pos - 1]])
-        
-        if(M_A_Count <= 0):
-            break
-    
-    while(M_A_Count > 0):
-        if(M_A_Count >= len(straightLine)):
-            M_A_Count -= 1
-        else:
-            x_M_A.append(straightLine[M_A_Count][0])
-            y_M_A.append(straightLine[M_A_Count][1])
-            cost_temp += (C_M_A * d_M_A) * 1
-            M_A_Count -= 1
+    x_M_A, y_M_A = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
 
     plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
     plt.plot(0, 0, color = "blue", linewidth = 1, alpha = 1, label = "Minus-cost Area")
