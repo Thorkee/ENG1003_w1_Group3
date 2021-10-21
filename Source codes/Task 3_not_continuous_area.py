@@ -13,6 +13,7 @@ This is the simple code for path planning class
 
 
 
+
 import math
 
 import matplotlib.pyplot as plt
@@ -38,6 +39,7 @@ class AStarPlanner:
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
         """
         Initialize grid map for a star planning
+
 
         ox: x position list of Obstacles [m]
         oy: y position list of Obstacles [m]
@@ -110,7 +112,7 @@ class AStarPlanner:
 
         open_set, closed_set = dict(), dict() # open_set: node not been tranversed yet. closed_set: node have been tranversed already
         open_set[self.calc_grid_index(start_node)] = start_node # node index is the grid index
-        
+
         while 1:
             if len(open_set) == 0:
                 print("Open set is empty..")
