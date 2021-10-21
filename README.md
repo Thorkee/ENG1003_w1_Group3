@@ -182,7 +182,7 @@
               <td width="8%" class="btbg font-center">5</td>
             </tr>     
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24023.52559935244</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24448.52559935244</th>
             </tr>
             <tr>
               <th width="8%" class="btbg font-center" colspan="8">4 Constraints with 6 Variables</th>
@@ -208,7 +208,7 @@
               <td width="8%" class="btbg font-center">1</td>
             </tr>         
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4223.323302152471</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4274.2349903979</th>
             </tr>
         </table>
         <p>Figure 1: The Result of 4 Constraints with 2 Variables</p>
