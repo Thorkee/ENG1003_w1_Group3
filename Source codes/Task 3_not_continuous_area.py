@@ -25,7 +25,7 @@ Delta_T_A = 1
 #You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-M_A_Count = 128  
+M_A_Count = 16 
 #--------------------------------------    
 
 C_T = 5
