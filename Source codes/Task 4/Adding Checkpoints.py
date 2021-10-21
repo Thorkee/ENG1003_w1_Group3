@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.core.records import array
 
-show_animation = False
+show_animation = True
 
 Delta_F_A = 0.2
 Delta_T_A = 0.2  
@@ -311,7 +311,7 @@ def check_point_planing(cp_x, cp_y, ox, oy, grid_size, robot_radius, fc_x, fc_y,
         plt.plot(_rx, _ry, "-r") # show the route 
         if(show_animation):
             plt.pause(0.001) # pause 0.001 seconds
-            plt.show() # show the plot
+            #plt.show() # show the plot
 
         rx += reversed(_rx) 
         ry += reversed(_ry)
