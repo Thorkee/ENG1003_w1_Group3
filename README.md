@@ -20,7 +20,12 @@
           <a href="#Task3">Design a minus-cost area for the route (Task3)</a>
         </li>
         <li>
-          <a href="#Task4">Task title (Task4)</a>
+          <a href="#Task4">Additional Tasks (Task4)</a>
+          <ol>
+            <li>
+              <a href="#Task4-1">Adding Checkpoints</a>
+            </li>
+          </ol>
         </li>
       </ol>
     </li>
@@ -233,7 +238,16 @@
 
 
 <a id="Task4"></a>
-### iv.Task title (Task4)
+### iv.Additional Tasks (Task4)
+<dl>
+  <a id="Task4-1"></a>
+  <dt>a) Adding Checkpoints
+    <dd>
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/cce37de4b2139b33b7fa0a02d221cba5d926e551/Image%20Resources/Check%20Point.png" alt="continous area">
+    </dd>
+  </dt>
+</dl>
+
 
 
 <a id="Contributors"></a>
