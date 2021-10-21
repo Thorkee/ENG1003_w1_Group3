@@ -17,10 +17,14 @@ import math
 
 import matplotlib.pyplot as plt
 
-show_animation = False
+show_animation = True
 
 Delta_F_A = 9
 Delta_T_A = 1
+
+C_M_A = -2
+d_M_A = 2
+M_A_Count = 16      #You can modify the minus-cost area here
 
 C_T = 5
 d_T = 5
@@ -117,7 +121,7 @@ class AStarPlanner:
             current = open_set[c_id]
 
             # show graph
-            if show_animation:  # pragma: no cover
+            if not show_animation:  # pragma: no cover
                 plt.plot(self.calc_grid_position(current.x, self.min_x),
                          self.calc_grid_position(current.y, self.min_y), "xc")
                 # for stopping simulation with the esc key.
@@ -129,7 +133,7 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("Find goal with cost of -> ",current.cost )
+                # print("Find goal with cost of -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 break
@@ -290,28 +294,6 @@ class AStarPlanner:
 
 
 
-def Find_TnF():
-
-    global C_T
-    global d_T
-    global C_F
-    global d_F
-    cost_list = []
-    min_cost_temp = 65565
-
-    for i in range(1, 10):
-        for j in range(1, 10):
-            if(i * j + (10 - i) * (10 - j) < min_cost_temp and i * j + (10 - i) * (10 - j) >= 25):
-                min_cost_temp, C_T, d_T, C_F, d_F = i * j + (10 - i) * (10 - j), i, j, 10 - i, 10 - j
-    
-    print("The Min-Cost Parameters:")
-    print("C_T:", C_T)
-    print("d_T:", d_T)
-    print("C_F:", C_F)
-    print("d_F:", d_F)
-
-    return 0
-
 
 
 
@@ -412,64 +394,64 @@ def main():
     cost = []
     min_cost = 3.4E38
     cost_temp = 0.0
-    show_animation = False
+    # show_animation = False
 
-    Find_TnF()
-
-    route_compare = []
-    while(True):
-        print("Time Cost Area:", Delta_T_A)
-        print("Fuel Cost Area:", Delta_F_A)
-
-        if show_animation:  # pragma: no cover
-            plt.plot(ox, oy, ".k") # plot the obstacle
-            plt.plot(sx, sy, "og") # plot the start position 
-            plt.plot(gx, gy, "xb") # plot the end position
+    if show_animation:  # pragma: no cover
+        plt.plot(ox, oy, ".k") # plot the obstacle
+        plt.plot(sx, sy, "og") # plot the start position 
+        plt.plot(gx, gy, "xb") # plot the end position
             
-            plt.plot(fc_x, fc_y, "oy", alpha=0.5) # plot the fuel consuming area
-            plt.plot(tc_x, tc_y, "or", alpha=0.3) # plot the time consuming area
+        plt.plot(fc_x, fc_y, "oy", alpha=0.5) # plot the fuel consuming area
+        plt.plot(tc_x, tc_y, "or", alpha=0.3) # plot the time consuming area
 
-            plt.grid(True) # plot the grid to the plot panel
-            plt.axis("equal") # set the same resolution for x and y axis 
+        plt.grid(True) # plot the grid to the plot panel
+        plt.axis("equal") # set the same resolution for x and y axis 
 
-        a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-        rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
-        cost.append(cost_temp)
-        Delta_T_A += 1
-        Delta_F_A = 10 - Delta_T_A
-        if(not show_animation):
-            rx.clear()
-            ry.clear()
-
-        if show_animation:  # pragma: no cover
-            C_T = 2
-            d_T = 5
-            C_F = 1
-            d_F = 1
-            Delta_F_A = 0.2
-            Delta_T_A = 0.2
-            a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-            rx_og, ry_og, cost_temp = a_star.planning(sx, sy, gx, gy)
-            plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
-            plt.plot(rx_og, ry_og, color = "gray", linewidth = 1, alpha = 0.7, label = "Origin Route (Task1 A380)") # show the origin route 
-            plt.legend(loc='upper left', bbox_to_anchor=(0.0, 1))
-            plt.pause(0.001) # pause 0.001 seconds
-            plt.show() # show the plot
-
-            break
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+    rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
+    
+    # decrease the cost in minus-cost area
+    global M_A_Count
+    straightLine = []   
+    x_M_A = []
+    y_M_A = []
+    for pos in range(len(rx) - 1, 0, -1):
+        if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2 and 
+        not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y) and
+        not(rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
+            x_M_A.append(rx[pos - 1])
+            y_M_A.append(ry[pos - 1])
+            cost_temp -= (C_M_A * d_M_A) * math.sqrt(2)
+            M_A_Count -= 1
+        else:
+            straightLine.append([rx[pos - 1], ry[pos - 1]])
         
-        if(Delta_F_A == 0):
-            for i in range(1, 10):
-                if(cost[i - 1] < min_cost):
-                    min_cost, Delta_T_A , Delta_F_A = cost[i - 1], i, 10 - i
-            
-            print("-------------------The Minimum Cost---------------------------")
-            print("C_T:", C_T)
-            print("d_T:", d_T)
-            print("C_F:", C_F)
-            print("d_F:", d_F)
+        if(M_A_Count <= 0):
+            break
+    
+    while(M_A_Count > 0):
+        if(M_A_Count >= len(straightLine)):
+            M_A_Count -= 1
+        else:
+            x_M_A.append(straightLine[M_A_Count][0])
+            y_M_A.append(straightLine[M_A_Count][1])
+            cost_temp -= (C_M_A * d_M_A) * 1
+            M_A_Count -= 1
 
-            show_animation = True
+    plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
+    plt.plot(0, 0, color = "blue", linewidth = 1, alpha = 1, label = "Minus-cost Area")
+    plt.plot(x_M_A, y_M_A, 'o', color = "blue", alpha = 0.7) # show the minus-cost area
+    plt.plot(0, 0, color = "black", alpha = 0, label = "Total Cost:{0}".format(cost_temp))
+    plt.legend(loc='upper left', bbox_to_anchor=(-0.15, 1.15))
+    plt.pause(0.001) # pause 0.001 seconds
+    plt.show() # show the plot
+
+        
+
+    if show_animation:  # pragma: no cover
+        plt.plot(rx, ry, "-r") # show the route 
+        plt.pause(0.001) # pause 0.001 seconds
+        plt.show() # show the plot
     
     return 0
 
@@ -478,3 +460,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
