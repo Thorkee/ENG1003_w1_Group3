@@ -26,7 +26,7 @@ Delta_T_A = 1
 #You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-M_A_Count = 16 
+M_A_Count = 128
 #--------------------------------------    
 
 C_T = 5
@@ -425,7 +425,7 @@ def main():
             if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2):
                 x_M_A.append(rx[pos - 1])
                 y_M_A.append(ry[pos - 1])
-                cost_temp -= (C_M_A * d_M_A) * math.sqrt(2)
+                cost_temp += (C_M_A * d_M_A) * math.sqrt(2)
                 M_A_Count -= 1
             else:
                 straightLine.append([rx[pos - 1], ry[pos - 1]])
@@ -439,7 +439,7 @@ def main():
         else:
             x_M_A.append(straightLine[M_A_Count][0])
             y_M_A.append(straightLine[M_A_Count][1])
-            cost_temp -= (C_M_A * d_M_A) * 1
+            cost_temp += (C_M_A * d_M_A) * 1
             M_A_Count -= 1
 
     plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
