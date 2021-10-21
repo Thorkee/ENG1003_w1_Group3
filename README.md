@@ -220,7 +220,7 @@
         <p>Figure 2: The Progress & Result of 4 Constraints with 6 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true" alt="4 Constraints with 6 Variables Result">
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/af85185020bca6497db33ecd4020a62654ab06d0/Image%20Resources/T2-46....png" alt="4 Constraints with 6 Variables Result">
       </dd>
   </dt>
 </dl>
