@@ -158,7 +158,7 @@ After Task 1, we reflected on the content of the task and concluded the followin
               <td width="8%" class="btbg font-center">d_T_A</td>
             </tr>
             <tr>
-              <th width="8%" class="btbg font-center">Group 1 Aircraft Model</th>
+              <th width="8%" class="btbg font-center" rowspan="2">Group 1 Aircraft Model</th>
               <td width="8%" class="btbg font-center">20</td>
               <td width="8%" class="btbg font-center">5</td>
               <td width="8%" class="btbg font-center">20</td>
@@ -166,7 +166,10 @@ After Task 1, we reflected on the content of the task and concluded the followin
               <td width="8%" class="btbg font-center">10</td>
               <td width="8%" class="btbg font-center">5</td>
               <td width="8%" class="btbg font-center">5</td>
-            </tr>        
+            </tr>     
+            <tr>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24023.52559935244</th>
+            </tr>
             <tr>
               <th width="8%" class="btbg font-center" colspan="8">4 Constraints with 6 Variables</th>
             </tr>
@@ -198,9 +201,9 @@ After Task 1, we reflected on the content of the task and concluded the followin
         This is the result computed by LP Algorithm shown as figure.
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/task2_1.png" alt="4 Constraints with 2 Variables Result">
         <br>
-        <p>-------------------------------------------------------------------:P--------------------------------------------------------------------------</p>
+        <p>-------------------------------------------------------------:P--------------------------------------------------------------------</p>
         </br>
-        <p>Figure 2: The Progress & Result of 4 Constraints with 2 Variables</p>
+        <p>Figure 2: The Progress & Result of 4 Constraints with 6 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true" alt="4 Constraints with 6 Variables Result">
