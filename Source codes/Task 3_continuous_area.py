@@ -20,19 +20,19 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-Delta_F_A = 9
-Delta_T_A = 1
+Delta_F_A = 0.2
+Delta_T_A = 0.2
 
 #You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-M_A_Count = 55
+M_A_Count = 16
 #--------------------------------------    
 
-C_T = 5
+C_T = 2
 d_T = 5
-C_F = 5
-d_F = 5
+C_F = 1
+d_F = 1
 
 class AStarPlanner:
 
@@ -338,7 +338,7 @@ def cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y):
         y_M_A.append(ry[pos])
         
 
-    return x_M_A, y_M_A, cost_temp + min_M_A_C[2]
+    return x_M_A, y_M_A, cost_temp + min_M_A_C[0]
 
 
 
@@ -393,29 +393,29 @@ def main():
 
     # set obstacle positions for group 3
     ox, oy = [], []
-    for i in range(-10, 60): # draw the button border 
+    for i in range(-10, 61): # draw the button border 
         ox.append(i)
         oy.append(-10.0)
-    for i in range(-10, 60): # draw the right border
+    for i in range(-10, 61): # draw the right border
         ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 60): # draw the top border
+    for i in range(-10, 61): # draw the top border
         ox.append(i)
         oy.append(60.0)
-    for i in range(-10, 60): # draw the left border
+    for i in range(-10, 61): # draw the left border
         ox.append(-10.0)
         oy.append(i)
 
 #Start_draw boarder
-    for i in range(0, 40): # draw the free border
+    for i in range(0, 41): # draw the free border
         ox.append(i)
         oy.append(20.0 + i)
 
-    for i in range(-10, 30):
+    for i in range(-10, 31):
         ox.append(25)
         oy.append(i)
 
-    for i in range(0, 50):
+    for i in range(0, 51):
         ox.append(40)
         oy.append(i)
 
@@ -433,8 +433,6 @@ def main():
     global Delta_F_A
     global Delta_T_A
 #    global show_animation
-    Delta_F_A = 9
-    Delta_T_A = 1
     cost = []
     min_cost = 3.4E38
     cost_temp = 0.0
