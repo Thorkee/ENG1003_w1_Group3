@@ -32,6 +32,9 @@ d_F = 1
 
 cp_list_x = [-8.0, 9, 28, 38.0]
 cp_list_y = [28.0, 26, -6, -3.0]
+# cp_d_c = [0]
+
+# fig = plt.figure()
 
 
 class AStarPlanner:
@@ -296,6 +299,29 @@ class AStarPlanner:
 
         return motion
 
+# def onclick(event):
+#     if(event.button == 1):
+#         global ix, iy
+#         ix, iy = event.xdata, event.ydata
+#         cp_list_x.append(ix)
+#         cp_list_y.append(iy)
+#         plt.plot(ix, iy, 'o', color = '#800080', alpha = 0.7)
+#         fig, ax = plt.subplots(subplot_kw={'xlim': [0,1],
+#                                    'ylim': [0,1]})
+#         global cp_d_c
+#         cp_d_c[len(cp_list_x) - 1], = ax.plot(ix, iy, 'o', color = '#800080', alpha = 0.7) # creates a blue dot
+
+#         global coords
+#         coords = [ix, iy]
+
+#         return coords
+
+#     if(event.button == 3):
+#         cp_d_c[len(cp_list_x) - 1].remove()
+#         cp_list_x.pop(len(cp_list_x) - 1)
+#         cp_list_y.pop(len(cp_list_y) - 1)
+#         return coords
+
 
 def check_point_planing(cp_x, cp_y, ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, sx, sy, gx, gy): 
     for i in range(0, len(cp_x)):
@@ -308,8 +334,8 @@ def check_point_planing(cp_x, cp_y, ox, oy, grid_size, robot_radius, fc_x, fc_y,
         a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
         _rx, _ry, _cost = a_star.planning(cp_x[0], cp_y[0], cp_x[1], cp_y[1])
 
-        plt.plot(_rx, _ry, "-r") # show the route 
         if(show_animation):
+            plt.plot(_rx, _ry, "-r") # show the route
             plt.pause(0.001) # pause 0.001 seconds
             #plt.show() # show the plot
 
@@ -431,6 +457,20 @@ def main():
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
+    # plt.title("Left click to select the checkpoint\nRight click to revoke the lastest point")
+    # plt.legend(bbox_to_anchor=(0, 1))
+    # for i in range(0,1):
+    #     cid = fig.canvas.mpl_connect('button_press_event', onclick)
+
+    # plt.show()
+    # x=range(1,10)
+    # y=[2*v for v in x]
+    # print(x, y)
+    # plt.plot(x, y)
+    # pos=plt.ginput(3)
+    # print(pos)
+    # plt.show()
+
     rx, ry, cost = check_point_planing(cp_list_x, cp_list_y, ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, sx, sy, gx, gy)
     
         
@@ -440,6 +480,7 @@ def main():
         plt.legend(loc='upper left', bbox_to_anchor=(0, 1))
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
+    
     
     return 0
 
