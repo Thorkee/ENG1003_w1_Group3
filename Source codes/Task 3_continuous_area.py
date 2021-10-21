@@ -20,23 +20,19 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-Delta_F_A = 0.2
-Delta_T_A = 0.2
+Delta_F_A = 9
+Delta_T_A = 1
 
 #You can modify the minus-cost area here
 C_M_A = -2
 d_M_A = 2
-<<<<<<< HEAD
-M_A_Count = 10      #You can modify the minus-cost area here
-=======
-M_A_Count = 16
+M_A_Count = 55
 #--------------------------------------    
->>>>>>> c8b015346f30d1ced73e829fa80509daa5163d5e
 
-C_T = 2
+C_T = 5
 d_T = 5
-C_F = 1
-d_F = 1
+C_F = 5
+d_F = 5
 
 class AStarPlanner:
 
@@ -304,33 +300,45 @@ class AStarPlanner:
 # decrease the cost in minus-cost area
 def cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y):
     global M_A_Count
-    straightLine = []   
-    x_M_A = []
-    y_M_A = []
-    for pos in range(len(rx) - 2, -1, -1):
-        if(not((rx[pos] in fc_x and ry[pos] in fc_y) or
-            (rx[pos] in tc_x and ry[pos] in tc_y))):
-            if(abs(rx[pos] - rx[pos + 1]) + abs(ry[pos] - ry[pos + 1]) == 2):
-                x_M_A.append(rx[pos])
-                y_M_A.append(ry[pos])
-                cost_temp += (C_M_A * d_M_A) * math.sqrt(2)
-                M_A_Count -= 1
+    min_M_A_C = [0.0, len(rx) - 1, 0] 
+    segment_cost = 0.0
+    st, ed = len(rx) - 2, len(rx) - 2
+    x_M_A, y_M_A = [], []   
+    size_M_A = 0
+    pos_cost = [0] * len(rx)
+    while(ed > 0):
+        size_M_A = st - ed + 1
+        if(not((rx[ed] in fc_x and ry[ed] in fc_y) or
+            (rx[ed] in tc_x and ry[ed] in tc_y))):
+            
+            if(abs(rx[ed] - rx[ed + 1]) + abs(ry[ed] - ry[ed + 1]) == 2):
+                pos_cost[ed] = (C_M_A * d_M_A) * math.sqrt(2)
+                segment_cost += pos_cost[ed]
             else:
-                straightLine.append([rx[pos], ry[pos]])
-        
-        if(M_A_Count <= 0):
-            break
-    
-    while(M_A_Count > 0):
-        if(M_A_Count >= len(straightLine)):
-            M_A_Count -= 1
+                pos_cost[ed] = (C_M_A * d_M_A) * 1
+                segment_cost += pos_cost[ed]
+
+            if(segment_cost - min_M_A_C[0] < -0.00001):
+                min_M_A_C = [segment_cost, ed, size_M_A]
+            
+            if(size_M_A >= M_A_Count):
+                segment_cost -= pos_cost[st]
+                st -= 1
+            ed -= 1
         else:
-            x_M_A.append(straightLine[M_A_Count][0])
-            y_M_A.append(straightLine[M_A_Count][1])
-            cost_temp += (C_M_A * d_M_A) * 1
-            M_A_Count -= 1
+            while(rx[ed] in fc_x and ry[ed] in fc_y or
+            rx[ed] in tc_x and ry[ed] in tc_y):
+                ed -= 1
+            ed -= 1
+            st = ed
+            segment_cost = 0
     
-    return x_M_A, y_M_A 
+    for pos in range(min_M_A_C[1] + min_M_A_C[2], min_M_A_C[1], -1):
+        x_M_A.append(rx[pos])
+        y_M_A.append(ry[pos])
+        
+
+    return x_M_A, y_M_A, cost_temp + min_M_A_C[2]
 
 
 
@@ -447,36 +455,7 @@ def main():
     rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
     
     # decrease the cost in minus-cost area
-<<<<<<< HEAD
-    global M_A_Count
-    straightLine = []   
-    x_M_A = []
-    y_M_A = []
-    for pos in range(len(rx) - 1, 0, -1):
-        if(abs(rx[pos - 1] - rx[pos]) + abs(ry[pos - 1] - ry[pos]) == 2 and 
-        not(rx[pos - 1] in fc_x and ry[pos - 1] in fc_y) and
-        not(rx[pos - 1] in tc_x and ry[pos - 1] in tc_y)):
-            x_M_A.append(rx[pos - 1])
-            y_M_A.append(ry[pos - 1])
-            cost_temp   -= (C_M_A * d_M_A) * math.sqrt(2)
-            M_A_Count -= 1
-        else:
-            straightLine.append([rx[pos - 1], ry[pos - 1]])
-        
-        if(M_A_Count <= 0):
-            break
-    
-    while(M_A_Count > 0):
-        if(M_A_Count >= len(straightLine)):
-            M_A_Count -= 1
-        else:
-            x_M_A.append(straightLine[M_A_Count][0])
-            y_M_A.append(straightLine[M_A_Count][1])
-            cost_temp -= (C_M_A * d_M_A) * 1
-            M_A_Count -= 1
-=======
-    x_M_A, y_M_A = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
->>>>>>> c8b015346f30d1ced73e829fa80509daa5163d5e
+    x_M_A, y_M_A, cost_temp = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
 
     plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
     plt.plot(0, 0, color = "blue", linewidth = 1, alpha = 1, label = "Minus-cost Area")
