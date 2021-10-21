@@ -8,7 +8,6 @@
 #D. Set the '<', '>' to adjust the line area
 #E. Run the program
 #*If there is any problem, please contact us at __(Waiting for input)__*
-#################################################################################################
 
 
 import matplotlib.pyplot as plt
@@ -60,6 +59,7 @@ def line_func(inp, sel):
         messagebox.showinfo("Error line_func()","The Function is not exist")
         exit()
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 
 
@@ -153,7 +153,6 @@ def cal_t_line():
 
     if(Check == 0):
         messagebox.showinfo("Error cal_t_line()","Minimum point is not exist")
-        exit()
     
     return 0
 
