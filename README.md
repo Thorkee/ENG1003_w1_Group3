@@ -248,7 +248,7 @@
   <a id="Task4-1"></a>
   <dt>a) Adding Checkpoints
     <dd>
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/cce37de4b2139b33b7fa0a02d221cba5d926e551/Image%20Resources/Check%20Point.png" alt="continous area">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
     </dd>
   </dt>
 </dl>
