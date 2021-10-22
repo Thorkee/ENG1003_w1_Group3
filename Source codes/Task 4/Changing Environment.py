@@ -353,7 +353,7 @@ def generate_map(min_x, min_y, max_x, max_y, f_width, f_height):
         if((gx - sx) ** 2 + (gy - sy) ** 2 > 50 ** 2):
             break
 
-        #random boarder
+    #random block
     density = 0.32 # 0 ~ 1  
     global egg
     if(random.random() < 0.7 and egg == 0):
