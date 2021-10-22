@@ -25,6 +25,9 @@
             <li>
               <a href="#Task4-1">Adding Checkpoints</a>
             </li>
+            <li>
+              <a href="#Task4-2">Changing Environment</a>
+            </li>
           </ol>
         </li>
       </ol>
