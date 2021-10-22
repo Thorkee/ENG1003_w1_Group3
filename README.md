@@ -74,11 +74,15 @@
   <dt>
       c) Reflection on Task 1
   <dd> 
- <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
- <p> 1. The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
-  <p>2. Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. 
- <p> 3. In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.
- <p> 4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
+   <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
+   <ol>
+     <li> The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.</li>
+     <li> Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. </li>
+     <li> In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.</li>
+     <li> In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.</li>
+    </ol>
+   </dd>
+   </dt>
 
 <a id="Task2"></a>
 ### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2) 
