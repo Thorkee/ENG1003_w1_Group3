@@ -29,7 +29,12 @@ def function4():
         print("Sorry my brother, I'm not that advanced to solve your input numbers. Have a nice day anyway!")
 
 def extrafunction5():
-    print("pls replace this line with your code")
+    i = input("Height:")
+    i = int(i)
+    j = 1
+    while j < i + 1:
+         print("xxx")
+         j = j + 1
     
 
 def extrafunction6():
@@ -48,7 +53,60 @@ def extrafunction7():
 
 
 def extrafunction8():
-    print("pls replace this line with your code")
+    side = int(input("Square Size : "))
+    print("Square Number Pattern") 
+    for i in range(side):
+        for i in range(side):
+            print('[ ]', end = ' ')
+        print()
+
+def eventualfunction():
+    import random
+    a = random.randint(50,200)
+    num = random.randint(1, a)
+    guess = None
+    attempt = 1
+    print("The range for this round is 1 -", a)
+    charles = a
+
+    while guess != num:
+        guess = input('Make a guess:')     
+        guess = int(guess)
+        if guess < num:
+            print("The range is now", guess, "-", a)
+            break
+        elif guess > a:
+            print("Wasssssup! You can not make any guessing exceeding", a)
+            break
+        elif guess > num and guess < a+1:
+            print("The range is now", 1, "-", guess)
+        else:
+            if attempt == 1:
+                print("BINGO! You took 1 attempt to reach the answer!" )
+        charles == guess
+    
+    while guess != num:
+        guess = input('Make a guess:')     
+        guess = int(guess)
+        attempt+=1
+        if guess < num:
+            print("The range is now", guess, "-", charles)
+            charles == guess
+            continue
+        elif guess > a:
+            print("Wasssssup! You can not make any guessing exceeding", a)
+            continue
+        elif guess > num and guess < a+1:
+            print("The range is now", 1, "-", guess)
+            charles == guess
+        else:
+            if attempt == 1:
+                print("BINGO! You took 1 attempt to reach the answer!" )
+            else:
+                print("BINGO! You took", attempt, "attempts to reach the answer!" )
+            break
+    
+            
 
 
 print("This is ENG1003'' Week 1 Tutorial Programming Task")
@@ -72,7 +130,7 @@ if inp1 == "N":
         print("There is no function", inp)
 
 elif inp1 == "Y":
-    inp2 = input('Enter the function number (from 1 to 4) to be executed: ')
+    inp2 = input('Enter the function number (from 1 to 5, 5 means the number guessing game) to be executed: ')
     if inp2 == '1':
         extrafunction5()
     elif inp2 == '2':
@@ -81,6 +139,8 @@ elif inp1 == "Y":
         extrafunction7()
     elif inp2 == '4':
         extrafunction8()
+    elif inp2 == '5':
+        eventualfunction()
     else:
         print('There is no function', inp2)
 else:
