@@ -17,10 +17,15 @@
           <a href="#Task2">Calculate the Minimum Cost Aircraft Model within the Constrains (Task2)</a>
         </li>
         <li>
-          <a href="#Task3">Task title (Task3)</a>
+          <a href="#Task3">Design a minus-cost area for the route (Task3)</a>
         </li>
         <li>
-          <a href="#Task4">Task title (Task4)</a>
+          <a href="#Task4">Additional Tasks (Task4)</a>
+          <ol>
+            <li>
+              <a href="#Task4-1">Adding Checkpoints</a>
+            </li>
+          </ol>
         </li>
       </ol>
     </li>
@@ -38,11 +43,12 @@
 
 <a id="Background"></a>
 ## 1. Background of Path Planning to Aviation Engineering
-
+ <dl> 
+      <p>Path planning has been an useful method consists of motion planning in different aspects, like self-driving vehicles, humanoid robots, aviation engineering, etc.. In aviation engineering, path planning is one of the important steps before the aircraft starts the journey. In this task, we need to design the shortest path in the map which has some obstacles. Also, cost calculation is an important step when we are designing the path. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.
 
 <a id="Task"></a>
 ## 2. Path Planning Algorithm (Group Task)
-
+  
 
 <a id="Task1"></a>
 ### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
@@ -58,21 +64,25 @@
       <dd>  
 <p>For the first step, we changed the specific data(See <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Source%20codes/Task%201.py">here</a>) from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
 
-<p>It is worth mentioning that we also changed the slash density inside the code in order to solve the problem that the planning points would cross the slash. Eventually, after making suitable modifications to the code, we obtained a satisfactory planning route as the graph shown below.
+<p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.
 
 ![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
 
-<p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model. The cost is 2396.23.
+<p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.
 </dd>
   </dt>
   <dt>
       c) Reflection on Task 1
   <dd> 
- <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
- <p> 1. The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.
-  <p>2. Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. 
- <p> 3. In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.
- <p> 4. In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.
+   <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
+   <ol>
+     <li> The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.</li>
+     <li> Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. </li>
+     <li> In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.</li>
+     <li> In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.</li>
+    </ol>
+   </dd>
+   </dt>
 
 <a id="Task2"></a>
 ### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2) 
@@ -182,7 +192,7 @@
               <td width="8%" class="btbg font-center">5</td>
             </tr>     
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24023.52559935244</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 24448.52559935244</th>
             </tr>
             <tr>
               <th width="8%" class="btbg font-center" colspan="8">4 Constraints with 6 Variables</th>
@@ -208,7 +218,7 @@
               <td width="8%" class="btbg font-center">1</td>
             </tr>         
             <tr>
-              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4223.323302152471</th>
+              <th width="8%" class="btbg font-center" colspan="7">Total Cost: 4274.2349903979</th>
             </tr>
         </table>
         <p>Figure 1: The Result of 4 Constraints with 2 Variables</p>
@@ -220,17 +230,29 @@
         <p>Figure 2: The Progress & Result of 4 Constraints with 6 Variables</p>
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T2-46...png?raw=true" alt="4 Constraints with 6 Variables Result">
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/af85185020bca6497db33ecd4020a62654ab06d0/Image%20Resources/T2-46....png" alt="4 Constraints with 6 Variables Result">
       </dd>
   </dt>
 </dl>
     
 
 <a id="Task3"></a>
-### iii.Task title (Task3)
+### iii.Design a minus-cost area for the route (Task3)
+<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/not%20continous%20area.png" alt="not continous area">
+<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/continous%20area.png" alt="continous area">
+
 
 <a id="Task4"></a>
-### iv.Task title (Task4)
+### iv.Additional Tasks (Task4)
+<dl>
+  <a id="Task4-1"></a>
+  <dt>a) Adding Checkpoints
+    <dd>
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/cce37de4b2139b33b7fa0a02d221cba5d926e551/Image%20Resources/Check%20Point.png" alt="continous area">
+    </dd>
+  </dt>
+</dl>
+
 
 
 <a id="Contributors"></a>

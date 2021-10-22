@@ -1,14 +1,46 @@
+"""
+
+A* grid planning
+
+author: Atsushi Sakai(@Atsushi_twi)
+        Nikos Kanargias (nkana@tee.gr)
+
+See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
+
+This is the simple code for path planning class
+
+"""
+
+
+
+
 import math
 
 import matplotlib.pyplot as plt
 
 show_animation = True
 
+Delta_F_A = 0.2
+Delta_T_A = 0.2
+
+#You can modify the minus-cost area here
+C_M_A = -2
+d_M_A = 2
+M_A_Count = 16
+#--------------------------------------    
+
+C_T = 2
+d_T = 5
+C_F = 1
+d_F = 1
+
 class AStarPlanner:
 
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
         """
         Initialize grid map for a star planning
+
+
         ox: x position list of Obstacles [m]
         oy: y position list of Obstacles [m]
         resolution: grid resolution [m]
@@ -28,21 +60,25 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
-
-    #PolyU-A380
-        self.C_F = 1
-        self.Delta_F = 1
-        self.C_T = 2
-        self.Delta_T = 5
+#model
+        ############you could modify the setup here for different aircraft models (based on the lecture slide) ##########################
+        self.C_F = C_F
+        self.Delta_F = d_F
+        self.C_T = C_T
+        self.Delta_T = d_T
         self.C_C = 10
         
-        self.Delta_F_A = 0.2 # additional fuel
-        self.Delta_T_A = 0.2 # additional time 
+#        self.Delta_F_A = 2 # additional fuel
+#        self.Delta_T_A = 5 # additional time 
+        
         
 
         self.costPerGrid = self.C_F * self.Delta_F + self.C_T * self.Delta_T + self.C_C
 
-            
+#        print("PolyU-A380 cost part1-> ", self.C_F * (self.Delta_F + self.Delta_F_A) )
+#        print("PolyU-A380 cost part2-> ", self.C_T * (self.Delta_T + self.Delta_T_A) )
+#        print("PolyU-A380 cost part3-> ", self.C_C )
+
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
             self.x = x  # index of grid
@@ -57,18 +93,17 @@ class AStarPlanner:
     def planning(self, sx, sy, gx, gy):
         """
         A star path search
+
         input:
             s_x: start x position [m]
             s_y: start y position [m]
             gx: goal x position [m]
             gy: goal y position [m]
+
         output:
             rx: x position list of the final path
             ry: y position list of the final path
         """
-
-#CTCF COUNTER INIT -----------
-        CT = CF = 0.0
 
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
                                self.calc_xy_index(sy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
@@ -86,12 +121,11 @@ class AStarPlanner:
             c_id = min(
                 open_set,
                 key=lambda o: open_set[o].cost + self.calc_heuristic(self, goal_node,
-                                                                     open_set[
-                                                                         o])) # g(n) and h(n): calculate the distance between the goal node and openset
+                                                                     open_set[o])) # g(n) and h(n): calculate the distance between the goal node and openset
             current = open_set[c_id]
 
             # show graph
-            if show_animation:  # pragma: no cover
+            if not show_animation:  # pragma: no cover
                 plt.plot(self.calc_grid_position(current.x, self.min_x),
                          self.calc_grid_position(current.y, self.min_y), "xc")
                 # for stopping simulation with the esc key.
@@ -103,15 +137,11 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-#Output Cost --------
-                print("Find goal with cost of -> ",current.cost )
-                plt.text(63, 61, "CTdT = " + str(CT), color = "r", fontsize = 10)
-                plt.text(63, 49, "CFdF = " + str(CF), color = "r", fontsize = 10)
-
+                # print("Find goal with cost of -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 break
-
+            
             # Remove the item from the open set
             del open_set[c_id]
 
@@ -125,22 +155,18 @@ class AStarPlanner:
                 node = self.Node(current.x + self.motion[i][0],
                                  current.y + self.motion[i][1],
                                  current.cost + self.motion[i][2] * self.costPerGrid, c_id)
-
-#CTCF COUNTER -----------
-                CT += self.motion[i][2] * (self.C_T * self.Delta_T)
-                CF += self.motion[i][2] * (self.C_F * self.Delta_F)
                 
                 ## add more cost in time-consuming area
                 if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
                         # print("time consuming area!!")
-                        node.cost = node.cost + self.Delta_T_A * self.motion[i][2]
+                        node.cost = node.cost + Delta_T_A * self.motion[i][2]
                 
                 # add more cost in fuel-consuming area
                 if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
                         # print("fuel consuming area!!")
-                        node.cost = node.cost + self.Delta_F_A * self.motion[i][2]
+                        node.cost = node.cost + Delta_F_A * self.motion[i][2]
                     # print()
                 
                 n_id = self.calc_grid_index(node)
@@ -163,7 +189,7 @@ class AStarPlanner:
         # print(len(closed_set))
         # print(len(open_set))
 
-        return rx, ry
+        return rx, ry, current.cost
 
     def calc_final_path(self, goal_node, closed_set):
         # generate final course
@@ -194,6 +220,7 @@ class AStarPlanner:
     def calc_grid_position(self, index, min_position):
         """
         calc grid position
+
         :param index:
         :param min_position:
         :return:
@@ -232,15 +259,15 @@ class AStarPlanner:
         self.min_y = round(min(oy))
         self.max_x = round(max(ox))
         self.max_y = round(max(oy))
-        print("min_x:", self.min_x)
-        print("min_y:", self.min_y)
-        print("max_x:", self.max_x)
-        print("max_y:", self.max_y)
+#        print("min_x:", self.min_x)
+#        print("min_y:", self.min_y)
+#        print("max_x:", self.max_x)
+#        print("max_y:", self.max_y)
 
         self.x_width = round((self.max_x - self.min_x) / self.resolution)
         self.y_width = round((self.max_y - self.min_y) / self.resolution)
-        print("x_width:", self.x_width)
-        print("y_width:", self.y_width)
+#        print("x_width:", self.x_width)
+#        print("y_width:", self.y_width)
 
         # obstacle map generation
         self.obstacle_map = [[False for _ in range(self.y_width)]
@@ -254,7 +281,7 @@ class AStarPlanner:
                     if d <= self.rr:
                         self.obstacle_map[ix][iy] = True # the griid is is occupied by the obstacle
                         break
-
+#motion
     @staticmethod
     def get_motion_model(): # the cost of the surrounding 8 points
         # dx, dy, cost
@@ -270,6 +297,53 @@ class AStarPlanner:
         return motion
 
 
+# decrease the cost in minus-cost area
+def cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y):
+    global M_A_Count
+    min_M_A_C = [0.0, len(rx) - 1, 0] 
+    segment_cost = 0.0
+    st, ed = len(rx) - 2, len(rx) - 2
+    x_M_A, y_M_A = [], []   
+    size_M_A = 0
+    pos_cost = [0] * len(rx)
+    while(ed > 0):
+        size_M_A = st - ed + 1
+        if(not((rx[ed] in fc_x and ry[ed] in fc_y) or
+            (rx[ed] in tc_x and ry[ed] in tc_y))):
+            
+            if(abs(rx[ed] - rx[ed + 1]) + abs(ry[ed] - ry[ed + 1]) == 2):
+                pos_cost[ed] = (C_M_A * d_M_A) * math.sqrt(2)
+                segment_cost += pos_cost[ed]
+            else:
+                pos_cost[ed] = (C_M_A * d_M_A) * 1
+                segment_cost += pos_cost[ed]
+
+            if(segment_cost - min_M_A_C[0] < -0.00001):
+                min_M_A_C = [segment_cost, ed, size_M_A]
+            
+            if(size_M_A >= M_A_Count):
+                segment_cost -= pos_cost[st]
+                st -= 1
+            ed -= 1
+        else:
+            while(rx[ed] in fc_x and ry[ed] in fc_y or
+            rx[ed] in tc_x and ry[ed] in tc_y):
+                ed -= 1
+            ed -= 1
+            st = ed
+            segment_cost = 0
+    
+    for pos in range(min_M_A_C[1] + min_M_A_C[2], min_M_A_C[1], -1):
+        x_M_A.append(rx[pos])
+        y_M_A.append(ry[pos])
+        
+
+    return x_M_A, y_M_A, cost_temp + min_M_A_C[0]
+
+
+
+#---------------------------------------------------------------------main---------------------------------------------------------------
+
 def main():
     print(__file__ + " start the A star algorithm demo !!") # print simple notes
 
@@ -281,37 +355,28 @@ def main():
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
-    # set obstacle positions
-    ox, oy = [], []
-    for i in range(-10, 60):
-        ox.append(i)
-        oy.append(-10.0)
-    for i in range(-10, 60):
-        ox.append(60.0)
-        oy.append(i)
-    for i in range(-10, 61):
-        ox.append(i)
-        oy.append(60.0)
-    for i in range(-10, 61):
-        ox.append(-10.0)
-        oy.append(i)
-    for i in range(-10, 30):
-        ox.append(25.0)
-        oy.append(i)
-    for i in range(0, 50):
-        ox.append(40)
-        oy.append(50 - i)   
-
-    for z in range(0, 40):
-        ox.append(z)
-        oy.append(z + 20)
-
- 
-    # for i in range(40, 45): # draw the button border 
+    # set obstacle positions for group 8
+    # ox, oy = [], []
+    # for i in range(-10, 60): # draw the button border 
     #     ox.append(i)
-    #     oy.append(30.0)
+    #     oy.append(-10.0)
+    # for i in range(-10, 60):
+    #     ox.append(60.0)
+    #     oy.append(i)
+    # for i in range(-10, 61):
+    #     ox.append(i)
+    #     oy.append(60.0)
+    # for i in range(-10, 61):
+    #     ox.append(-10.0)
+    #     oy.append(i)
+    # for i in range(-10, 40):
+    #     ox.append(20.0)
+    #     oy.append(i)
+    # for i in range(0, 40):
+    #     ox.append(40.0)
+    #     oy.append(60.0 - i)
 
-    
+
     # set fuel consuming area
     fc_x, fc_y = [], []
     for i in range(-10, 10):
@@ -325,31 +390,91 @@ def main():
         for j in range(-10, 10):
             tc_x.append(i)
             tc_y.append(j)
- 
+
+    # set obstacle positions for group 3
+    ox, oy = [], []
+    for i in range(-10, 61): # draw the button border 
+        ox.append(i)
+        oy.append(-10.0)
+    for i in range(-10, 61): # draw the right border
+        ox.append(60.0)
+        oy.append(i)
+    for i in range(-10, 61): # draw the top border
+        ox.append(i)
+        oy.append(60.0)
+    for i in range(-10, 61): # draw the left border
+        ox.append(-10.0)
+        oy.append(i)
+
+#Start_draw boarder
+    for i in range(0, 41): # draw the free border
+        ox.append(i)
+        oy.append(20.0 + i)
+
+    for i in range(-10, 31):
+        ox.append(25)
+        oy.append(i)
+
+    for i in range(0, 51):
+        ox.append(40)
+        oy.append(i)
+
+#End_draw boarder    
+
+    # for i in range(40, 45): # draw the button border 
+    #     ox.append(i)
+    #     oy.append(30.0)
+
+    global C_T
+    global d_T
+    global C_F
+    global d_F
+    
+    global Delta_F_A
+    global Delta_T_A
+#    global show_animation
+    cost = []
+    min_cost = 3.4E38
+    cost_temp = 0.0
+    # show_animation = False
 
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
-
-    #plot must-go spots
-        plt.plot(-5, 25, "ob")
-        plt.plot(30, 0, "ob")
-        
-        plt.plot(fc_x, fc_y, "y") # plot the fuel consuming area
-        plt.plot(tc_x, tc_y, "r") # plot the time consuming area
+            
+        plt.plot(fc_x, fc_y, "oy", alpha=0.5) # plot the fuel consuming area
+        plt.plot(tc_x, tc_y, "or", alpha=0.3) # plot the time consuming area
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-    rx, ry = a_star.planning(sx, sy, gx, gy)
+    rx, ry, cost_temp = a_star.planning(sx, sy, gx, gy)
+    
+    # decrease the cost in minus-cost area
+    x_M_A, y_M_A, cost_temp = cal_minus_cost_area(rx, ry, cost_temp, tc_x, tc_y, fc_x, fc_y)
+
+    plt.plot(rx, ry, "-g", linewidth = 1, label = "Minimum Cost Route") # show the route 
+    plt.plot(0, 0, color = "blue", linewidth = 1, alpha = 1, label = "Minus-cost Area")
+    plt.plot(x_M_A, y_M_A, 'o', color = "blue", alpha = 0.7) # show the minus-cost area
+    plt.plot(0, 0, color = "black", alpha = 0, label = "Total Cost:{0}".format(cost_temp))
+    plt.legend(loc='upper left', bbox_to_anchor=(-0.15, 1.15))
+    plt.pause(0.001) # pause 0.001 seconds
+    plt.show() # show the plot
+
+        
 
     if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r") # show the route 
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
+    
+    return 0
+
+
 
 
 if __name__ == '__main__':
     main()
+

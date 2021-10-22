@@ -181,7 +181,7 @@ class AStarPlanner:
         # print(len(closed_set))
         # print(len(open_set))
 
-        return rx, ry, goal_node.cost
+        return rx, ry, current.cost
 
     def calc_final_path(self, goal_node, closed_set):
         # generate final course
@@ -367,29 +367,29 @@ def main():
 
     # set obstacle positions for group 3
     ox, oy = [], []
-    for i in range(-10, 60): # draw the button border 
+    for i in range(-10, 61): # draw the button border 
         ox.append(i)
         oy.append(-10.0)
-    for i in range(-10, 60): # draw the right border
+    for i in range(-10, 61): # draw the right border
         ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 60): # draw the top border
+    for i in range(-10, 61): # draw the top border
         ox.append(i)
         oy.append(60.0)
-    for i in range(-10, 60): # draw the left border
+    for i in range(-10, 61): # draw the left border
         ox.append(-10.0)
         oy.append(i)
 
 #Start_draw boarder
-    for i in range(0, 40): # draw the free border
+    for i in range(0, 41): # draw the free border
         ox.append(i)
         oy.append(20.0 + i)
 
-    for i in range(-10, 30):
+    for i in range(-10, 31):
         ox.append(25)
         oy.append(i)
 
-    for i in range(0, 50):
+    for i in range(0, 51):
         ox.append(40)
         oy.append(i)
 
