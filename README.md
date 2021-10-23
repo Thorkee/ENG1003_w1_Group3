@@ -25,6 +25,9 @@
             <li>
               <a href="#Task4-1">Adding Checkpoints</a>
             </li>
+            <li>
+              <a href="#Task4-2">Changing Environment</a>
+            </li>
           </ol>
         </li>
       </ol>
@@ -248,7 +251,15 @@
   <a id="Task4-1"></a>
   <dt>a) Adding Checkpoints
     <dd>
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/cce37de4b2139b33b7fa0a02d221cba5d926e551/Image%20Resources/Check%20Point.png" alt="continous area">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
+    </dd>
+  </dt>
+  <a id="Task4-2"></a>
+  <dt>a) Changing Environment
+    <dd>
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2.PNG" alt="Changing Environment">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_Bad%20condition.PNG" alt="A* Bad Condition">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" alt="oops...">
     </dd>
   </dt>
 </dl>
@@ -273,6 +284,7 @@
 #### CHENG Wai Ching @Chengmm565
 > Responsible part:
 
+<a id="References"></a>
 ## 4. References
 
 
