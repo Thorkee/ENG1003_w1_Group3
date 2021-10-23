@@ -314,6 +314,8 @@ class AStarPlanner:
 
         return motion
 
+
+# generate a map randomly
 def generate_map(min_x, min_y, max_x, max_y, f_width, f_height):
     random.seed(datetime.datetime.now())
 
