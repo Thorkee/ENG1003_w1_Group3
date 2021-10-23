@@ -361,6 +361,7 @@ def generate_map(min_x, min_y, max_x, max_y, f_width, f_height):
             density = 0.41
         else:
             egg = 2
+            density = 0.25
     else:
         egg == -1
     for i in range(min_x + 1, max_x):
