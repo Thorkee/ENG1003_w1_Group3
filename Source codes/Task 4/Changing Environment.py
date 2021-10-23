@@ -7,7 +7,7 @@ author: Atsushi Sakai(@Atsushi_twi)
 
 See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
 
-This is the simple code for path planning class
+This is the sample code for Additional Task 2 of the path planning class
 
 """
 
@@ -178,11 +178,7 @@ class AStarPlanner:
                                  current.y + self.motion[i][1],
                                  current.cost + self.motion[i][2] * self.costPerGrid, c_id)
                 
-                ## add more cost in time-consuming area
-                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
-                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
-                        # print("time consuming area!!")
-                        node.cost = node.cost + Delta_T_A * self.motion[i][2]
+
                 
                 # add more cost in fuel-consuming area
                 if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
@@ -419,7 +415,7 @@ def main():
             plt.plot(gx, gy, "xb") # plot the end position
                 
             plt.plot(fc_x, fc_y, "oy", alpha=0.3) # plot the fuel consuming area
-            plt.plot(tc_x, tc_y, "or", alpha=0.3) # plot the time consuming area
+            #plt.plot(tc_x, tc_y, "or", alpha=0.3) # plot the time consuming area
 
             plt.grid(True) # plot the grid to the plot panel
             plt.axis("equal") # set the same resolution for x and y axis 
