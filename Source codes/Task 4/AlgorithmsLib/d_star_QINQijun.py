@@ -69,6 +69,8 @@ class DSTAR:
     def __init__(self, x_range, y_range, ox, oy, start, goal):
         self.ox = ox
         self.oy = oy
+        self.x_range = x_range
+        self.y_range = y_range
         self.start = start
         self.goal = goal
         self.open_list = OPENLIST()
@@ -105,9 +107,11 @@ class DSTAR:
 
         return map_data_row
 
-    def cost(x1, y1, x2, y2):
-        return math.sqrt(math.pow((x1 - x2), 2) +
-                         math.pow((y1 - y2), 2))
+    def cost(x, y):
+        if(x.type == "#" or y.type == "#"):
+            return maxsize
+        return math.sqrt(math.pow((x.x - y.x), 2) +
+                         math.pow((x.y - y.y), 2))
 
     def map_edit(self, x, y, status):
         self.map[x][y].type = status
@@ -119,19 +123,56 @@ class DSTAR:
         x = self.map[pos[0]][pos[1]]
         k_old = self.open_list[pos[0]][pos[1]]
         self.open_list.pop()
+        x.t = self.map[pos[0]][pos[1]].t = "closed"
 
 
         for i in enumerate(self.motion):
+            if(not(0 <= pos[0] + i[0] <= self.x_range and 0 <= pos[1] + i[1] <= self.y_range)):
+                continue
             y = self.map[pos[0] + i[0]][pos[1] + i[1]]
+
+
+            if(y.h <= k_old and x.h > y.h + self.cost(x, y)):
+                x.b = y; 
+                x.h = y.h+self.cost(x,y)
+            if(k_old == x.h):
+                if(y.t == "new" or
+                (y.b == x and y.h != x.h + self.cost(x, y)) or (y.b != x and y.h > x.h + self.cost(x, y))): 
+                    y.b = x 
+                    self.insert(y, x.h + self.cost(x, y))
+            else:
+                if(y.t == "new" or (y.b == x and y.h != x.h + self.cost(x, y))):
+                    y.b = x
+                    self.insert(y, x.h + self.cost(x, y))
+                elif(y.b != x and y.h > x.h + self.cost(x, y)):
+                    self.insert(x, x.h)
+                elif(y.b != x and x.h > y.h + self.cost(x, y) and y.t == "closed" and y.h > k_old):
+                    self.insert(y, y.h)
+                
+        self.map_updata(x)
+        self.map_updata(y)
+        return self.open_list[1]
 
 
     def min_state():
         pass
 
-    def insert():
-        pass
+    def insert(self, x, hnew):
+        if(x.t == "new"):
+            x.k = hnew
+        if(x.t == "open"):
+            x.k = min(x.k, hnew)
+        if(x.t == "closed"):
+            x.k = min(x.k, hnew)
+            x.t = "open"
+        
+        self.open_list.add(x.x, x.y, x.k)
 
-    def modify_cost():
-        pass
+    def map_updata(self, x):
+        self.map[x.x][x.y] = x
+
+    def modify_cost(self, x):
+        if x.t == "close":
+            self.insert(x, x.h)
 
 
