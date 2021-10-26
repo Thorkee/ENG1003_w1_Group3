@@ -102,6 +102,12 @@ class Dstar:
         k_old = self.get_kmin()
         self.remove(x)
 
+        if show_animation:  # pragma: no cover
+                plt.plot(x.x,
+                         x.y, "xc", alpha = 0.5)
+                # for stopping simulation with the esc key.
+                plt.pause(0.0001)
+
         if k_old < x.h:
             for y in self.map.get_neighbors(x):
                 if y.h <= k_old and x.h > y.h + x.cost(y):
@@ -149,11 +155,6 @@ class Dstar:
         state.h = h_new
         state.t = "open"
         self.open_list.add(state)
-        if show_animation:  # pragma: no cover
-                plt.plot(state.x,
-                         state.y, "xc", alpha = 0.5)
-                # for stopping simulation with the esc key.
-                plt.pause(0.0001)
                     
 
     def remove(self, state):

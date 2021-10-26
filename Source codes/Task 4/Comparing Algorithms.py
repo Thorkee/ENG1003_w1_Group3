@@ -29,7 +29,7 @@ def generate_map(min_x, min_y, max_x, max_y):
     while(1):
         gx = min_x + 1 + int((max_x - min_x - 1) * random.random())
         gy = min_y + 1 + int((max_y - min_y - 1) * random.random())
-        if((gx - sx) ** 2 + (gy - sy) ** 2 > 70 ** 2):
+        if((gx - sx) ** 2 + (gy - sy) ** 2 < 20 ** 2):
             break
 
     #generate block
@@ -39,9 +39,9 @@ def generate_map(min_x, min_y, max_x, max_y):
             if(random.random() < density and not((i - sx) ** 2 + (j - sy) ** 2 <= 2 or (i - gx) ** 2 + (j - gy) ** 2 <= 2)):
                 ox.append(i)
                 oy.append(j)
-            # if(98 <= (i - sx) ** 2 + (j - sy) ** 2 <= 128):
-            #     ox.append(i)
-            #     oy.append(j)
+            if(98 <= (i - sx) ** 2 + (j - sy) ** 2 <= 128):
+                ox.append(i)
+                oy.append(j)
 
     return sx, sy, gx, gy, ox, oy
 
@@ -56,8 +56,8 @@ def main():
 
     min_x = 0
     min_y = 0
-    max_x = 70
-    max_y = 70
+    max_x = 20
+    max_y = 20
 
     sx, sy, gx, gy, ox, oy = generate_map(min_x, min_y, max_x, max_y)
 
