@@ -1,5 +1,4 @@
-from _typeshed import Self
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 from sys import maxsize
 
@@ -27,6 +26,8 @@ class OPENLIST:
         self.openlist.append(point_data)
         index = len(self.openlist) - 1
 
+        if(index == 1):
+            return self.openlist[1][2]
         while(self.openlist[index][2] < self.openlist[math.floor(index/2)][2] and index != 1):
             self.openlist[index], self.openlist[math.floor(index/2)] = self.openlist[math.floor(index/2)], self.openlist[index]
             index = math.floor(index/2)
@@ -49,6 +50,9 @@ class OPENLIST:
         self.openlist.pop(index)
         length -= 1  
 
+        if(length <= 1):
+            return min_value
+
         min_index = index = 1   
         while(index * 2 - 1 <= length):
             if(index * 2 > length):
@@ -57,7 +61,8 @@ class OPENLIST:
                 min_index = index * 2 - 1
             else:
                 min_index = index * 2
-        self.openlist[index], self.openlist[min_index] = self.openlist[min_index], self.openlist[index]
+            self.openlist[index], self.openlist[min_index] = self.openlist[min_index], self.openlist[index]
+            index = min_index
 
         return min_value
 
@@ -90,24 +95,27 @@ class DSTAR:
         else:
             return "."
 
+    # def neighbor():
+        
+
 
     def map_init(self, x_range, y_range):
         map_data_row = []
         map_data_line = []
-        for i in range(0, y_range + 2):
-            for j in range(0, x_range + 2):
+        for i in range(0, y_range + 2):         
+            for j in range(0, x_range + 2):                
                 map_data_line.append(MAP(i, j, self.point_type(i, j)))
-            map_data_row.append(map_data_row)
-            map_data_line.clear()
+            map_data_row.append(map_data_line)
+            map_data_line = []
 
-        self.open_list.add(self.goal)
-        map_data_line[self.goal[0]][self.goal[1]].t = "new"
-        map_data_line[self.goal[0]][self.goal[1]].h = 0
-        map_data_line[self.goal[0]][self.goal[1]].k = 0
+        self.open_list.add(self.goal[0], self.goal[1], 0)
+        map_data_row[self.goal[0]][self.goal[1]].t = "new"
+        map_data_row[self.goal[0]][self.goal[1]].h = 0
+        map_data_row[self.goal[0]][self.goal[1]].k = 0
 
         return map_data_row
 
-    def cost(x, y):
+    def cost(self, x, y):
         if(x.type == "#" or y.type == "#"):
             return maxsize
         return math.sqrt(math.pow((x.x - y.x), 2) +
@@ -121,26 +129,41 @@ class DSTAR:
         if(pos == None):
             return -1
         x = self.map[pos[0]][pos[1]]
-        k_old = self.open_list[pos[0]][pos[1]]
+        k_old = x.k
         self.open_list.pop()
         x.t = self.map[pos[0]][pos[1]].t = "closed"
 
+        plt.plot(x.x, x.y, "xc", alpha = 0.5)
+                # for stopping simulation with the esc key.
+        plt.pause(0.001)
 
-        for i in enumerate(self.motion):
-            if(not(0 <= pos[0] + i[0] <= self.x_range and 0 <= pos[1] + i[1] <= self.y_range)):
-                continue
-            y = self.map[pos[0] + i[0]][pos[1] + i[1]]
+        if(k_old < x.h):
+            for i in enumerate(self.motion):
+                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                        continue
+                y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
+                if(y.h <= k_old and x.h > y.h + self.cost(x, y)):
+                    x.b = y; 
+                    x.h = y.h + self.cost(x, y)
 
-            if(y.h <= k_old and x.h > y.h + self.cost(x, y)):
-                x.b = y; 
-                x.h = y.h+self.cost(x,y)
-            if(k_old == x.h):
+        if(k_old == x.h):
+            for i in enumerate(self.motion):
+                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                    continue
+                y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
+
                 if(y.t == "new" or
                 (y.b == x and y.h != x.h + self.cost(x, y)) or (y.b != x and y.h > x.h + self.cost(x, y))): 
                     y.b = x 
                     self.insert(y, x.h + self.cost(x, y))
-            else:
+
+        else:
+            for i in enumerate(self.motion):
+                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                    continue
+                y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
+
                 if(y.t == "new" or (y.b == x and y.h != x.h + self.cost(x, y))):
                     y.b = x
                     self.insert(y, x.h + self.cost(x, y))
@@ -151,7 +174,7 @@ class DSTAR:
                 
         self.map_updata(x)
         self.map_updata(y)
-        return self.open_list[1]
+        return self.open_list.min_val()
 
 
     def min_state():
@@ -175,4 +198,50 @@ class DSTAR:
         if x.t == "close":
             self.insert(x, x.h)
 
+
+
+    def run(self):
+
+        while(1):
+            kmin = self.process_state()
+            point = self.open_list.min_val()
+            if(point == None):
+                exit()
+            if(point[0] == self.start[0] and point[1] == self.start[1]):
+                break
+
+def main():
+
+    x_range = 6
+    y_range = 5
+    ox = [3, 3]
+    oy = [1, 2]
+    for i in range(0, x_range + 2):
+        ox.append(i)
+        oy.append(0)
+    for i in range(0, x_range + 2):
+        ox.append(i)
+        oy.append(y_range + 1)
+    for i in range(0, y_range + 2):
+        ox.append(0)
+        oy.append(i)
+    for i in range(0, y_range + 2):
+        ox.append(x_range + 1)
+        oy.append(i)
+
+    start = [1, 1]
+    goal = [5, 1]
+
+    plt.plot(ox, oy, ".k")
+    plt.plot(start[0], start[1], "og")
+    plt.plot(goal[0], goal[1], "xb")
+    plt.pause(0.01)
+
+    d_star = DSTAR(x_range, y_range, ox, oy, start, goal)
+    d_star.run()
+
+
+
+if __name__ == "__main__":
+    main()
 
