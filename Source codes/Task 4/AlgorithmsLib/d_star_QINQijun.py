@@ -218,6 +218,18 @@ class DSTAR:
                 exit()
             if(point[0] == self.start[0] and point[1] == self.start[1]):
                 break
+        
+        route = self.map[point[0]][point[1]]
+        while(1):
+            if(route.x == self.goal[0] and route.y == self.goal[1]):
+                plt.plot(route.x, route.y, "or")
+                plt.pause(0.01)
+                break
+            plt.plot(route.x, route.y, "or")
+            plt.pause(0.01)
+            route = route.b
+
+        pass
 
 def main():
 
