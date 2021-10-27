@@ -6,11 +6,11 @@ import math
 
 class MAP:
 
-    def __init__(self, x, y, ptype):
+    def __init__(self, x, y, ptype, tag):
         self.x = x
         self.y = y
         self.type = ptype
-        self.t = ""
+        self.t = tag
         self.h = maxsize
         self.k = maxsize
         self.b = []
@@ -74,6 +74,7 @@ class DSTAR:
     def __init__(self, x_range, y_range, ox, oy, start, goal):
         self.ox = ox
         self.oy = oy
+        self.obs = self.obstacle(ox, oy)
         self.x_range = x_range
         self.y_range = y_range
         self.start = start
@@ -85,8 +86,14 @@ class DSTAR:
                         [-1, 0],
                         [0, -1]]
 
+    def obstacle(self, ox, oy):
+        temp_obs = []
+        for i in range(0, len(ox)):
+            temp_obs.append([ox[i], oy[i]])
+        return temp_obs
+
     def point_type(self, x, y):
-        if(self.ox == x and self.oy == y):
+        if([x, y] in self.obs):
             return "#"
         elif(self.start[0] == x and self.start[1] == y):
             return "s"
@@ -104,12 +111,11 @@ class DSTAR:
         map_data_line = []
         for i in range(0, y_range + 2):         
             for j in range(0, x_range + 2):                
-                map_data_line.append(MAP(i, j, self.point_type(i, j)))
+                map_data_line.append(MAP(i, j, self.point_type(i, j), "new"))
             map_data_row.append(map_data_line)
             map_data_line = []
 
         self.open_list.add(self.goal[0], self.goal[1], 0)
-        map_data_row[self.goal[0]][self.goal[1]].t = "new"
         map_data_row[self.goal[0]][self.goal[1]].h = 0
         map_data_row[self.goal[0]][self.goal[1]].k = 0
 
@@ -133,13 +139,13 @@ class DSTAR:
         self.open_list.pop()
         x.t = self.map[pos[0]][pos[1]].t = "closed"
 
-        plt.plot(x.x, x.y, "xc", alpha = 0.5)
+        plt.plot(x.x, x.y, "xr", alpha = 0.5)
                 # for stopping simulation with the esc key.
         plt.pause(0.001)
 
         if(k_old < x.h):
             for i in enumerate(self.motion):
-                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                if(not(1 <= pos[0] + i[1][0] <= self.x_range and 1 <= pos[1] + i[1][1] <= self.y_range)):
                         continue
                 y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
@@ -149,7 +155,7 @@ class DSTAR:
 
         if(k_old == x.h):
             for i in enumerate(self.motion):
-                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                if(not(1 <= pos[0] + i[1][0] <= self.x_range and 1 <= pos[1] + i[1][1] <= self.y_range)):
                     continue
                 y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
@@ -160,7 +166,7 @@ class DSTAR:
 
         else:
             for i in enumerate(self.motion):
-                if(not(0 <= pos[0] + i[1][0] <= self.x_range and 0 <= pos[1] + i[1][1] <= self.y_range)):
+                if(not(1 <= pos[0] + i[1][0] <= self.x_range and 1 <= pos[1] + i[1][1] <= self.y_range)):
                     continue
                 y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
@@ -188,6 +194,9 @@ class DSTAR:
         if(x.t == "closed"):
             x.k = min(x.k, hnew)
             x.t = "open"
+        x.h = x.k
+        x.t = "open"
+        plt.plot(x.x, x.y, "xc", alpha = 0.5)
         
         self.open_list.add(x.x, x.y, x.k)
 
