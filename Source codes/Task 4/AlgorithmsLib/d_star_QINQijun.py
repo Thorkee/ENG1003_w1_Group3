@@ -121,14 +121,13 @@ class DSTAR:
 
         return map_data_row
 
+
     def cost(self, x, y):
         if(x.type == "#" or y.type == "#"):
             return maxsize
         return math.sqrt(math.pow((x.x - y.x), 2) +
                          math.pow((x.y - y.y), 2))
 
-    def map_edit(self, x, y, status):
-        self.map[x][y].type = status
 
     def process_state(self):
         pos = self.open_list.min_val()
@@ -183,9 +182,6 @@ class DSTAR:
         return self.open_list.min_val()
 
 
-    def min_state():
-        pass
-
     def insert(self, x, hnew):
         if(x.t == "new"):
             x.k = hnew
@@ -208,6 +204,12 @@ class DSTAR:
             self.insert(x, x.h)
 
 
+    def obstacle_sensor(self, x, y, status):
+        if(status == "#"):
+            self.map[x][y].type = status
+            self.map[x][y].h = maxsize
+            plt.plot(x, y, ".k")
+
 
     def run(self):
 
@@ -220,16 +222,28 @@ class DSTAR:
                 break
         
         route = self.map[point[0]][point[1]]
+
+        self.obstacle_sensor(3, 3, "#")
+        self.obstacle_sensor(4, 4, "#")
         while(1):
-            if(route.x == self.goal[0] and route.y == self.goal[1]):
-                plt.plot(route.x, route.y, "or")
-                plt.pause(0.01)
-                break
+            if(route.type == "#"):
+                self.modify_cost(route)
+
+                while(1):
+                    md_point = self.process_state()
+                    if(md_point[2] >= self.map[route.x][route.y].h):
+                        break
+
             plt.plot(route.x, route.y, "or")
             plt.pause(0.01)
+
+            if(route.x == self.goal[0] and route.y == self.goal[1]):
+                break
+            
             route = route.b
 
-        pass
+        plt.show()
+
 
 def main():
 
