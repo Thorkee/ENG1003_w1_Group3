@@ -1,8 +1,14 @@
 import matplotlib.pyplot as plt
 
+import numpy as np
+
 from sys import maxsize
 
 import math
+
+from numpy.core.fromnumeric import shape
+
+show_animation = False
 
 class MAP:
 
@@ -18,18 +24,31 @@ class MAP:
 
 class OPENLIST:
 
-    def __init__(self):
+    def __init__(self, x_range, y_range):
         self.openlist = ["#"]
+        self.hash_value = np.zeros((x_range + 1, y_range + 1), dtype = np.int16)
 
     def add(self, x, y, value):
+        tmp = self.openlist[self.hash_value[x][y]]
+        if(tmp != "#" and tmp[2] == value):
+            return tmp
+
         point_data = [x, y, value]
-        self.openlist.append(point_data)
-        index = len(self.openlist) - 1
+
+        if(tmp == "#"):
+            self.openlist.append(point_data)
+            index = len(self.openlist) - 1
+            self.hash_value[x][y] = index
+        else:
+            index = self.hash_value[x][y]
+            self.openlist[index] = point_data
 
         if(index == 1):
             return self.openlist[1][2]
-        while(self.openlist[index][2] < self.openlist[math.floor(index/2)][2] and index != 1):
+        while(index != 1 and self.openlist[index][2] < self.openlist[math.floor(index/2)][2]):
+            tmp = self.openlist[math.floor(index/2)]
             self.openlist[index], self.openlist[math.floor(index/2)] = self.openlist[math.floor(index/2)], self.openlist[index]
+            self.hash_value[x][y], self.hash_value[tmp[0]][tmp[1]] = math.floor(index/2), index
             index = math.floor(index/2)
 
         return self.openlist[1]
@@ -46,6 +65,7 @@ class OPENLIST:
         min_value = self.openlist[1][2]
         length = index = len(self.openlist) - 1
 
+        self.hash_value[self.openlist[1][0]][self.openlist[1][1]] = 0
         self.openlist[index], self.openlist[1] = self.openlist[1], self.openlist[index]
         self.openlist.pop(index)
         length -= 1  
@@ -54,14 +74,20 @@ class OPENLIST:
             return min_value
 
         min_index = index = 1   
-        while(index * 2 - 1 <= length):
-            if(index * 2 > length):
-                min_index = index * 2 - 1
-            elif(self.openlist[index * 2 - 1][2] < self.openlist[index * 2][2]):
-                min_index = index * 2 - 1
-            else:
+        while(index * 2 <= length):
+            if(index * 2 + 1> length):
                 min_index = index * 2
+            elif(self.openlist[index * 2][2] < self.openlist[index * 2 + 1][2]):
+                min_index = index * 2
+            else:
+                min_index = index * 2 + 1
+            tmp1 = self.openlist[index]
+            tmp2 = self.openlist[min_index]
+            if(tmp2[2] >= tmp1[2]):
+                self.hash_value[tmp1[0]][tmp1[1]], self.hash_value[tmp2[0]][tmp2[1]] = index, min_index
+                break
             self.openlist[index], self.openlist[min_index] = self.openlist[min_index], self.openlist[index]
+            self.hash_value[tmp1[0]][tmp1[1]], self.hash_value[tmp2[0]][tmp2[1]] = min_index, index
             index = min_index
 
         return min_value
@@ -79,7 +105,7 @@ class DSTAR:
         self.y_range = y_range
         self.start = start
         self.goal = goal
-        self.open_list = OPENLIST()
+        self.open_list = OPENLIST(x_range, y_range)
         self.map = self.map_init(x_range, y_range)
         self.motion =   [[1, 0],
                         [0, 1],
@@ -133,14 +159,16 @@ class DSTAR:
         pos = self.open_list.min_val()
         if(pos == None):
             return -1
+        if(pos[2] >= maxsize):
+            return -1
         x = self.map[pos[0]][pos[1]]
         k_old = x.k
         self.open_list.pop()
         x.t = self.map[pos[0]][pos[1]].t = "closed"
 
-        plt.plot(x.x, x.y, "xr", alpha = 0.5)
-                # for stopping simulation with the esc key.
-        plt.pause(0.001)
+        if show_animation == True:
+            plt.plot(x.x, x.y, "xr", alpha = 0.5)
+            plt.pause(0.001)
 
         if(k_old < x.h):
             for i in enumerate(self.motion):
@@ -173,13 +201,12 @@ class DSTAR:
                     y.b = x
                     self.insert(y, x.h + self.cost(x, y))
                 elif(y.b != x and y.h > x.h + self.cost(x, y)):
-                    self.insert(x, x.h)
+                    # x.b = y
+                    self.insert(y, x.h)
                 elif(y.b != x and x.h > y.h + self.cost(x, y) and y.t == "closed" and y.h > k_old):
                     self.insert(y, y.h)
                 
-        self.map_updata(x)
-        self.map_updata(y)
-        return self.open_list.min_val()
+        return x
 
 
     def insert(self, x, hnew):
@@ -190,9 +217,12 @@ class DSTAR:
         if(x.t == "closed"):
             x.k = min(x.k, hnew)
             x.t = "open"
-        x.h = x.k
+        x.h = hnew
+        if(hnew >= maxsize):
+            x.h = maxsize
         x.t = "open"
-        plt.plot(x.x, x.y, "xc", alpha = 0.5)
+        if show_animation == True:
+            plt.plot(x.x, x.y, "xc", alpha = 0.5)
         
         self.open_list.add(x.x, x.y, x.k)
 
@@ -200,8 +230,9 @@ class DSTAR:
         self.map[x.x][x.y] = x
 
     def modify_cost(self, x):
-        if x.t == "close":
-            self.insert(x, x.h)
+        if x.t == "closed":
+            self.insert(x, x.b.h + self.cost(x, x.b))
+
 
 
     def obstacle_sensor(self, x, y, status):
@@ -210,35 +241,49 @@ class DSTAR:
             self.map[x][y].h = maxsize
             plt.plot(x, y, ".k")
 
-
     def run(self):
 
         while(1):
-            kmin = self.process_state()
-            point = self.open_list.min_val()
-            if(point == None):
+            point = self.process_state()          
+            if(point == -1):
                 exit()
-            if(point[0] == self.start[0] and point[1] == self.start[1]):
+            if(point.type == "s"):
                 break
         
-        route = self.map[point[0]][point[1]]
+        route = point
 
-        self.obstacle_sensor(3, 3, "#")
+        self.obstacle_sensor(4, 3, "#")
         self.obstacle_sensor(4, 4, "#")
-        while(1):
-            if(route.type == "#"):
-                self.modify_cost(route)
+        self.obstacle_sensor(3, 4, "#")
+        self.obstacle_sensor(4, 2, "#")
 
-                while(1):
-                    md_point = self.process_state()
-                    if(md_point[2] >= self.map[route.x][route.y].h):
-                        break
+        while(1):
 
             plt.plot(route.x, route.y, "or")
             plt.pause(0.01)
 
-            if(route.x == self.goal[0] and route.y == self.goal[1]):
+            if(route.type == "g"):
                 break
+
+            if(route.b.type == "#"):
+                md_point = route
+                self.modify_cost(md_point)
+                self.modify_cost(md_point.b)
+                global show_animation
+                show_animation = True
+                while(1):
+                    md_point = self.process_state()
+
+                    if(md_point == -1):
+                        break             
+                    # if(md_point == 1):
+                    #     self.map[self.goal[0]][self.goal[1]].b = self.map[self.goal[0]][self.goal[1]]
+                    #     self.modify_cost(self.map[self.goal[0]][self.goal[1]])      
+                    if(md_point.k >= route.h):
+                        break
+                    
+                if(md_point == -1):
+                    exit()
             
             route = route.b
 
@@ -249,8 +294,8 @@ def main():
 
     x_range = 6
     y_range = 5
-    ox = [3, 3]
-    oy = [1, 2]
+    ox = [4]
+    oy = [1]
     for i in range(0, x_range + 2):
         ox.append(i)
         oy.append(0)
