@@ -1,3 +1,11 @@
+#################################################################################################
+#                                        Instructions
+# Developer: QIN Qijun
+#
+
+
+
+
 import matplotlib.pyplot as plt
 
 import numpy as np
@@ -8,7 +16,9 @@ import math
 
 from numpy.core.fromnumeric import shape
 
-show_animation = True
+from tkinter import messagebox
+
+show_animation = False
 
 class MAP:
 
@@ -128,6 +138,10 @@ class DSTAR:
         else:
             return "."
 
+    def non_route(self):
+        messagebox.showinfo("咫尺相隔两相望","冇有路惹, 過不去惹QAQ\n")
+        exit()
+
     # def neighbor():
         
 
@@ -166,7 +180,7 @@ class DSTAR:
         self.open_list.pop()
         x.t = self.map[pos[0]][pos[1]].t = "closed"
 
-        if show_animation == True:
+        if show_animation:
             plt.plot(x.x, x.y, "xr", alpha = 0.5)
             plt.pause(0.001)
 
@@ -223,7 +237,7 @@ class DSTAR:
         if(hnew >= maxsize):
             x.h = maxsize
         x.t = "open"
-        if show_animation == True:
+        if show_animation:
             plt.plot(x.x, x.y, "xc", alpha = 0.5)
         
         self.open_list.add(x.x, x.y, x.k)
@@ -237,38 +251,43 @@ class DSTAR:
 
 
 
-    def obstacle_sensor(self, x, y, status):
+    def obstacle_sensor(self, ox, oy, status):
         if(status == "#"):
-            self.map[x][y].type = status
-            self.map[x][y].h = maxsize
-            self.modify_cost(self.map[x][y])
-            plt.plot(x, y, ".k")
+            amount = min(len(ox), len(oy))
 
-            md_point = self.map[x][y]
+            for i in range(0, amount):
+                self.map[ox[i]][oy[i]].type = status
+                self.map[ox[i]][oy[i]].h = maxsize
+                self.modify_cost(self.map[ox[i]][oy[i]])
+                plt.plot(ox[i], oy[i], ".k")
+            plt.pause(0.01)
+
+            md_point = self.map[ox[i]][oy[i]]
             self.modify_cost(md_point)
             global show_animation
-            show_animation = True
+            show_animation = False
 
             self.process_state()
 
-            for i in enumerate(self.motion):
-                if(not(1 <= x + i[1][0] <= self.x_range and 1 <= y + i[1][1] <= self.y_range)):
+            for j in range(0, amount):
+                for i in enumerate(self.motion):
+                    if(not(1 <= ox[j] + i[1][0] <= self.x_range and 1 <= oy[j] + i[1][1] <= self.y_range)):
+                            continue
+
+                    if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].b != self.map[ox[j]][oy[j]]):
                         continue
 
-                if(self.map[x + i[1][0]][y + i[1][1]].b != self.map[x][y]):
-                    continue
+                    if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].type == "#"):
+                        continue
 
-                if(self.map[x + i[1][0]][y + i[1][1]].type == "#"):
-                    continue
+                    while(1):
+                        feedback = self.process_state()
+                        md_point = self.open_list.min_val()
 
-                while(1):
-                    self.process_state()
-                    md_point = self.open_list.min_val()
-
-                    if(md_point == -1):
-                        break                  
-                    if(md_point[2] >= self.map[x + i[1][0]][y + i[1][1]].h):
-                        break
+                        if(feedback == -1):
+                            self.non_route()
+                        if(md_point[2] >= self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].h):
+                            break
 
     def run(self):
 
@@ -281,75 +300,114 @@ class DSTAR:
         
         route = point
 
-        # self.obstacle_sensor(4, 3, "#")
-        # self.obstacle_sensor(4, 4, "#")
-        self.obstacle_sensor(4, 3, "#")
-        self.obstacle_sensor(3, 4, "#")
-        self.obstacle_sensor(2, 4, "#")
-
+        # ox = []
+        # oy = []
+        # for i in range(0, self.x_range):
+        #     for j in range(0, self.y_range):
+        #         if(i <= 18 or j <= 18):
+        #             continue
+        #         if(2340 <= (i - self.start[0]) ** 2 + (j - self.start[1]) ** 2 <= 2500):
+        #             ox.append(i)
+        #             oy.append(j)
+        # self.obstacle_sensor(ox, oy, "#")
+        
+            
+        obstacle_generate = False
         while(1):
 
-            plt.plot(route.x, route.y, "or")
+            plt.plot(route.x, route.y, ".r")
             plt.pause(0.01)
+
+            if(route.x <= self.x_range * 0.4 and route.y <= self.y_range * 0.4 and not obstacle_generate):
+                ox = []
+                oy = []
+                for i in range(0, self.x_range):
+                    for j in range(0, self.y_range):
+                        if(i <= 14 or j <= 14):
+                            continue
+                        if(30 ** 2 <= (i - 45) ** 2 + (j - 45) ** 2 <= 32 ** 2):
+                            ox.append(i)
+                            oy.append(j)
+                self.obstacle_sensor(ox, oy, "#")
+                obstacle_generate = True
 
             if(route.type == "g"):
                 break
 
             if(route.b.type == "#"):
+                global show_animation
+                show_animation = False
+
                 md_point = route
                 self.modify_cost(md_point)
-                self.modify_cost(md_point.b)
-                global show_animation
-                show_animation = True
+                self.modify_cost(md_point.b)          
                 while(1):
                     self.process_state()
                     md_point = self.open_list.min_val()
 
                     if(md_point == -1):
-                        break                  
+                        break               
+                    if(route.b.type == "#"):
+                        continue
                     if(md_point[2] >= route.h):
                         break
                     
                 if(md_point == -1):
                     exit()
+
+                show_animation = False
             
             route = route.b
 
         plt.show()
 
 
-def main():
+def d_star(x_range, y_range, sx, sy, gx, gy, ox, oy):
 
-    x_range = 6
-    y_range = 5
-    ox = [4, 4]
-    oy = [1, 2]
-    for i in range(0, x_range + 2):
-        ox.append(i)
-        oy.append(0)
-    for i in range(0, x_range + 2):
-        ox.append(i)
-        oy.append(y_range + 1)
-    for i in range(0, y_range + 2):
-        ox.append(0)
-        oy.append(i)
-    for i in range(0, y_range + 2):
-        ox.append(x_range + 1)
-        oy.append(i)
-
-    start = [1, 5]
-    goal = [5, 1]
+    start = [sx, sy]
+    goal = [gx, gy]
 
     plt.plot(ox, oy, ".k")
     plt.plot(start[0], start[1], "og")
     plt.plot(goal[0], goal[1], "xb")
+    plt.axis("equal")
     plt.pause(0.01)
 
     d_star = DSTAR(x_range, y_range, ox, oy, start, goal)
     d_star.run()
 
+# def main():
+
+#     x_range = 6
+#     y_range = 5
+#     ox = [4, 4]
+#     oy = [1, 2]
+#     for i in range(0, x_range + 2):
+#         ox.append(i)
+#         oy.append(0)
+#     for i in range(0, x_range + 2):
+#         ox.append(i)
+#         oy.append(y_range + 1)
+#     for i in range(0, y_range + 2):
+#         ox.append(0)
+#         oy.append(i)
+#     for i in range(0, y_range + 2):
+#         ox.append(x_range + 1)
+#         oy.append(i)
+
+#     start = [1, 5]
+#     goal = [5, 1]
+
+#     plt.plot(ox, oy, ".k")
+#     plt.plot(start[0], start[1], "og")
+#     plt.plot(goal[0], goal[1], "xb")
+#     plt.pause(0.01)
+
+#     d_star = DSTAR(x_range, y_range, ox, oy, start, goal)
+#     d_star.run()
 
 
-if __name__ == "__main__":
-    main()
+
+# if __name__ == "__main__":
+#     main()
 

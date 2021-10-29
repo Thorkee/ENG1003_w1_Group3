@@ -1,4 +1,6 @@
-import AlgorithmsLib.d_star_AtsushiSakai as algo
+import AlgorithmsLib.d_star_AtsushiSakai as dstar_A
+
+import AlgorithmsLib.d_star_dynamic_QINQijun as dstar_Q
 
 import matplotlib as plt
 
@@ -29,7 +31,7 @@ def generate_map(min_x, min_y, max_x, max_y):
     while(1):
         gx = min_x + 1 + int((max_x - min_x - 1) * random.random())
         gy = min_y + 1 + int((max_y - min_y - 1) * random.random())
-        if((gx - sx) ** 2 + (gy - sy) ** 2 < 20 ** 2):
+        if((gx - sx) ** 2 + (gy - sy) ** 2 > 70 ** 2):
             break
 
     #generate block
@@ -39,9 +41,9 @@ def generate_map(min_x, min_y, max_x, max_y):
             if(random.random() < density and not((i - sx) ** 2 + (j - sy) ** 2 <= 2 or (i - gx) ** 2 + (j - gy) ** 2 <= 2)):
                 ox.append(i)
                 oy.append(j)
-            if(98 <= (i - sx) ** 2 + (j - sy) ** 2 <= 128):
-                ox.append(i)
-                oy.append(j)
+            # if(98 <= (i - sx) ** 2 + (j - sy) ** 2 <= 128):
+            #     ox.append(i)
+            #     oy.append(j)
 
     return sx, sy, gx, gy, ox, oy
 
@@ -56,20 +58,25 @@ def main():
 
     min_x = 0
     min_y = 0
-    max_x = 20
-    max_y = 20
+    max_x = 70
+    max_y = 70
 
     sx, sy, gx, gy, ox, oy = generate_map(min_x, min_y, max_x, max_y)
 
-    algo_list = {
-        1 : algo.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy),
-        2 : "two",
-        3 : "three"
-    }
+    
 
-    for algo_index in range(1, 3 + 1):
-        plt.subplot(1, 3, algo_index)
-        algo_list[algo_index]
+    # algo_list = {
+    #     1 : dstar_A.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy),
+    #     2 : dstar_Q.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy),
+    #     3 : "three",
+    #     4 : "four"
+    # }
+
+    dstar_Q.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy)
+
+    # for algo_index in range(1, 3 + 1):
+    #     plt.subplot(1, 3, algo_index)
+    #     algo_list[algo_index]
 
     return 0
 
