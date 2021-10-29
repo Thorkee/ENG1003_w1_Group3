@@ -441,7 +441,7 @@ def main():
     plt.plot(ox, oy, ".k") # plot the obstacle
     plt.plot(gx, gy, "xb") # plot the end position
     plt.plot(0, 0, color = "black", alpha = 0, label = "Total Cost:{0}".format(cost_temp))
-    plt.legend(loc='upper left', bbox_to_anchor=(-0.15, 1.15))
+    plt.legend(loc='upper left', bbox_to_anchor=(-0.18, 1.15))
     plt.pause(0.001) # pause 0.001 seconds
     plt.show() # show the plot
     
