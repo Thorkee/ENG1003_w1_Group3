@@ -8,7 +8,7 @@ import math
 
 from numpy.core.fromnumeric import shape
 
-show_animation = False
+show_animation = True
 
 class MAP:
 
@@ -176,7 +176,9 @@ class DSTAR:
                         continue
                 y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
-                if(y.h <= k_old and x.h > y.h + self.cost(x, y)):
+                if((y.h <= k_old and x.h > y.h + self.cost(x, y))
+                ):
+                # or (y.k < y.h < maxsize and x.h < maxsize and y.h <= k_old + y.h - y.k + self.cost(x, y))
                     x.b = y; 
                     x.h = y.h + self.cost(x, y)
 
@@ -201,8 +203,8 @@ class DSTAR:
                     y.b = x
                     self.insert(y, x.h + self.cost(x, y))
                 elif(y.b != x and y.h > x.h + self.cost(x, y)):
-                    # x.b = y
-                    self.insert(y, x.h)
+                    y.b = x
+                    self.insert(y, x.h + self.cost(x, y))
                 elif(y.b != x and x.h > y.h + self.cost(x, y) and y.t == "closed" and y.h > k_old):
                     self.insert(y, y.h)
                 
@@ -231,7 +233,7 @@ class DSTAR:
 
     def modify_cost(self, x):
         if x.t == "closed":
-            self.insert(x, x.b.h + self.cost(x, x.b))
+            self.insert(x, x.h)
 
 
 
@@ -239,7 +241,34 @@ class DSTAR:
         if(status == "#"):
             self.map[x][y].type = status
             self.map[x][y].h = maxsize
+            self.modify_cost(self.map[x][y])
             plt.plot(x, y, ".k")
+
+            md_point = self.map[x][y]
+            self.modify_cost(md_point)
+            global show_animation
+            show_animation = True
+
+            self.process_state()
+
+            for i in enumerate(self.motion):
+                if(not(1 <= x + i[1][0] <= self.x_range and 1 <= y + i[1][1] <= self.y_range)):
+                        continue
+
+                if(self.map[x + i[1][0]][y + i[1][1]].b != self.map[x][y]):
+                    continue
+
+                if(self.map[x + i[1][0]][y + i[1][1]].type == "#"):
+                    continue
+
+                while(1):
+                    self.process_state()
+                    md_point = self.open_list.min_val()
+
+                    if(md_point == -1):
+                        break                  
+                    if(md_point[2] >= self.map[x + i[1][0]][y + i[1][1]].h):
+                        break
 
     def run(self):
 
@@ -252,10 +281,11 @@ class DSTAR:
         
         route = point
 
+        # self.obstacle_sensor(4, 3, "#")
+        # self.obstacle_sensor(4, 4, "#")
         self.obstacle_sensor(4, 3, "#")
-        self.obstacle_sensor(4, 4, "#")
         self.obstacle_sensor(3, 4, "#")
-        self.obstacle_sensor(4, 2, "#")
+        self.obstacle_sensor(2, 4, "#")
 
         while(1):
 
@@ -272,14 +302,12 @@ class DSTAR:
                 global show_animation
                 show_animation = True
                 while(1):
-                    md_point = self.process_state()
+                    self.process_state()
+                    md_point = self.open_list.min_val()
 
                     if(md_point == -1):
-                        break             
-                    # if(md_point == 1):
-                    #     self.map[self.goal[0]][self.goal[1]].b = self.map[self.goal[0]][self.goal[1]]
-                    #     self.modify_cost(self.map[self.goal[0]][self.goal[1]])      
-                    if(md_point.k >= route.h):
+                        break                  
+                    if(md_point[2] >= route.h):
                         break
                     
                 if(md_point == -1):
@@ -294,8 +322,8 @@ def main():
 
     x_range = 6
     y_range = 5
-    ox = [4]
-    oy = [1]
+    ox = [4, 4]
+    oy = [1, 2]
     for i in range(0, x_range + 2):
         ox.append(i)
         oy.append(0)
@@ -309,7 +337,7 @@ def main():
         ox.append(x_range + 1)
         oy.append(i)
 
-    start = [1, 1]
+    start = [1, 5]
     goal = [5, 1]
 
     plt.plot(ox, oy, ".k")
