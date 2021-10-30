@@ -17,7 +17,7 @@ def generate_map(min_x, min_y, max_x, max_y):
         oy.append(min_y)
     for i in range(min_y, max_y + 1): # draw the right border
         ox.append(max_x)
-        oy.append(i)
+        oy.append(i) 
     for i in range(min_x, max_x + 1): # draw the top border
         ox.append(i)
         oy.append(max_y)
@@ -35,7 +35,7 @@ def generate_map(min_x, min_y, max_x, max_y):
             break
 
     #generate block
-    density = 0.32 # 0 ~ 1  
+    density = 0.30 # 0 ~ 1  
     for i in range(min_x + 1, max_x):
         for j in range(min_y + 1, max_y):
             if(random.random() < density and not((i - sx) ** 2 + (j - sy) ** 2 <= 2 or (i - gx) ** 2 + (j - gy) ** 2 <= 2)):

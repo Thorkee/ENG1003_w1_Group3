@@ -252,6 +252,7 @@ class DSTAR:
 
 
     def obstacle_sensor(self, ox, oy, status):
+        global show_animation
         if(status == "#"):
             amount = min(len(ox), len(oy))
 
@@ -262,34 +263,44 @@ class DSTAR:
                 plt.plot(ox[i], oy[i], ".k")
             plt.pause(0.01)
 
-            md_point = self.map[ox[i]][oy[i]]
-            self.modify_cost(md_point)
-            global show_animation
-            show_animation = False
+            # md_point = self.map[ox[i]][oy[i]]
+            # self.modify_cost(md_point)
+            # show_animation = False
 
-            self.process_state()
+            # self.process_state()
 
-            for j in range(0, amount):
-                for i in enumerate(self.motion):
-                    if(not(1 <= ox[j] + i[1][0] <= self.x_range and 1 <= oy[j] + i[1][1] <= self.y_range)):
-                            continue
-
-                    if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].b != self.map[ox[j]][oy[j]]):
+            show_animation = True
+            j = int(amount/2)
+            for i in enumerate(self.motion):
+                if(not(1 <= ox[j] + i[1][0] <= self.x_range and 1 <= oy[j] + i[1][1] <= self.y_range)):
                         continue
 
-                    if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].type == "#"):
-                        continue
+                if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].b != self.map[ox[j]][oy[j]]):
+                    continue
 
-                    while(1):
-                        feedback = self.process_state()
-                        md_point = self.open_list.min_val()
+                if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].type == "#"):
+                    continue
 
-                        if(feedback == -1):
-                            self.non_route()
-                        if(md_point[2] >= self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].h):
-                            break
+                while(1):
+                    feedback = self.process_state()
+                    md_point = self.open_list.min_val()
+
+                    if(feedback == -1):
+                        break               
+                    if(md_point[2] >= self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].h):
+                        break
+
+                self.map[ox[j]][oy[j]].k = maxsize
+
+            # while(1):
+            #         data_cls = self.open_list.min_val()
+            #         if(data_cls[2] >= maxsize):
+            #             break
+            #         self.open_list.pop()
+
 
     def run(self):
+        global show_animation
 
         while(1):
             point = self.process_state()          
@@ -312,50 +323,85 @@ class DSTAR:
         # self.obstacle_sensor(ox, oy, "#")
         
             
-        obstacle_generate = False
+        obstacle_generate_1 = False
+        obstacle_generate_2 = False
         while(1):
 
             plt.plot(route.x, route.y, ".r")
-            plt.pause(0.01)
+            plt.pause(0.001)
 
-            if(route.x <= self.x_range * 0.4 and route.y <= self.y_range * 0.4 and not obstacle_generate):
+#------------------------------------------------------------------------------------------------------------------
+
+            if(route.x <= self.x_range * 0.4 and route.y <= self.y_range * 0.4 and not obstacle_generate_1):
                 ox = []
                 oy = []
                 for i in range(0, self.x_range):
                     for j in range(0, self.y_range):
-                        if(i <= 14 or j <= 14):
+                        if(not(14 <= i <= 60 and 14 <= j <= 60)):
                             continue
                         if(30 ** 2 <= (i - 45) ** 2 + (j - 45) ** 2 <= 32 ** 2):
                             ox.append(i)
                             oy.append(j)
                 self.obstacle_sensor(ox, oy, "#")
-                obstacle_generate = True
+                obstacle_generate_1 = True
+
+            if(route.x <= 40 and route.y <= 16 and not obstacle_generate_2):
+                show_animation = True
+                ox = []
+                oy = []
+                for i in range(1, 16):
+                        ox.append(31)
+                        oy.append(i)
+                self.obstacle_sensor(ox, oy, "#")
+                obstacle_generate_2 = True
+
+            # if(route.k == 6):
+            #     ox = []
+            #     oy = []
+            #     for i in range(1, 5):
+            #             ox.append(2)
+            #             oy.append(i)
+            #     self.obstacle_sensor(ox, oy, "#")
+
+            # if(route.k == 4):
+            #     ox = [5]
+            #     oy = [3]
+                
+            #     self.obstacle_sensor(ox, oy, "#")
+            
+            
+#------------------------------------------------------------------------------------------------------------------
 
             if(route.type == "g"):
                 break
 
             if(route.b.type == "#"):
-                global show_animation
                 show_animation = False
 
                 md_point = route
                 self.modify_cost(md_point)
                 self.modify_cost(md_point.b)          
                 while(1):
-                    self.process_state()
+                    feedback = self.process_state()
                     md_point = self.open_list.min_val()
 
-                    if(md_point == -1):
+                    if(feedback == -1):
                         break               
                     if(route.b.type == "#"):
                         continue
                     if(md_point[2] >= route.h):
                         break
                     
-                if(md_point == -1):
-                    exit()
+                if(feedback == -1):
+                    self.non_route()
 
-                show_animation = False
+                route.b.k = maxsize
+                # while(1):
+                #     data_cls = self.open_list.min_val()
+                #     if(data_cls[2] >= maxsize):
+                #         break
+                #     self.open_list.pop()
+                # show_animation = False
             
             route = route.b
 
