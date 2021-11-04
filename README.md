@@ -278,6 +278,8 @@
   <a id="Dijkstra's algorithm"></a>
      a. Dijkstra's algorithm
     <dd>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">
+    <dd>
       <a id="D* algorithm"></a>
       b. D* algorithm
       
