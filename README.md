@@ -28,6 +28,9 @@
             <li>
               <a href="#Task4-2">Changing Environment</a>
             </li>
+            <li>
+              <a href="#Comparing Algoritms">Comparing Algoritms</a>
+            </li>
           </ol>
         </li>
       </ol>
@@ -255,13 +258,15 @@
     </dd>
   </dt>
   <a id="Task4-2"></a>
-  <dt>a) Changing Environment
+  <dt>b) Changing Environment
     <dd>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_Bad%20condition.PNG" alt="A* Bad Condition">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" alt="oops...">
     </dd>
   </dt>
+<a id="Comparing Algoritms"></a>
+  <dt>c)Comparing Algoritms
 </dl>
 
 
