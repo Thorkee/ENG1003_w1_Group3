@@ -30,6 +30,12 @@
             </li>
             <li>
               <a href="#Comparing Algoritms">Comparing Algoritms</a>
+            <ol>
+            <li>
+               <a href="#Dijkstra's algorithm">Dijkstra's algorithm</a>
+              </li>
+            <li>
+              <a href="#D* algorithm">D* algorithm</a>
             </li>
           </ol>
         </li>
@@ -267,6 +273,15 @@
   </dt>
 <a id="Comparing Algoritms"></a>
   <dt>c)Comparing Algoritms
+  <dl>
+     <dd>
+  <a id="Dijkstra's algorithm"></a>
+     a. Dijkstra's algorithm
+    <dd>
+      <a id="D* algorithm"></a>
+      b. D* algorithm
+      
+    
 </dl>
 
 
