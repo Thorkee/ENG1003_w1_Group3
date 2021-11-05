@@ -134,16 +134,16 @@
               <li>Display</li>  
             </ul>
             <li>
-              <p>-->Search for Cross Point</p>
+              <p>--> Search for Cross Point</p>
               Substitute every x in domain into every Line Equation. If |f(x) - g(x)| --> 0, then mark the point(x, f(x)) and store it into list A. Adjusting the precision to ensure the efficiency and accuracy is the key point. The accuracy will decrease if the slops of the two lines are too similar.
             </li>
             <li>
-              <p>-->Calculate Target Line</p>
+              <p>--> Calculate Target Line</p>
               First, determine whether the point in A is in the spacific area between certain line and xy-aixs and store the results of every line into list B. Take the intersection of the B, and then we can get the possible points.</br>
               Second, find the minimum point using the equation C_F = (C_T * d_T) / d_F(i.e. f(x) = (a * x) / b. However, there may be some BUGs like no appropriate point or the result which goes to infinity. We just consider general condition and there is considerable scope for improvement.
             </li>
             <li>
-              <p>-->Display</p>
+              <p>--> Display</p>
               Show the result with pattern and figure.
             </li>
           </ul>
@@ -246,13 +246,108 @@
       </dd>
   </dt>
 </dl>
-    
+</br></br>
 
 <a id="Task3"></a>
 ### iii.Design a minus-cost area for the route (Task3)
-<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/not%20continous%20area.png" alt="not continous area">
-<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/continous%20area.png" alt="continous area">
-
+<dl>
+  <dt>
+    a) Introduction 
+    <dd>
+      In this task, our group has designed two algorithms to find the minus-cost area in order to decrease the cost of flight. Based on the limitation that the maximun minus-cost area is 16 grids, there are two programs, one (<a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_not_continuous_area.py">Discontinuous Area Algorithm</a>) of which is to calculate discontinous area, and another one (<a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_continuous_area.py">Continuous Area Algorithm</a>) is to calculate continous area. (<a href="#T3_result">See the result directly</a>)
+    </dd>
+  </dt>
+  <dt>
+      b) Designing Scheme
+      <dd>
+        <p>Through analysing, we believed that covering the minus-area on the route which has worked out is the efficient way to reduce the cost of flight. </p>       
+        <p>According to this principal, we can</p>
+          <ol>
+            <li>
+              Compute the route of flight without covering the minus-area.
+            </li>
+            <li>
+              Traverse the route which has worked out and record the data.
+            </li>
+            <li>
+              Process and compare the data, get the result. 
+            </li>
+          </ol>
+      </dd>
+  </dt>
+  <dt>
+      c) Algorithm Implementation
+      <ul>
+        <li>
+          <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_not_continuous_area.py">Discontinuous Area Algorithm</a></p>
+          <ul>
+            <li>List of key function:</li>
+            <ul>
+              <li>A* Path Algorithm</li>
+              <li>Discontinous Area Algorithm</li>
+              <li>Display</li>  
+            </ul>
+            <li>
+              <p>--> A* Path Algorithm</p>
+              Search for the minimum-cost path.
+            </li>
+            <li>
+              <p>--> Discontinous Area Algorithm</p>
+              1) Traverse the path, while recording firstly all slash paths and secondly all straight paths.</br>
+              2) Append all the slash path into minus-cost area list. If there is still avialable space of the list, append the straight path into the list.</br>
+            </li>
+            <li>
+              <p>--> Display</p>
+              Draw all the blue areas recorded in the minus-cost list on the map.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_continuous_area.py">Continuous Area Algorithm</a></p>
+          <ul>
+            <li>List of key function:</li>
+            <ul>
+              <li>A* Path Algorithm</li>
+              <li>Continous Area Algorithm</li>
+              <li>Display</li>  
+            </ul>
+            <li>
+              <p>--> A* Path Algorithm</p>
+              Search for the minimum-cost path.
+            </li>
+            <li>
+              <p>--> Continous Area Algorithm</p>
+              Traverse the path. Different from the Discontinous Area Algorithm, this traversal is like a "snake". The "snake" will firstly come out from the start point. Then with the head of the "snake" moving on, its body will come out and follow one by one (Maximum length is 16 grid). If the "snake" meets the fuel/time cost areas, it will disappear and come out from other sides of the areas.</br></br>
+              During the process of traversal, we have to record the position where the "snake" can reduce the cost most.</br>
+            </li>
+            <li>
+              <p>--> Display</p>
+              Draw the blue "snake" at the position on the map.
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </dt>
+  <dt>
+  <a id="T3_result"></a>
+      d) Result
+      <dd>
+        Through computing, we got following minus-cost area:      
+        <ul>
+          <li>
+            Discontinous Area shown below:
+            <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/not%20continous%20area.png" alt="not continous area">
+          </li>
+          </br></br>
+          <li>
+            Continous Area shown below:
+            <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/905ea6c99b122458a3358c8c6a43f88a1d47bbe1/Image%20Resources/continous%20area.png" alt="continous area">
+          </li>
+        </ul>
+      </dd>
+  </dt>
+</dl>
+</br></br>
 
 <a id="Task4"></a>
 ### iv.Additional Tasks (Task4)
