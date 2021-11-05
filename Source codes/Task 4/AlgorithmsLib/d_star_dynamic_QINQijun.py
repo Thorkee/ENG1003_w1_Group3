@@ -30,6 +30,8 @@ class MAP:
         self.h = maxsize
         self.k = maxsize
         self.b = []
+        self.count = 0
+
 
 
 class OPENLIST:
@@ -122,6 +124,8 @@ class DSTAR:
                         [-1, 0],
                         [0, -1]]
 
+        self.skip = []
+
     def obstacle(self, ox, oy):
         temp_obs = []
         for i in range(0, len(ox)):
@@ -137,6 +141,17 @@ class DSTAR:
             return "g"
         else:
             return "."
+
+    def circle_check(self, x):
+        check = x
+        while(check.b != [] and check.b.type != "#"):
+            self.skip.append(check)
+            if(check.b == x or check.b.b == check or check.b in self.skip):
+                return True
+            check = check.b
+
+        self.skip = []
+        return False
 
     def non_route(self):
         messagebox.showinfo("咫尺相隔两相望","冇有路惹, 過不去惹QAQ\n")
@@ -180,6 +195,15 @@ class DSTAR:
         self.open_list.pop()
         x.t = self.map[pos[0]][pos[1]].t = "closed"
 
+        if(len(self.skip) > 0):
+            if(x in self.skip):
+                return
+        if(x.count >= 20):
+            if(self.circle_check(x)):
+                return
+            x.count = 0
+        x.count += 1
+
         if show_animation:
             plt.plot(x.x, x.y, "xr", alpha = 0.5)
             plt.pause(0.001)
@@ -193,7 +217,8 @@ class DSTAR:
                 if((y.h <= k_old and x.h > y.h + self.cost(x, y))
                 ):
                 # or (y.k < y.h < maxsize and x.h < maxsize and y.h <= k_old + y.h - y.k + self.cost(x, y))
-                    x.b = y; 
+                    if(y.b != x):
+                        x.b = y; 
                     x.h = y.h + self.cost(x, y)
 
         if(k_old == x.h):
@@ -206,7 +231,7 @@ class DSTAR:
                 (y.b == x and y.h != x.h + self.cost(x, y)) or (y.b != x and y.h > x.h + self.cost(x, y))): 
                     y.b = x 
                     self.insert(y, x.h + self.cost(x, y))
-
+        
         else:
             for i in enumerate(self.motion):
                 if(not(1 <= pos[0] + i[1][0] <= self.x_range and 1 <= pos[1] + i[1][1] <= self.y_range)):
@@ -221,6 +246,31 @@ class DSTAR:
                     self.insert(y, x.h + self.cost(x, y))
                 elif(y.b != x and x.h > y.h + self.cost(x, y) and y.t == "closed" and y.h > k_old):
                     self.insert(y, y.h)
+                    
+            
+
+        # else:
+        #     for i in enumerate(self.motion):
+        #         if(not(1 <= pos[0] + i[1][0] <= self.x_range and 1 <= pos[1] + i[1][1] <= self.y_range)):
+        #             continue
+        #         y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
+
+        #         if(y.t == "new" or (y.b == x and y.h != x.h + self.cost(x, y))):
+        #             y.b = x
+        #             self.insert(y, x.h + self.cost(x, y))
+        #         else:
+        #             if(y.b != x and y.h > x.h + self.cost(x, y)):
+                        
+        #                 self.insert(x, x.h + self.cost(x, y))
+        #             else:
+        #                 if y.b != x and x.h > y.h + self.cost(x, y) and y.t == "close" and y.h > k_old:
+        #                     self.insert(y, y.h)
+		            
+				    
+				
+					
+					
+						
                 
         return x
 
@@ -229,13 +279,19 @@ class DSTAR:
         if(x.t == "new"):
             x.k = hnew
         if(x.t == "open"):
+            # if(x.k == hnew or (x.k >=maxsize and hnew >= maxsize)):
+            #     return
+            # if(x.k < hnew and hnew >= maxsize):
+            #     return
             x.k = min(x.k, hnew)
         if(x.t == "closed"):
+            # if(x.k == hnew or (x.k >=maxsize and hnew >= maxsize)):
+            #     return
             x.k = min(x.k, hnew)
             x.t = "open"
         x.h = hnew
-        if(hnew >= maxsize):
-            x.h = maxsize
+        # if(hnew >= maxsize):
+        #     x.h = maxsize
         x.t = "open"
         if show_animation:
             plt.plot(x.x, x.y, "xc", alpha = 0.5)
@@ -248,10 +304,13 @@ class DSTAR:
     def modify_cost(self, x):
         if x.t == "closed":
             self.insert(x, x.h)
+        # if x.t == "circle":
+        #     self.insert(x, x.h)
+        #     x.t = "new"
 
 
 
-    def obstacle_sensor(self, ox, oy, status):
+    def obstacle_sensor(self, ox, oy, status, current):
         global show_animation
         if(status == "#"):
             amount = min(len(ox), len(oy))
@@ -263,34 +322,81 @@ class DSTAR:
                 plt.plot(ox[i], oy[i], ".k")
             plt.pause(0.01)
 
+            while(1):
+                if(current.b.type != "#"):
+                # if(current.count <= 20 and current.b.type != "#"):
+
+                #     if(len(self.skip) > 0):
+                #         if(current in self.skip):
+                #             return
+                #     if(current.count >= 20):
+                #         if(self.circle_check(current)):
+                #             current.count += 1
+                #             current.t = "circle"
+                #             # for i in range(0, len(self.skip)):
+                #             #     self.skip[i].b = []
+                #             continue
+                #         current.count = 0
+                #     current.count += 1
+
+                    current = current.b
+                else:
+                    # show_animation = False
+
+                    md_point = current
+                    self.modify_cost(md_point)
+                    # self.modify_cost(md_point.b)          
+                    while(1):
+                        feedback = self.process_state()
+                        md_point = self.open_list.min_val()
+
+                        if(feedback == -1):
+                            break               
+                        if(current.b.type == "#"):
+                            continue
+                        if(md_point[2] >= current.h):
+                            break
+                        
+                    if(feedback == -1):
+                        self.non_route()
+
+                    current.b.k = maxsize
+                    self.skip = []
+
+                if(current.type == "g"):
+                    break
+
             # md_point = self.map[ox[i]][oy[i]]
             # self.modify_cost(md_point)
             # show_animation = False
 
             # self.process_state()
 
-            show_animation = True
-            j = int(amount/2)
-            for i in enumerate(self.motion):
-                if(not(1 <= ox[j] + i[1][0] <= self.x_range and 1 <= oy[j] + i[1][1] <= self.y_range)):
-                        continue
+            
 
-                if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].b != self.map[ox[j]][oy[j]]):
-                    continue
 
-                if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].type == "#"):
-                    continue
+            # show_animation = True
+            # j = int(amount/2)
+            # for i in enumerate(self.motion):
+            #     if(not(1 <= ox[j] + i[1][0] <= self.x_range and 1 <= oy[j] + i[1][1] <= self.y_range)):
+            #             continue
 
-                while(1):
-                    feedback = self.process_state()
-                    md_point = self.open_list.min_val()
+            #     if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].b != self.map[ox[j]][oy[j]]):
+            #         continue
 
-                    if(feedback == -1):
-                        break               
-                    if(md_point[2] >= self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].h):
-                        break
+            #     if(self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].type == "#"):
+            #         continue
 
-                self.map[ox[j]][oy[j]].k = maxsize
+            #     while(1):
+            #         feedback = self.process_state()
+            #         md_point = self.open_list.min_val()
+
+            #         if(feedback == -1):
+            #             break               
+            #         if(md_point[2] >= self.map[ox[j] + i[1][0]][oy[j] + i[1][1]].h):
+            #             break
+
+            #     self.map[ox[j]][oy[j]].k = maxsize
 
             # while(1):
             #         data_cls = self.open_list.min_val()
@@ -337,22 +443,22 @@ class DSTAR:
                 oy = []
                 for i in range(0, self.x_range):
                     for j in range(0, self.y_range):
-                        if(not(14 <= i <= 60 and 14 <= j <= 60)):
+                        if(not(14 <= i <= 40 and 14 <= j <= 40)):
                             continue
                         if(30 ** 2 <= (i - 45) ** 2 + (j - 45) ** 2 <= 32 ** 2):
                             ox.append(i)
                             oy.append(j)
-                self.obstacle_sensor(ox, oy, "#")
+                self.obstacle_sensor(ox, oy, "#", route)
                 obstacle_generate_1 = True
 
-            if(route.x <= 40 and route.y <= 16 and not obstacle_generate_2):
-                show_animation = True
+            if(route.x <= 18 and route.y <= 16 and not obstacle_generate_2):
+                # show_animation = True
                 ox = []
                 oy = []
                 for i in range(1, 16):
-                        ox.append(31)
+                        ox.append(16)
                         oy.append(i)
-                self.obstacle_sensor(ox, oy, "#")
+                self.obstacle_sensor(ox, oy, "#", route)
                 obstacle_generate_2 = True
 
             # if(route.k == 6):
@@ -376,11 +482,11 @@ class DSTAR:
                 break
 
             if(route.b.type == "#"):
-                show_animation = False
+                # show_animation = False
 
                 md_point = route
                 self.modify_cost(md_point)
-                self.modify_cost(md_point.b)          
+                # self.modify_cost(md_point.b)          
                 while(1):
                     feedback = self.process_state()
                     md_point = self.open_list.min_val()
