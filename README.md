@@ -31,7 +31,10 @@
             <li>
               <a href="#Task4-3">Comparing Algoritms</a>
             <ol>
-            <li>
+              <li>
+                <a href="#A_star">A* algorithm</a>
+              </li>
+              <li>
                <a href="#Dijkstra">Dijkstra's algorithm</a>
               </li>
             <li>
@@ -377,7 +380,14 @@
           <a id="A_star">
           a. A* algorithm 
             <p>
-              
+              A* algorithm absorbs the advantages of Dijkstra algorithm. Similar to Dijkstra algorithm, A* algorithm also adopts priority queue. What different from Dijkstra is that A* algorithm sets priority follow the equation "f(n) = g(n) + h(n)", which can optimize the tranversal efficiently and reduce the time consumption in some cases. 
+            </p>
+            <p>Advantage:</p>
+            <ul>
+              <li>
+                A* algorithm can substantially optimize the process of searching and reduce the time of calculating, which can improve the 
+              </li>
+            </ul>
             </p>
         </li>
         <li>      
