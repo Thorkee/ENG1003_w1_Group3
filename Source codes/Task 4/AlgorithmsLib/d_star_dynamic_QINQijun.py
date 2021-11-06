@@ -511,14 +511,13 @@ class DSTAR:
             
             route = route.b
 
-        plt.show()
 
 
 def d_star(x_range, y_range, sx, sy, gx, gy, ox, oy):
 
     start = [sx, sy]
     goal = [gx, gy]
-
+    plt.grid(True)
     plt.plot(ox, oy, ".k")
     plt.plot(start[0], start[1], "og")
     plt.plot(goal[0], goal[1], "xb")
