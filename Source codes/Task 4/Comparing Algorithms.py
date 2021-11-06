@@ -2,7 +2,11 @@ import AlgorithmsLib.d_star_AtsushiSakai as dstar_A
 
 import AlgorithmsLib.d_star_dynamic_QINQijun as dstar_Q
 
-import matplotlib as plt
+import AlgorithmsLib.dijkstra as dijkstra
+
+import AlgorithmsLib.a_star as astar
+
+import matplotlib.pyplot as plt
 
 import random
 
@@ -71,8 +75,31 @@ def main():
     #     3 : "three",
     #     4 : "four"
     # }
+    # plt.subplots(1, 3, figsize = (13, 5))
 
-    dstar_Q.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy)
+    # plt.subplot(1, 3, 3)
+    plt.title("A-star")
+    astar.a_star(sx, sy, gx, gy, ox ,oy)
+    plt.show()
+
+    # plt.subplot(1, 3, 2)
+    plt.title("dijkstra")
+    dijkstra.dijkstra(sx, sy, gx, gy, ox ,oy)
+    plt.show()
+    
+    # plt.subplot(1, 3, 1)
+    plt.title("Static D-star")
+    dstar_A.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox, oy)
+    plt.show()
+
+    plt.title("Dynamic D-star")
+    dstar_Q.d_star(max_x - min_x, max_y - min_y, sx, sy, gx, gy, ox ,oy)
+    plt.show()
+
+
+    
+    
+    
 
     # for algo_index in range(1, 3 + 1):
     #     plt.subplot(1, 3, algo_index)
