@@ -29,13 +29,13 @@
               <a href="#Task4-2">Changing Environment</a>
             </li>
             <li>
-              <a href="#Comparing Algoritms">Comparing Algoritms</a>
+              <a href="#Task4-3">Comparing Algoritms</a>
             <ol>
             <li>
-               <a href="#Dijkstra's algorithm">Dijkstra's algorithm</a>
+               <a href="#Dijkstra">Dijkstra's algorithm</a>
               </li>
             <li>
-              <a href="#D* algorithm">D* algorithm</a>
+              <a href="#D_star_static">D* algorithm</a>
             </li>
           </ol>
         </li>
@@ -352,39 +352,47 @@
 <a id="Task4"></a>
 ### iv.Additional Tasks (Task4)
 <dl>
-  <a id="Task4-1"></a>
-  <dt>a) Adding Checkpoints
+  <dt>
+    <a id="Task4-1"></a>
+    a) Adding Checkpoints
     <dd>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
     </dd>
   </dt>
-  <a id="Task4-2"></a>
-  <dt>b) Changing Environment
+  <dt>
+    <a id="Task4-2"></a>
+    b) Changing Environment
     <dd>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_Bad%20condition.PNG" alt="A* Bad Condition">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" alt="oops...">
     </dd>
   </dt>
-<a id="Comparing Algoritms"></a>
-  <dt>c)Comparing Algoritms
-  <dl>
-     <dd>
-       
-         </dd>
-  </dt>
-  <a id="Dijkstra's algorithm"></a>
-     a. Dijkstra's algorithm
+  <dt>
+    <a id="Task4-3"></a>
+    c)Comparing Algoritms
     <dd>
-Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).
-
-In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.<br/>
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">
-    </dd>
-      <a id="D* algorithm"></a>
-      b. D* algorithm
-      
-    
+      <ul>
+        <li>
+          <a id="A_star">
+          a. A* algorithm 
+            <p>
+              
+            </p>
+        </li>
+        <li>      
+          <a id="Dijkstra"></a>
+          b. Dijkstra's algorithm
+          <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
+          <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
+                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">  
+        </li>
+        <li>
+          <a id="D_star_static"></a>
+          c. D* algorithm
+        </li>      
+      </ul>
+    </dd>   
 </dl>
 
 
