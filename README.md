@@ -385,7 +385,14 @@
             <p>Advantage:</p>
             <ul>
               <li>
-                A* algorithm can substantially optimize the process of searching and reduce the time of calculating, which can improve the 
+                A* algorithm can substantially optimize the process of searching and reduce the time of calculating, which can improve the capability of path planning in all areas like flight planning. 
+              </li>
+            </ul>
+            </p>
+            <p>Disadvantage:</p>
+            <ul>
+              <li>
+                A* algorithm is mainly suitable for static calculation. If there are some changes like obstacles suddenly appearing in the path which has worked out, this algorithm have to recalculate the path. That will cause the time comsumption and effect the performance of computing. If there is no optimization for A* algorithm, this algorithm will be difficult to apply for dynamic planning.
               </li>
             </ul>
             </p>
@@ -400,7 +407,37 @@
         <li>
           <a id="D_star_static"></a>
           c. D* algorithm
-        </li>      
+          <p>
+          D* algorithm is based on Dijkstra algorithm. The difference is that the D* algorithm will first start searching from the end point. After initial planning, if an obstacle is detected, the program will make local adjustment to avoid the obstacle. Until it reaches the end, the program ends.
+          </p>
+            <ol>
+              <li>
+                <ul>         
+                  <li>
+                    <p>Static planning</p>
+                    In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
+                  </li>
+                  <li>
+                    <p>Dynamic planning</p>
+                    <p>
+                    After the initial planning, when an obstacle is detected and blocks the route, the D* algorithm will first diffuse the RAISE state (indicating that the actual value of the current point is higher than the originally calculated point) from the obstacle point to the surrounding points, until it diffuses to the point or path that can reduce the actual value, and diffuses the LOWER state (indicating that the actual value of the current point can be reduced by other points) to the diffusion source, until it gets the new shortest path, then ending the obstacle avoidance planning. In this way, the D* algorithm can efficiently re-route when the route is blocked, enabling dynamic planning.
+                    </p>
+                    <p>
+                    Of course, to reflect the efficient dynamic planning of D* algorithm, the program must be run on a larger scale map to ensure that the area that its RAISE state spreads takes a very small percentage of the map, otherwise the efficiency of D* algorithm replanning will not be comparable to that of A* algorithm replanning.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Function Display
+                <dl>
+                  <dd>
+                  In order to implement dynamic planning to demonstrate the function of D* algorithm, group member QIN Qijun studied a lot of D* theory literature papers, and modified part of the algorithm theory in the literature papers through a lot of experimental data and reasoning. Finally, he independently finished a program based on D* algorithm and almost implemented the function of dynamic planning. The function shows as figure below:
+                  </dd>
+                </dl>
+              </li>
+            </ol>
+        </li>   
       </ul>
     </dd>   
 </dl>
