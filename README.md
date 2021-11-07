@@ -378,7 +378,7 @@
       <ul>
         <li>
           <a id="A_star">
-          a. A* algorithm 
+          a. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/a_star.py">A* algorithm</a>
             <p>
               A* algorithm absorbs the advantages of Dijkstra algorithm. Similar to Dijkstra algorithm, A* algorithm also adopts priority queue. What different from Dijkstra is that A* algorithm sets priority follow the equation "f(n) = g(n) + h(n)", which can optimize the tranversal efficiently and reduce the time consumption in some cases. 
             </p>
@@ -399,14 +399,14 @@
         </li>
         <li>      
           <a id="Dijkstra"></a>
-          b. Dijkstra's algorithm
+          b. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/dijkstra.py">Dijkstra's algorithm</a>
           <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
           <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
                   <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">  
         </li>
         <li>
           <a id="D_star_static"></a>
-          c. D* algorithm
+          c. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/d_star_dynamic_QINQijun.py">D* algorithm</a> 
           <p>
           D* algorithm is based on Dijkstra algorithm. The difference is that the D* algorithm will first start searching from the end point. After initial planning, if an obstacle is detected, the program will make local adjustment to avoid the obstacle. Until it reaches the end, the program ends.
           </p>
