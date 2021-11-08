@@ -112,7 +112,7 @@
       b) Designing Scheme
       <dd>
         <p>Through the research, we found that the parameters of the model do not affect the minimum-cost except the time and fuel consuming area. </p>       
-        (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant !=0, the shortest Distance will not change) 
+        (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant ≠ 0, the shortest Distance will not change) 
         <p>With this idea, 
           <ul>
             <li>
@@ -378,7 +378,7 @@
       <ul>
         <li>
           <a id="A_star">
-          a. A* algorithm 
+          a. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/a_star.py">A* algorithm</a>
             <p>
               A* algorithm absorbs the advantages of Dijkstra algorithm. Similar to Dijkstra algorithm, A* algorithm also adopts priority queue. What different from Dijkstra is that A* algorithm sets priority follow the equation "f(n) = g(n) + h(n)", which can optimize the tranversal efficiently and reduce the time consumption in some cases. 
             </p>
@@ -399,14 +399,14 @@
         </li>
         <li>      
           <a id="Dijkstra"></a>
-          b. Dijkstra's algorithm
+          b. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/dijkstra.py">Dijkstra's algorithm</a>
           <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
           <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
-                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">  
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DJ%20vs%20A%20STAR.gif" alt="demo of dij alg">  
         </li>
         <li>
           <a id="D_star_static"></a>
-          c. D* algorithm
+          c. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/d_star_dynamic_QINQijun.py">D* algorithm</a> 
           <p>
           D* algorithm is based on Dijkstra algorithm. The difference is that the D* algorithm will first start searching from the end point. After initial planning, if an obstacle is detected, the program will make local adjustment to avoid the obstacle. Until it reaches the end, the program ends.
           </p>
@@ -416,6 +416,7 @@
                   <li>
                     <p>Static planning</p>
                     In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
+                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
                   </li>
                   <li>
                     <p>Dynamic planning</p>
@@ -425,18 +426,96 @@
                     <p>
                     Of course, to reflect the efficient dynamic planning of D* algorithm, the program must be run on a larger scale map to ensure that the area that its RAISE state spreads takes a very small percentage of the map, otherwise the efficiency of D* algorithm replanning will not be comparable to that of A* algorithm replanning.
                     </p>
+                    <p>
+                    In order to implement dynamic planning to demonstrate the function of D* algorithm, group member QIN Qijun studied a lot of D* theory literature papers, and modified part of the algorithm theory in the literature papers through a lot of experimental data and reasoning. Finally, he independently finished a program based on D* algorithm and almost implemented the function of dynamic planning. The dynamic planning function shows below:
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DYNAMIC.gif" alt="DD">
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
-                Function Display
-                <dl>
-                  <dd>
-                  In order to implement dynamic planning to demonstrate the function of D* algorithm, group member QIN Qijun studied a lot of D* theory literature papers, and modified part of the algorithm theory in the literature papers through a lot of experimental data and reasoning. Finally, he independently finished a program based on D* algorithm and almost implemented the function of dynamic planning. The function shows as figure below:
-                  </dd>
-                </dl>
+                Algorithm Implementation
+                <ul>
+                  <li>
+                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_not_continuous_area.py">Discontinuous Area Algorithm</a></p>
+                    <ul>
+                      <li>Structure of program:</li>
+                      <ul>
+                        <li>MAP</li>
+                        <li>OPENLIST</li>
+                        <li>DSTAR.state_process</li>
+                        <li>DSTAR.obstacle_sensor</li>  
+                        <li>DSTAR.run</li>
+                      </ul>
+                      <li>
+                        <p>--> MAP</p>
+                        To record the information of every point on the map.
+                      </li>
+                      <li>
+                        <p>--> OPENLIST</p>
+                        We use the minimum binomial heap to implement the OPENLIST function and assign key values (not k values in D*) to all elements in OPENLIST to maintain the uniqueness of the elements and to update the element values.
+                      </li>
+                      <li>
+                        <p>--> DSTAR.state_process</p>
+                        To process current point and build the relationship with other point.
+                        <dl>
+                          <dt>
+                          NORMAL state:
+                          </dt>
+                          <dd>
+                            Preferentially tranverse the point which is nearest to the end point similar to dijkstra until it reaches the end.
+                          </dd>
+                          <dt>
+                          RAISE state:
+                          </dt>
+                          <dd>
+                            That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.
+                          </dd>
+                          LOWER state:
+                          </dt>
+                          <dd>
+                            That means the value of current point can be reduce by surrounding point and diffuse value-decreasing information to the new obstacles. In addition, change the direction of that point.
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <p>--> DSTAR.obstacle_sensor</p>
+                        To detecting barriers. 
+                      </li>
+                      <li>
+                        <p>--> Display</p>
+                        Draw all the blue areas recorded in the minus-cost list on the map.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_continuous_area.py">Continuous Area Algorithm</a></p>
+                    <ul>
+                      <li>List of key function:</li>
+                      <ul>
+                        <li>A* Path Algorithm</li>
+                        <li>Continous Area Algorithm</li>
+                        <li>Display</li>  
+                      </ul>
+                      <li>
+                        <p>--> A* Path Algorithm</p>
+                        Search for the minimum-cost path.
+                      </li>
+                      <li>
+                        <p>--> Continous Area Algorithm</p>
+                        Traverse the path. Different from the Discontinous Area Algorithm, this traversal is like a "snake". The "snake" will firstly come out from the start point. Then with the head of the "snake" moving on, its body will come out and follow one by one (Maximum length is 16 grid). If the "snake" meets the fuel/time cost areas, it will disappear and come out from other sides of the areas.</br></br>
+                        During the process of traversal, we have to record the position where the "snake" can reduce the cost most.</br>
+                      </li>
+                      <li>
+                        <p>--> Display</p>
+                        Draw the blue "snake" at the position on the map.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </li>
-            </ol>
+              ---
+            </ol>          
         </li>   
       </ul>
     </dd>   
