@@ -1,4 +1,4 @@
-# Group 3's Report on Compulsory Tasks
+# Group 3's Report on Program Tasks
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
