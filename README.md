@@ -59,7 +59,9 @@
 <a id="Background"></a>
 ## 1. Background of Path Planning to Aviation Engineering
  <dl> 
-      <p>Path planning has been an useful method consists of motion planning in different aspects, like self-driving vehicles, humanoid robots, aviation engineering, etc.. In aviation engineering, path planning is one of the important steps before the aircraft starts the journey. In this task, we need to design the shortest path in the map which has some obstacles. Also, cost calculation is an important step when we are designing the path. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.
+<p>Path planning has been an useful method consists of motion planning in different aspects, like self-driving vehicles, humanoid robots, aviation engineering, etc.. In aviation engineering, path planning is one of the important steps before the aircraft starts the journey. </p>
+        
+<p>In this task, we need to design the shortest path in the map which has some obstacles. Also, cost calculation is an important step when we are designing the path. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
 
 <a id="Task"></a>
 ## 2. Path Planning Algorithm (Group Task)
