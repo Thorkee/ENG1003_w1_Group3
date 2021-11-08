@@ -437,6 +437,8 @@
                 </dl>
               </li>
             </ol>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
+          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DYNAMIC.gif" alt="DD">
         </li>   
       </ul>
     </dd>   
