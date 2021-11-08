@@ -480,7 +480,7 @@
                       </li>
                       <li>
                         <p>--> DSTAR.obstacle_sensor</p>
-                        To detecting barriers. 
+                          This is a function for detecting barriers. In practical applications, we can pass in signals from actual sensor devices. 
                       </li>
                       <li>
                         <p>--> Display</p>
