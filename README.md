@@ -402,7 +402,7 @@
           b. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/dijkstra.py">Dijkstra's algorithm</a>
           <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
           <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
-                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/dcad3782168fc71dfd890d2600da78de.gif" alt="demo of dij alg">  
+                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DJ%20vs%20A%20STAR.gif" alt="demo of dij alg">  
         </li>
         <li>
           <a id="D_star_static"></a>
