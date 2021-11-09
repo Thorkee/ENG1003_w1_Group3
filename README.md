@@ -565,7 +565,7 @@
   - How to programmed through review literature papers (like D* algorithm)
   - How to use HTML to write the report
   - ...
-  - However, the thing that most matters is that we cultivate the ability to learn on our own, to break through from internet resources and to work together as a team to complete tasks with a dramatic 1+1>2 effect.
+  - However, the thing that most matters is that we cultivate the ability to learn on our own, to break through from internet resources and to work together as a team to complete tasks with an incredible 1+1>2 effect.
 
 
 <a id="Contributors"></a>
