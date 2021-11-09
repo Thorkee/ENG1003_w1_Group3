@@ -260,7 +260,6 @@ class DSTAR:
         #             self.insert(y, x.h + self.cost(x, y))
         #         else:
         #             if(y.b != x and y.h > x.h + self.cost(x, y)):
-                        
         #                 self.insert(x, x.h + self.cost(x, y))
         #             else:
         #                 if y.b != x and x.h > y.h + self.cost(x, y) and y.t == "close" and y.h > k_old:
