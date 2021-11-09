@@ -516,9 +516,18 @@
               <li>
                 Problem still unresolved
                 <dl>
-                  Currently there is a situation that causes replanning to hang, that is, when the two replanned diffusion ranges overlap, the last diffusion may form a ring in the previous diffusion range, causing the program to spin around in the ring. </br>
-                  We speculate that it may be due to the fact that the h-values of some points were modified and not equal to the k-values during the next diffusion, causing these points to interfere with the program's judgment during the next diffusion. </br>
-                  If conditions permit, we will try our best to fix BUGs and improve the program.
+                  <dd>
+                  </br>
+                    <p>
+                    Currently there is a situation that causes replanning to hang, that is, when the two replanned diffusion ranges overlap, the last diffusion may form a ring in the previous diffusion range, causing the program to spin around in the ring. 
+                    </p>
+                    <p>
+                    We speculate that it may be due to the fact that the h-values of some points were modified and not equal to the k-values during the next diffusion, causing these points to interfere with the program's judgment during the next diffusion. 
+                    </p>
+                    <p>
+                    If conditions permit, we will try our best to fix BUGs and improve the program.
+                    </p>
+                  </dd>
                 </dl>
               </li>
             </ol>          
