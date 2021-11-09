@@ -30,16 +30,17 @@
             </li>
             <li>
               <a href="#Task4-3">Comparing Algoritms</a>
-            <ol>
+            <ul>
               <li>
                 <a href="#A_star">A* algorithm</a>
               </li>
               <li>
                <a href="#Dijkstra">Dijkstra's algorithm</a>
               </li>
-            <li>
-              <a href="#D_star_static">D* algorithm</a>
-            </li>
+              <li>
+                <a href="#D_star_static">D* algorithm</a>
+              </li>
+            </ul>
           </ol>
         </li>
       </ol>
@@ -53,6 +54,7 @@
     <li>
      <a href="#References">References</a>
     </li>
+  </ol>
 </details>
 
 
@@ -385,7 +387,7 @@
   </dt>
   <dt>
     <a id="Task4-3"></a>
-    c)Comparing Algoritms
+    c) Comparing Algoritms
     <dd>
       <ul>
         <li>
