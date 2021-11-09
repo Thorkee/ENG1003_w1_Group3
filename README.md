@@ -431,7 +431,7 @@
                 <ul>         
                   <li>
                     <p>Static planning</p>
-                    In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
+                    In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. </br>Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
                   <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
                   </li>
                   <li>
@@ -479,14 +479,14 @@
                           NORMAL state:
                           </dt>
                           <dd>
-                            Preferentially tranverse the point which is nearest to the end point similar to dijkstra until it reaches the end.
+                            Preferentially tranverse the point which is nearest to the end point until it reaches the end. That is similar to dijkstra.
                           </dd>
                           <dt>
                           RAISE state:
                           </dt>
                           <dd>
                           <p>That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.</p>
-                          <p>There are 3 cases in the next point: 1.New point. 2.The next point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.The next point does not point to the current point and the current point can reduce the value of the next point.
+                          <p>There are 3 cases in the next point: 1.New point. 2.This point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.This point does not point to the current point and the current point can reduce the value of the next point.
                           </dd>
                           <dt>
                           LOWER state:
