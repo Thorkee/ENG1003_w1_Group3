@@ -469,52 +469,58 @@
                           RAISE state:
                           </dt>
                           <dd>
-                            That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.
+                          <p>That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.</p>
+                          <p>There are 3 cases in the next point: 1.New point. 2.The next point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.The next point does not point to the current point and the current point can reduce the value of the next point.
                           </dd>
+                          <dt>
                           LOWER state:
                           </dt>
                           <dd>
-                            That means the value of current point can be reduce by surrounding point and diffuse value-decreasing information to the new obstacles. In addition, change the direction of that point.
+                            That means the value of current point can be reduce by surrounding point which is closer to the starting point and diffuse value-decreasing information to the new obstacles. In addition, change the direction of that point.
                           </dd>
                         </dl>
                       </li>
                       <li>
                         <p>--> DSTAR.obstacle_sensor</p>
-                          This is a function for detecting barriers. In practical applications, we can pass in signals from actual sensor devices. 
+                          This is a function for detecting obstacles. In practical applications, we can pass in signals from actual sensor devices. If the sbstacles block the original route, the program will execute obstacles avoidance function.
                       </li>
                       <li>
-                        <p>--> Display</p>
-                        Draw all the blue areas recorded in the minus-cost list on the map.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_continuous_area.py">Continuous Area Algorithm</a></p>
-                    <ul>
-                      <li>List of key function:</li>
-                      <ul>
-                        <li>A* Path Algorithm</li>
-                        <li>Continous Area Algorithm</li>
-                        <li>Display</li>  
-                      </ul>
-                      <li>
-                        <p>--> A* Path Algorithm</p>
-                        Search for the minimum-cost path.
-                      </li>
-                      <li>
-                        <p>--> Continous Area Algorithm</p>
-                        Traverse the path. Different from the Discontinous Area Algorithm, this traversal is like a "snake". The "snake" will firstly come out from the start point. Then with the head of the "snake" moving on, its body will come out and follow one by one (Maximum length is 16 grid). If the "snake" meets the fuel/time cost areas, it will disappear and come out from other sides of the areas.</br></br>
-                        During the process of traversal, we have to record the position where the "snake" can reduce the cost most.</br>
-                      </li>
-                      <li>
-                        <p>--> Display</p>
-                        Draw the blue "snake" at the position on the map.
+                        <p>--> DSTAR.run</p>
+                        Integrates pathfinding and obstacle avoidance functions. It is the main function of DSTAR.
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              ---
+              </br>
+              <li>
+                Development History
+                <dl>
+                  <dd>
+                  </br>
+                    <p>
+                      The total development time of the D* algorithm program was about a month. At the beginning we used Mr. Atsushi's D* algorithm template and referred to a lot of literature papers. Everything went well in the initial planning process. However, when an obstacle suddenly appeared, the program could only be replanned if the obstacle was smooth, otherwise the program would hang. 
+                    </p>
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/smooth_.png?raw=true" width="360px" height="360px" alt="smooth">
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/not_smooth_.png?raw=true" width="360px" height="360px" alt="not_smooth"> 
+                    <p></br> 
+                      So we created a small map and then did a lot of debugging. We obtained a lot of experimental data including but not limited to the processing of each point to the next point in different situations, the change of data near the diffusion source at the beginning of diffusion and the change of the pointer during the diffusion process. Eventually we boldly modified and adjusted part of the algorithm in the diffusion process, and successfully implemented obstacles avoidance action.
+                    </p>
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/edit.PNG?raw=true" alt="algorithm_adjust">
+                    <p></br> 
+                      However, such forced changes may create potential BUGs. So there are lot of experimentation and modification needed to ensure the program's viability.
+                    </p>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                Problem still unresolved
+                <dl>
+                  Currently there is a situation that causes replanning to hang, that is, when the two replanned diffusion ranges overlap, the last diffusion may form a ring in the previous diffusion range, causing the program to spin around in the ring. </br>
+                  We speculate that it may be due to the fact that the h-values of some points were modified and not equal to the k-values during the next diffusion, causing these points to interfere with the program's judgment during the next diffusion. </br>
+                  If conditions permit, we will try our best to fix BUGs and improve the program.
+                </dl>
+              </li>
             </ol>          
         </li>   
       </ul>
