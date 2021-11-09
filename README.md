@@ -44,6 +44,9 @@
         </li>
       </ol>
     </li>
+    <li>  
+      <a href="#Summary">Summary</a>
+    </li>
     <li>
       <a href="#Contributors">Contributors</a>
     </li>
@@ -357,18 +360,27 @@
 <dl>
   <dt>
     <a id="Task4-1"></a>
-    a) Adding Checkpoints
+    a) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Adding%20Checkpoints.py">Adding Checkpoints</a>
     <dd>
+      <p>
+        This task simulates the planning of a multi-node route in a flight plan.</br>
+        We can achieve it by planning between every two points：</br>
+      </p>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
     </dd>
   </dt>
   <dt>
     <a id="Task4-2"></a>
-    b) Changing Environment
+    b) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Changing%20Environment.py">Changing Environment</a>
     <dd>
+      </br>
+      This task simulates the performance of the A* algorithm in a complex environment. </br>
+      a) Map generation: Use random numbers and set the probability for each point generation.</br>
+      b) Path calculation: use A* algorithm and remove the slash direction</br>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_Bad%20condition.PNG" alt="A* Bad Condition">
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" alt="oops...">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
+      <p></br>Of course, one day, there will be a chance that the map will then look like the following (w <p>
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
     </dd>
   </dt>
   <dt>
@@ -499,7 +511,7 @@
                   <dd>
                   </br>
                     <p>
-                      The total development time of the D* algorithm program was about a month. At the beginning we used Mr. Atsushi's D* algorithm template and referred to a lot of literature papers. Everything went well in the initial planning process. However, when an obstacle suddenly appeared, the program could only be replanned if the obstacle was smooth, otherwise the program would hang. 
+                      Limited by our technical level, The total development time of the D* algorithm program was about a month. At the beginning we used Mr. Atsushi's D* algorithm template and referred to a lot of literature papers. Everything went well in the initial planning process. However, when an obstacle suddenly appeared, the program could only be replanned if the obstacle was smooth, otherwise the program would hang. 
                     </p>
                     <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/smooth_.png?raw=true" width="360px" height="360px" alt="smooth">
                     <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/not_smooth_.png?raw=true" width="360px" height="360px" alt="not_smooth"> 
@@ -537,9 +549,22 @@
 </dl>
 
 
+<a id="Summary"></a>
+## 3. Summary
+- This freshman program gave us a great challenge. However, we gained a lot of knowledge and experience through this freshman project. From the beginning, we had never touched path planning, never learned python, and didn't even know how to use programming software. In order to complete the task, we had group discussions and kept self-learning. We review a lot of information and do the tast while learning. That led us to learn a lot of algorithms and principles, and gain a lot of experience. In the process, we also developed a passion for programming and algorithms. If there's still a chance, it's sure we'll keep trying to improve ourselves and reach a higher goal!
+- We have learned:
+  - How to use VScode and Github
+  - The Basics of Python
+  - How to use Atsushi's A* algorithm to complete the task
+  - How to edit the A* algorithm to adapt other task
+  - Other more algorithms
+  - How to programmed through review literature papers (like D* algorithm)
+  - How to use HTML to write the report
+  - ...
+
 
 <a id="Contributors"></a>
-## 3. Contributors
+## 4. Contributors
 
 #### LIN Ju @Thorkee
 > Responsible part:
@@ -557,6 +582,6 @@
 > Responsible part:
 
 <a id="References"></a>
-## 4. References
+## 5. References
 
 
