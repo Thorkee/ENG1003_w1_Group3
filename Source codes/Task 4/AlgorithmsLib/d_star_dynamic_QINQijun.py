@@ -20,7 +20,8 @@ from tkinter import messagebox
 
 show_animation = False
 
-class MAP:
+# Each point on the map has follow data
+class MAP:                                      
 
     def __init__(self, x, y, ptype, tag):
         self.x = x
@@ -33,12 +34,13 @@ class MAP:
         self.count = 0
 
 
-
-class OPENLIST:
+# To record the point which has been found and is ready to be tranversed
+# Use minimum binary heap and add key value to locate the elements in the list
+class OPENLIST:                                 
 
     def __init__(self, x_range, y_range):
         self.openlist = ["#"]
-        self.hash_value = np.zeros((x_range + 1, y_range + 1), dtype = np.int16)
+        self.hash_value = np.zeros((x_range + 1, y_range + 1), dtype = np.int16)    # hash_value is fake... Just a normal key value
 
     def add(self, x, y, value):
         tmp = self.openlist[self.hash_value[x][y]]
@@ -154,11 +156,10 @@ class DSTAR:
         return False
 
     def non_route(self):
-        messagebox.showinfo("咫尺相隔两相望","冇有路惹, 過不去惹QAQ\n")
+        messagebox.showinfo("Unable to pass","Unable to pass\n")
         exit()
 
     # def neighbor():
-        
 
 
     def map_init(self, x_range, y_range):
@@ -238,11 +239,10 @@ class DSTAR:
                     continue
                 y = self.map[pos[0] + i[1][0]][pos[1] + i[1][1]]
 
-                if(y.t == "new" or (y.b == x and y.h != x.h + self.cost(x, y))):
+                if(y.t == "new" or y.b != x and y.h > x.h + self.cost(x, y)):
                     y.b = x
                     self.insert(y, x.h + self.cost(x, y))
-                elif(y.b != x and y.h > x.h + self.cost(x, y)):
-                    y.b = x
+                elif((y.b == x and y.h != x.h + self.cost(x, y))):
                     self.insert(y, x.h + self.cost(x, y))
                 elif(y.b != x and x.h > y.h + self.cost(x, y) and y.t == "closed" and y.h > k_old):
                     self.insert(y, y.h)
@@ -431,16 +431,16 @@ class DSTAR:
             
         obstacle_generate_1 = False
         obstacle_generate_2 = False
+        ox = []
+        oy = []
         while(1):
 
             plt.plot(route.x, route.y, ".r")
             plt.pause(0.001)
 
 #------------------------------------------------------------------------------------------------------------------
-
-            if(route.x <= self.x_range * 0.4 and route.y <= self.y_range * 0.4 and not obstacle_generate_1):
-                ox = []
-                oy = []
+# To generate obstacles manually
+            if(route.x <= self.x_range * 0.4 and route.y <= self.y_range * 0.4 and not obstacle_generate_1):            
                 for i in range(0, self.x_range):
                     for j in range(0, self.y_range):
                         if(not(14 <= i <= 40 and 14 <= j <= 40)):
@@ -448,35 +448,21 @@ class DSTAR:
                         if(30 ** 2 <= (i - 45) ** 2 + (j - 45) ** 2 <= 32 ** 2):
                             ox.append(i)
                             oy.append(j)
-                self.obstacle_sensor(ox, oy, "#", route)
                 obstacle_generate_1 = True
 
             if(route.x <= 18 and route.y <= 16 and not obstacle_generate_2):
                 # show_animation = True
-                ox = []
-                oy = []
                 for i in range(1, 16):
                         ox.append(16)
-                        oy.append(i)
-                self.obstacle_sensor(ox, oy, "#", route)
-                obstacle_generate_2 = True
-
-            # if(route.k == 6):
-            #     ox = []
-            #     oy = []
-            #     for i in range(1, 5):
-            #             ox.append(2)
-            #             oy.append(i)
-            #     self.obstacle_sensor(ox, oy, "#")
-
-            # if(route.k == 4):
-            #     ox = [5]
-            #     oy = [3]
-                
-            #     self.obstacle_sensor(ox, oy, "#")
-            
+                        oy.append(i)     
+                obstacle_generate_2 = True          
             
 #------------------------------------------------------------------------------------------------------------------
+        
+            if(ox != [] and oy != []):                      # Detecte obstacles 
+                self.obstacle_sensor(ox, oy, "#", route)
+                ox = []
+                oy = []
 
             if(route.type == "g"):
                 break
