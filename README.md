@@ -51,9 +51,6 @@
     <li>
       <a href="#Contributors">Contributors</a>
     </li>
-    <li>
-     <a href="#References">References</a>
-    </li>
   </ol>
 </details>
 
@@ -453,7 +450,7 @@
                 Algorithm Implementation
                 <ul>
                   <li>
-                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_not_continuous_area.py">Discontinuous Area Algorithm</a></p>
+                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/d_star_dynamic_QINQijun.py">D* algorithm program</a> 
                     <ul>
                       <li>Structure of program:</li>
                       <ul>
@@ -572,21 +569,14 @@
 ## 4. Contributors
 
 #### LIN Ju @Thorkee
-> Responsible part:
 
 #### Cheng PakHin @marcus2405
-> Responsible part:
 
 #### QIN Qijun @QuintinUmi
-> Responsible part:
 
 #### HUI CHIUMING @edmondhui04
-> Responsible part:
 
 #### CHENG Wai Ching @Chengmm565
-> Responsible part:
 
-<a id="References"></a>
-## 5. References
 
 
