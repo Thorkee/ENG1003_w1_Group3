@@ -396,7 +396,7 @@ First, in the airline prospective, every commercial airline flight start begins 
       b) Path calculation: use A* algorithm and remove the slash direction</br>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
-      <p></br>Of course, one day, there will be a chance that the map will then look like the following (w <p>
+      <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
     </dd>
   </dt>
