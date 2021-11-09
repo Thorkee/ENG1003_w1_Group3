@@ -51,9 +51,6 @@
     <li>
       <a href="#Contributors">Contributors</a>
     </li>
-    <li>
-     <a href="#References">References</a>
-    </li>
   </ol>
 </details>
 
@@ -431,7 +428,7 @@
                 <ul>         
                   <li>
                     <p>Static planning</p>
-                    In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
+                    In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. </br>Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
                   <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
                   </li>
                   <li>
@@ -479,14 +476,14 @@
                           NORMAL state:
                           </dt>
                           <dd>
-                            Preferentially tranverse the point which is nearest to the end point similar to dijkstra until it reaches the end.
+                            Preferentially tranverse the point which is nearest to the end point until it reaches the end. That is similar to dijkstra.
                           </dd>
                           <dt>
                           RAISE state:
                           </dt>
                           <dd>
                           <p>That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.</p>
-                          <p>There are 3 cases in the next point: 1.New point. 2.The next point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.The next point does not point to the current point and the current point can reduce the value of the next point.
+                          <p>There are 3 cases in the next point: 1.New point. 2.This point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.This point does not point to the current point and the current point can reduce the value of the next point.
                           </dd>
                           <dt>
                           LOWER state:
@@ -517,8 +514,8 @@
                     <p>
                       Limited by our technical level, The total development time of the D* algorithm program was about a month. At the beginning we used Mr. Atsushi's D* algorithm template and referred to a lot of literature papers. Everything went well in the initial planning process. However, when an obstacle suddenly appeared, the program could only be replanned if the obstacle was smooth, otherwise the program would hang. 
                     </p>
-                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/smooth_.png?raw=true" width="360px" height="360px" alt="smooth">
-                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/not_smooth_.png?raw=true" width="360px" height="360px" alt="not_smooth"> 
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/smooth_.png?raw=true" width="320px" height="320px" alt="smooth">
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/not_smooth_.png?raw=true" width="320px" height="320px" alt="not_smooth"> 
                     <p></br> 
                       So we created a small map and then did a lot of debugging. We obtained a lot of experimental data including but not limited to the processing of each point to the next point in different situations, the change of data near the diffusion source at the beginning of diffusion and the change of the pointer during the diffusion process. Eventually we boldly modified and adjusted part of the algorithm in the diffusion process, and successfully implemented obstacles avoidance action.
                     </p>
@@ -571,21 +568,14 @@
 ## 4. Contributors
 
 #### LIN Ju @Thorkee
-> Responsible part:
 
 #### Cheng PakHin @marcus2405
-> Responsible part:
 
 #### QIN Qijun @QuintinUmi
-> Responsible part:
 
 #### HUI CHIUMING @edmondhui04
-> Responsible part:
 
 #### CHENG Wai Ching @Chengmm565
-> Responsible part:
 
-<a id="References"></a>
-## 5. References
 
 
