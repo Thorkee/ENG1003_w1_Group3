@@ -450,7 +450,7 @@
                 Algorithm Implementation
                 <ul>
                   <li>
-                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/d_star_dynamic_QINQijun.py">D* algorithm</a> 
+                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/d_star_dynamic_QINQijun.py">D* algorithm program</a> 
                     <ul>
                       <li>Structure of program:</li>
                       <ul>
