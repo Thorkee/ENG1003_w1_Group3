@@ -30,19 +30,23 @@
             </li>
             <li>
               <a href="#Task4-3">Comparing Algoritms</a>
-            <ol>
+            <ul>
               <li>
                 <a href="#A_star">A* algorithm</a>
               </li>
               <li>
                <a href="#Dijkstra">Dijkstra's algorithm</a>
               </li>
-            <li>
-              <a href="#D_star_static">D* algorithm</a>
-            </li>
+              <li>
+                <a href="#D_star_static">D* algorithm</a>
+              </li>
+            </ul>
           </ol>
         </li>
       </ol>
+    </li>
+    <li>  
+      <a href="#Summary">Summary</a>
     </li>
     <li>
       <a href="#Contributors">Contributors</a>
@@ -50,6 +54,7 @@
     <li>
      <a href="#References">References</a>
     </li>
+  </ol>
 </details>
 
 
@@ -114,7 +119,7 @@
       b) Designing Scheme
       <dd>
         <p>Through the research, we found that the parameters of the model do not affect the minimum-cost except the time and fuel consuming area. </p>       
-        (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant !=0, the shortest Distance will not change) 
+        (It can prove by: Cost = (C_T * d_T + C_F * d_F) * Distance(a) + C_T/F_Area * Distance(b). If only C_T * d_T + C_F * d_F = Constant ≠ 0, the shortest Distance will not change) 
         <p>With this idea, 
           <ul>
             <li>
@@ -359,23 +364,32 @@
 <dl>
   <dt>
     <a id="Task4-1"></a>
-    a) Adding Checkpoints
+    a) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Adding%20Checkpoints.py">Adding Checkpoints</a>
     <dd>
+      <p>
+        This task simulates the planning of a multi-node route in a flight plan.</br>
+        We can achieve it by planning between every two points：</br>
+      </p>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
     </dd>
   </dt>
   <dt>
     <a id="Task4-2"></a>
-    b) Changing Environment
+    b) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Changing%20Environment.py">Changing Environment</a>
     <dd>
+      </br>
+      This task simulates the performance of the A* algorithm in a complex environment. </br>
+      a) Map generation: Use random numbers and set the probability for each point generation.</br>
+      b) Path calculation: use A* algorithm and remove the slash direction</br>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_Bad%20condition.PNG" alt="A* Bad Condition">
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" alt="oops...">
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
+      <p></br>Of course, one day, there will be a chance that the map will then look like the following (w <p>
+      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
     </dd>
   </dt>
   <dt>
     <a id="Task4-3"></a>
-    c)Comparing Algoritms
+    c) Comparing Algoritms
     <dd>
       <ul>
         <li>
@@ -403,14 +417,8 @@
           <a id="Dijkstra"></a>
           b. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/dijkstra.py">Dijkstra's algorithm</a>
           <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
-          <p>In fact, the A* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
-          <p>In what follows, we run the Dijkstra code and the A* code in the same environment and plot out the following animation:</p>
-  
-<img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DJ%20vs%20A%20STAR.gif" alt="demo of dij alg">  
-
-  <p>We can find that in a complex environment, the Dijkstra code is so computationally large on long-range search that it makes the computation even slower because it does not combine the location of endpoints when performing breadth search.</p></p>
-
-<p>However, this code is not without its advantages. Since it performs a more comprehensive search of the map, the computed route is closer to the "shortest distance" goal and achieves a more desirable goal.</p>
+          <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DJ%20vs%20A%20STAR.gif" alt="demo of dij alg">  
         </li>
         <li>
           <a id="D_star_static"></a>
@@ -424,6 +432,7 @@
                   <li>
                     <p>Static planning</p>
                     In the initial planning, the D* algorithm will start from the end point. Based on a certain point, after searching the points around the store and adding the searched points to the Openlist, the D* algorithm will preferentially traverse the points according to the k-value from smallest to largest and point the pointer to another point whose k-value is smallest. Therefore, D* algorithm is much less efficient than the A* algorithm and does not use its raise and lower part of the algorithm in the initial planning process. Therefore, the D* algorithm does not realize its advantage in static planning.
+                  <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
                   </li>
                   <li>
                     <p>Dynamic planning</p>
@@ -433,29 +442,133 @@
                     <p>
                     Of course, to reflect the efficient dynamic planning of D* algorithm, the program must be run on a larger scale map to ensure that the area that its RAISE state spreads takes a very small percentage of the map, otherwise the efficiency of D* algorithm replanning will not be comparable to that of A* algorithm replanning.
                     </p>
+                    <p>
+                    In order to implement dynamic planning to demonstrate the function of D* algorithm, group member QIN Qijun studied a lot of D* theory literature papers, and modified part of the algorithm theory in the literature papers through a lot of experimental data and reasoning. Finally, he independently finished a program based on D* algorithm and almost implemented the function of dynamic planning. The dynamic planning function shows below:
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DYNAMIC.gif" alt="DD">
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
-                Function Display
+                Algorithm Implementation
+                <ul>
+                  <li>
+                    <p><a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/e23231d680f2e3812cf2e1b7f342bf5a4af754cd/Source%20codes/Task%203_not_continuous_area.py">Discontinuous Area Algorithm</a></p>
+                    <ul>
+                      <li>Structure of program:</li>
+                      <ul>
+                        <li>MAP</li>
+                        <li>OPENLIST</li>
+                        <li>DSTAR.state_process</li>
+                        <li>DSTAR.obstacle_sensor</li>  
+                        <li>DSTAR.run</li>
+                      </ul>
+                      <li>
+                        <p>--> MAP</p>
+                        To record the information of every point on the map.
+                      </li>
+                      <li>
+                        <p>--> OPENLIST</p>
+                        We use the minimum binomial heap to implement the OPENLIST function and assign key values (not k values in D*) to all elements in OPENLIST to maintain the uniqueness of the elements and to update the element values.
+                      </li>
+                      <li>
+                        <p>--> DSTAR.state_process</p>
+                        To process current point and build the relationship with other point.
+                        <dl>
+                          <dt>
+                          NORMAL state:
+                          </dt>
+                          <dd>
+                            Preferentially tranverse the point which is nearest to the end point similar to dijkstra until it reaches the end.
+                          </dd>
+                          <dt>
+                          RAISE state:
+                          </dt>
+                          <dd>
+                          <p>That means current point has changed into obstacle or the value increases. Need to diffuse the obstacles information to surrounding point and to find a point that can reduce the value of current point.</p>
+                          <p>There are 3 cases in the next point: 1.New point. 2.The next point points to the current point but the value of the next point plus the distance between the two points is not equal to the current point. 3.The next point does not point to the current point and the current point can reduce the value of the next point.
+                          </dd>
+                          <dt>
+                          LOWER state:
+                          </dt>
+                          <dd>
+                            That means the value of current point can be reduce by surrounding point which is closer to the starting point and diffuse value-decreasing information to the new obstacles. In addition, change the direction of that point.
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <p>--> DSTAR.obstacle_sensor</p>
+                          This is a function for detecting obstacles. In practical applications, we can pass in signals from actual sensor devices. If the sbstacles block the original route, the program will execute obstacles avoidance function.
+                      </li>
+                      <li>
+                        <p>--> DSTAR.run</p>
+                        Integrates pathfinding and obstacle avoidance functions. It is the main function of DSTAR.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              </br>
+              <li>
+                Development History
                 <dl>
                   <dd>
-                  In order to implement dynamic planning to demonstrate the function of D* algorithm, group member QIN Qijun studied a lot of D* theory literature papers, and modified part of the algorithm theory in the literature papers through a lot of experimental data and reasoning. Finally, he independently finished a program based on D* algorithm and almost implemented the function of dynamic planning. The function shows as figure below:
+                  </br>
+                    <p>
+                      Limited by our technical level, The total development time of the D* algorithm program was about a month. At the beginning we used Mr. Atsushi's D* algorithm template and referred to a lot of literature papers. Everything went well in the initial planning process. However, when an obstacle suddenly appeared, the program could only be replanned if the obstacle was smooth, otherwise the program would hang. 
+                    </p>
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/smooth_.png?raw=true" width="360px" height="360px" alt="smooth">
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/not_smooth_.png?raw=true" width="360px" height="360px" alt="not_smooth"> 
+                    <p></br> 
+                      So we created a small map and then did a lot of debugging. We obtained a lot of experimental data including but not limited to the processing of each point to the next point in different situations, the change of data near the diffusion source at the beginning of diffusion and the change of the pointer during the diffusion process. Eventually we boldly modified and adjusted part of the algorithm in the diffusion process, and successfully implemented obstacles avoidance action.
+                    </p>
+                    <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/edit.PNG?raw=true" alt="algorithm_adjust">
+                    <p></br> 
+                      However, such forced changes may create potential BUGs. So there are lot of experimentation and modification needed to ensure the program's viability.
+                    </p>
                   </dd>
                 </dl>
               </li>
-            </ol>
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/FOOLISH%20D%20STAR.gif" alt="FD">
-          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DYNAMIC.gif" alt="DD">
+              <li>
+                Problem still unresolved
+                <dl>
+                  <dd>
+                  </br>
+                    <p>
+                    Currently there is a situation that causes replanning to hang, that is, when the two replanned diffusion ranges overlap, the last diffusion may form a ring in the previous diffusion range, causing the program to spin around in the ring. 
+                    </p>
+                    <p>
+                    We speculate that it may be due to the fact that the h-values of some points were modified and not equal to the k-values during the next diffusion, causing these points to interfere with the program's judgment during the next diffusion. 
+                    </p>
+                    <p>
+                    If conditions permit, we will try our best to fix BUGs and improve the program.
+                    </p>
+                  </dd>
+                </dl>
+              </li>
+            </ol>          
         </li>   
       </ul>
     </dd>   
 </dl>
 
 
+<a id="Summary"></a>
+## 3. Summary
+- This freshman program gave us a great challenge. However, we gained a lot of knowledge and experience through this freshman project. From the beginning, we had never touched path planning, never learned python, and didn't even know how to use programming software. In order to complete the task, we had group discussions and kept self-learning. We review a lot of information and do the tast while learning. That led us to learn a lot of algorithms and principles, and gain a lot of experience. In the process, we also developed a passion for programming and algorithms. If there's still a chance, it's sure we'll keep trying to improve ourselves and reach a higher goal!
+- We have learned:
+  - How to use VScode and Github
+  - The Basics of Python
+  - How to use Atsushi's A* algorithm to complete the task
+  - How to edit the A* algorithm to adapt other task
+  - Other more algorithms
+  - How to programmed through review literature papers (like D* algorithm)
+  - How to use HTML to write the report
+  - ...
+
 
 <a id="Contributors"></a>
-## 3. Contributors
+## 4. Contributors
 
 #### LIN Ju @Thorkee
 > Responsible part:
@@ -473,6 +586,6 @@
 > Responsible part:
 
 <a id="References"></a>
-## 4. References
+## 5. References
 
 
