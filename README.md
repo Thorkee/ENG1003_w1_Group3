@@ -52,7 +52,7 @@
       <a href="#Contributors">Contributors</a>
     </li>
     <li>
-      <a href="#Reference">Contributors</a>
+      <a href="#References">Contributors</a>
     </li>
   </ol>
 </details>
