@@ -118,7 +118,7 @@ It is created by Guido van Rossum in 1990 as a way to write software for the Amo
   <p>It available on several Operating System including Windows, macOS and Linux.</p> 
         <dd>
         <ul>
-        <li> -->Why python is popular:</li>
+    <ul> -->Why python is popular:</ul>
         
   <li>1. Easy to learn and use</li> 
   <p>Python language is incredibly easy to use and learn for new beginners and newcomers. The python language is one of the most accessible programming languages available because it has simplified syntax and not complicated, which gives more emphasis on natural language. </p> 
