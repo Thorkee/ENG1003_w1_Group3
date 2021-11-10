@@ -8,6 +8,17 @@
       <a href="#Background">Background of Path Planning to Aviation Engineering</a>
     </li>
     <li>
+      <a href="#Tools">Introduction of the Engineering Tools</a>
+      <ul>
+        <li>
+          <a href="#Python">Python</a>
+        </li>
+        <li>
+          <a href="#GitHub">GitHub</a>
+        </li>
+      </ul>
+    </li>
+    <li>
       <a href="#Task">Path Planning Algorithm (Group Task)</a>
       <ol>
         <li>
@@ -51,6 +62,9 @@
     <li>
       <a href="#Contributors">Contributors</a>
     </li>
+    <li>
+      <a href="#References">References</a>
+    </li>
   </ol>
 </details>
 
@@ -62,13 +76,45 @@
 ## 1. Background of Path Planning to Aviation Engineering
  <dl> 
 <p>Path planning has been an useful method consists of motion planning in different aspects, like self-driving vehicles, humanoid robots, aviation engineering, etc.. In aviation engineering, path planning is one of the important steps before the aircraft starts the journey. </p>
-        
-<p>In this task, we need to design the shortest path in the map which has some obstacles. Also, cost calculation is an important step when we are designing the path. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
 
-<a id="Task"></a>
-## 2. Path Planning Algorithm (Group Task)
+<p>To begin with, the algorithms of path planning is used to compute a continuous path that connecting the start point and the goal point, avoiding collision with obstacles. The path planning algorithms generate a geometric path, passing through free space, as known as C free, from initial point to final point. Since path planning is a procedure that is used to figure out what the status of the area around the starting point and the final point, it is needed to calculate what is the best solution under certain restricts, in order to find out the best route that can avoid obstacles, also the shortest route that can use the least time.</p>
+
+<p>Moreover, without path planning, it is even impossible for us to plan a path. Since without path planning, we could not figure out what is the exact topography, and also other situations that can affect the motion going on the path. It will make the whole motion become way more complicate to go on the path and also increase the percentage of accidents happen. Therefore path planning plays an important role in the every aspects that consist of motion, including flight planning.</p>
   
+ <p>Flight path is dependent on the model of the aircraft, including the acoustic characteristics, engine power of the aircraft. Flight path can be different due to the wide range of variables of the aircraft. Therefore, it is important to calculate all the major and minor factors of the aircraft that can affect the flight paths, in order to make a shortest flight path that can have the most cost and time reduction for each particular aircraft.</p> 
+ 
+<p>Flight plans are documents filed by a pilot or flight dispatcher with the local Air Navigation Service Provider (e.g. the FAA in the United States) prior to departure which indicate the plane's planned route or flight path. Flight plan format is specified in ICAO Doc 4444. They generally include basic information such as departure and arrival points, estimated time en route, alternate airports in case of bad weather, type of flight (whether instrument flight rules [IFR] or visual flight rules [VFR]), the pilot's information, number of people on board and information about the aircraft itself. </p>
+  
+<p>Flight path can be thought of as three-dimensional highways for aircraft. In most land areas of the world, aircraft are required to fly airways between the departure and destination airports. The rules governing airway routing cover altitude, airspeed, and requirements for entering and leaving the airway (see SIDs and STARs). </p>
+  
+<p>SIDs and STARs are procedures and checkpoints used to enter and leave the airway system by aircraft operating on IFR flight plans. There is a defined transition point at which an airway and a SID or STAR intersect.
+A SID (Standard Instrument Departure), defines a pathway out of an airport and onto the airway structure. A SID is sometimes called a Departure Procedure (DP). SIDs are unique to the associated airport.
+A STAR(Standard Terminal Arrival Route), ('Standard Instrument Arrival' in the UK) defines a pathway into an airport from the airway structure. STARs can be associated with more than one arrival airport, which can occur when two or more airports are in proximity (e.g., San Francisco and San Jose).</p>
 
+<p>The flight paths are corresponding with several aspects:
+First, in the airline prospective, every commercial airline flight start begins with a flight plan. A well-designed flight path can bring great benefits to the airline, including flight safety and economy. For flight safety, an operational flight plan is required to ensure an airplane meets all of the operational regulations for a specific flight, to give the flight crew information to help them conduct the flight safely, and to coordinate with air traffic control (ATC).  For economy, a well-designed flight plan includes the route the crew will fly and specifies altitudes and speeds. It also provides calculations for how much fuel the airplane will use and the additional fuel it will need to carry to meet various requirements for safety. By varying the route (i.e., ground track), altitudes, speeds, and amount of departure fuel, an effective flight plan can reduce fuel costs, time-based costs, overflight costs, and lost revenue from payload that can't be carried, that it leading to saving money for the airline.</p>
+  
+<p>Next, in the ATC prospective, path planning is crucial in maintaining efficient use of airspace with balance public interest as aircraft operations produces noise to the surrounding community. Therefore, when constructing flight path (SID/STAR) in AIP noise mitigations measures are considered following ICAO guidelines. Take Hong Kong as example, aircraft operations between 11pm to 7am departing east are required to deviate south to the southern district to avoid noise disturbance to the populated areas in both sides of the Victoria harbour.</p>
+  
+<p>Finally, flight safety is the biggest concern in every controversy in aviation engineering, a well-designed flight path can totally reduce the probability of aviation accident. Some of the unexpected aviation accident due to uncontrollable reasons such as bad weather and extreme topography. A well-designed flight plan can totally avoid the flight path pass through the extreme topography, also, it should including an extra planning to handle emergency situation. For example, the normal flight path should close to the airports for emergency landing or the aircraft can change the flight to the designed emergency path when facing extreme weather.</p>
+
+        
+<p>While in this task, we need to design the shortest path in the map which has some obstacles with the basic concepts of flight path planning in the above, including flight safety, flight efficiency and other aircraft operation problem. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
+
+  
+<a id="Tools"></a>  
+## 2. Background of Path Planning to Aviation Engineering
+  
+  <a id="Python"></a>
+- ### Python
+  
+  <a id="GitHub"></a>
+- ### GitHub
+
+  
+<a id="Task"></a>
+## 3. Path Planning Algorithm (Group Task)
+  
 <a id="Task1"></a>
 ### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
   <dl>
@@ -380,13 +426,13 @@
       b) Path calculation: use A* algorithm and remove the slash direction</br>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
-      <p></br>Of course, one day, there will be a chance that the map will then look like the following (w <p>
+      <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
       <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
     </dd>
   </dt>
   <dt>
     <a id="Task4-3"></a>
-    c) Comparing Algoritms
+    c) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/58c8238128de346fe078c0c75ef939a337c4927d/Source%20codes/Task%204/Comparing%20Algorithms.py">Comparing Algoritms</a>
     <dd>
       <ul>
         <li>
@@ -414,7 +460,9 @@
           <a id="Dijkstra"></a>
           b. <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/311a7fbff5885b4fff65c018d44d978a1a3e84c5/Source%20codes/Task%204/AlgorithmsLib/dijkstra.py">Dijkstra's algorithm</a>
           <p>Dijkstra&#39;s algorithm is an algorithm designed by computer scientist Edsger W. Dijkstra in 1956 that uses a similar approach to breadth-first search to solve the shortest path problem for a single source in a given environment (especially if the environment is already given).</p>
-          <p>In fact, the A\* code we used in the previous task is a variant of Dijkstra&#39;s algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path of this vertex and all other nodes.</p>
+          <p>The essential difference between Dijkstra and the breadth-first algorithm (BSF) is that BSF accesses the nodes in the container in an artificially predefined order, while Dijkstra accesses the node with the lowest cumulative cost g(n) (which is the current best estimate of the cumulative cost from the starting node to node "n") in the current container.</p>
+<p>The Dijkstra algorithm guarantees that the node it has visited is the least costly node in the container at the current moment, thus ensuring the completeness of the entire algorithm.</p>
+          <p>In fact, the A* algorithm we used in the previous task is a variant of Dijkstra's algorithm. This new code takes each new point as a source and produces a shortest path tree by finding the shortest path between this endpoint and all other nodes, which achieves the effect of improving efficiency. However, since its search area is relatively limited compared to Dijkstra's algorithm, the path found is not necessarily the "shortest path".</p>
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/DJ%20vs%20A%20STAR.gif" alt="demo of dij alg">  
         </li>
         <li>
@@ -551,7 +599,7 @@
 
 
 <a id="Summary"></a>
-## 3. Summary
+## 4. Summary
 - This freshman program gave us a great challenge. However, we gained a lot of knowledge and experience through this freshman project. From the beginning, we had never touched path planning, never learned python, and didn't even know how to use programming software. In order to complete the task, we had group discussions and kept self-learning. We review a lot of information and do the tast while learning. That led us to learn a lot of algorithms and principles, and gain a lot of experience. In the process, we also developed a passion for programming and algorithms. If there's still a chance, it's sure we'll keep trying to improve ourselves and reach a higher goal!
 - We have learned:
   - How to use VScode and Github
@@ -562,10 +610,11 @@
   - How to programmed through review literature papers (like D* algorithm)
   - How to use HTML to write the report
   - ...
+  - However, the thing that most matters is that we cultivate the ability to learn on our own, to break through from internet resources and to work together as a team to complete tasks with an incredible 1+1>2 effect.
 
 
 <a id="Contributors"></a>
-## 4. Contributors
+## 5. Contributors
 
 #### LIN Ju @Thorkee
 
@@ -577,5 +626,7 @@
 
 #### CHENG Wai Ching @Chengmm565
 
+<a id="References"></a>
+## 6. References
 
-
+1. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
