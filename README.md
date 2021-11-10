@@ -102,21 +102,10 @@ First, in the airline prospective, every commercial airline flight start begins 
 <p>While in this task, we need to design the shortest path in the map which has some obstacles with the basic concepts of flight path planning in the above, including flight safety, flight efficiency and other aircraft operation problem. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
 
   
-<a id="Tools"></a>  
-## 2. Background of Path Planning to Aviation Engineering
-  
-  <a id="Python"></a>
-- ### Python
-  - #### (请在这里写)
-  
-  <a id="GitHub"></a>
-- ### GitHub
-  - #### (请在这里写)
-
-  
 <a id="Task"></a>
 ## 2. Path Planning Algorithm (Group Task)
   
+<a id="Task"></a>  
 ## 3. Introduction of the Engineering Tools
   a) Python
   <dd>
