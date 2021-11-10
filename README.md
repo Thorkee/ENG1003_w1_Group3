@@ -8,6 +8,17 @@
       <a href="#Background">Background of Path Planning to Aviation Engineering</a>
     </li>
     <li>
+      <a href="#Tools">Introduction of the Engineering Tools</a>
+      <ul>
+        <li>
+          <a href="#Python">Python</a>
+        </li>
+        <li>
+          <a href="#GitHub">GitHub</a>
+        </li>
+      </ul>
+    </li>
+    <li>
       <a href="#Task">Path Planning Algorithm (Group Task)</a>
       <ol>
         <li>
@@ -90,10 +101,20 @@ First, in the airline prospective, every commercial airline flight start begins 
         
 <p>While in this task, we need to design the shortest path in the map which has some obstacles with the basic concepts of flight path planning in the above, including flight safety, flight efficiency and other aircraft operation problem. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
 
-<a id="Task"></a>
-## 2. Path Planning Algorithm (Group Task)
   
+<a id="Tools"></a>  
+## 2. Background of Path Planning to Aviation Engineering
+  
+  <a id="Python"></a>
+- ### Python
+  
+  <a id="GitHub"></a>
+- ### GitHub
 
+  
+<a id="Task"></a>
+## 3. Path Planning Algorithm (Group Task)
+  
 <a id="Task1"></a>
 ### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
   <dl>
@@ -578,7 +599,7 @@ First, in the airline prospective, every commercial airline flight start begins 
 
 
 <a id="Summary"></a>
-## 3. Summary
+## 4. Summary
 - This freshman program gave us a great challenge. However, we gained a lot of knowledge and experience through this freshman project. From the beginning, we had never touched path planning, never learned python, and didn't even know how to use programming software. In order to complete the task, we had group discussions and kept self-learning. We review a lot of information and do the tast while learning. That led us to learn a lot of algorithms and principles, and gain a lot of experience. In the process, we also developed a passion for programming and algorithms. If there's still a chance, it's sure we'll keep trying to improve ourselves and reach a higher goal!
 - We have learned:
   - How to use VScode and Github
@@ -593,7 +614,7 @@ First, in the airline prospective, every commercial airline flight start begins 
 
 
 <a id="Contributors"></a>
-## 4. Contributors
+## 5. Contributors
 
 #### LIN Ju @Thorkee
 
@@ -606,6 +627,7 @@ First, in the airline prospective, every commercial airline flight start begins 
 #### CHENG Wai Ching @Chengmm565
 
 <a id="References"></a>
-## 5. References
+## 6. References
+
 
 1. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
