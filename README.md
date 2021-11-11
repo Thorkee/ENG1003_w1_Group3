@@ -718,8 +718,6 @@ To make the programming more funny, we add a possibility for the code to automat
 ## 5. Contributors & Reflections
 
 #### LIN Ju @Thorkee
-> Reflection:
-> 
 > The process of completing this project was very rewarding. We spent many nights in the library discussing the project until the library closed. Although we did not learn much hard knowledge of path planning or the algorithm in class, we gradually cultivated our independent learning ability in this process, and kept learning from the previous experience and wisdom of the pioneers in this field under the requirements of each task, and created incredible results.
 > 
 > As the group leader of this group, I did not do a good job in many aspects of leadership. For instance, I did not do a good job in mobilizing members' motivation. I have been reflecting on this and learning from it. I believe I can do better in other tasks in the future. 
@@ -735,7 +733,13 @@ To make the programming more funny, we add a possibility for the code to automat
 #### Cheng PakHin @marcus2405
 > Reflection: 
 #### QIN Qijun @QuintinUmi
-> Reflection: 
+> This project is the first one I have participated in since I started school.
+> 
+> This project brought me not only technical improvement, but also teamwork, self-learning ability, perseverance, ability to find solutions to problems... The combination of these qualities. It really makes a person grow and mature.
+> 
+> In the process of overcoming the project, there is nothing I have experienced more than the word "self-learning". When I was studying algorithms, writing programs and reports, I was often in a state of "learning by doing, learning from doing", not knowing how many difficulties were waiting ahead. But these challenges whetted my appetite for learning algorithm. The intensity and initiative of my study was comparable to my high school days. Finally, live up to expectations, achievements in lage numbers. In this sense, the way Dr. Li-Ta teaches is of great benefit to hardworking students. This way gives us space for independent thinking, self-learning, and teamwork, which can give great growth
+> 
+> In the future of my life, I will also continue to be looking for my goals, continue to pursue my passions, and devote my passions to the pursuit of my goals!
 #### HUI CHIUMING @edmondhui04
 > Reflection: 
 #### CHENG Wai Ching @Chengmm565
