@@ -749,7 +749,11 @@ To make the programming more funny, we add a possibility for the code to automat
 
 
 #### CHENG Wai Ching @Chengmm565
-> Reflection: 
+> It was my first project when I got into the university. It was  such a great experience for me to learn from peers and the apply of Python and GitHub. I am responsible for the part of additional tasks which are adding checkpoint and changing environment. In this task, I have to programme the route plot from Python and figure out the methodology of adding the nodes. Besides, I have to make changes to the map and finally find the shortest and low-priced path in a complicated environment. Since the coding from Python was quite challenging for me so I asked for  assistant from my group mate. Furthermore, I searched and collected information of A* algorithm and Dijkstra’s algorithm from the internet and also some educational video clips from YouTube. 
+> 
+> From the group work,  we learnt to share different ideas and gained programming skills. We got togther and tried to brainstorm a better decision. Our group leader Charles gave us a big support in the group work and he corrected the mistake we made on readme report. It was a precious chance for us to learn from each other.
+
+
 <a id="References"></a>
 ## 6. References
 
