@@ -60,7 +60,7 @@
       <a href="#Summary">Summary</a>
     </li>
     <li>
-      <a href="#Contributors">Contributors</a>
+      <a href="#Contributors">Contributors & Reflections</a>
     </li>
     <li>
       <a href="#References">References</a>
@@ -161,7 +161,7 @@ First, in the airline prospective, every commercial airline flight start begins 
          Such a research method can be extended and applied to the process of aircraft development: By setting different experimental conditions and using the A* algorithm to calculate the costs for different conditions, the most suitable aircraft parameters can be predicted in a comprehensive manner, providing a good reference for aircraft designers.
        </p>
         <p>
-          Hwoever, the code is not intelligent enough so far. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex. In addition, the path calculated by the A* algorithm may be not the best since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area. At a later day, we will continue to study in-depth.
+          However, the code is not intelligent enough so far. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex. In addition, the path calculated by the A* algorithm maybe not the best since the mechanism of finding the optimal route is based on the closest path between each point itself and the endpoint, rather than considering the whole area. At a later day, we will continue to study in-depth.
         </p>
        </dd>
    </dt>
@@ -186,10 +186,10 @@ First, in the airline prospective, every commercial airline flight start begins 
         <p>With this idea, 
           <ul>
             <li>
-              For 4 constraints with 2 variables, there is no need to consider the path. We can use the "Linear programming(LP)" to compute the approximate paramaters.
+              For 4 constraints with 2 variables, there is no need to consider the path. We can use "Linear programming(LP)" to compute the approximate parameters.
             </li>
             <li>
-              For 4 constraints with 6 variables, we have to use A* algorithm to compute the best path due to the changeable T/F_Consuming Area. However, in consideration of the paramaters which are integer and the simplification of the constrains, we can easily use Enumeration Method to find C_T, d_T, C_F, d_F, and then use A* algorithm to enumerate all eligible value of T/F_Consuming Area.
+              For 4 constraints with 6 variables, we have to use A* algorithm to compute the best path due to the changeable T/F_Consuming Area. However, in consideration of the parameters which are integer and the simplification of the constraints, we can easily use the Enumeration Method to find C_T, d_T, C_F, d_F, and then use A* algorithm to enumerate all eligible values of T/F_Consuming Area.
             </li>
           </ul>
       </dd>
@@ -322,10 +322,10 @@ First, in the airline prospective, every commercial airline flight start begins 
       e) Discussion
       <dd>
         <p>
-          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
+          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from a different view.
         </p>
         <p>
-          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
+          Such a diversified research system is of great significance in the development of real aircraft. For example, Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost-effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, a diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
         </p>
         <p>
           However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
@@ -472,8 +472,9 @@ First, in the airline prospective, every commercial airline flight start begins 
       </dd>
       <dt>Discussion:</dt>
       <dd>
-        ...
-    </dd>
+        Adding checkpoints is a rather easy and straightforward task compared to the others. The most critical part of it is to understand the basic principle that how the algorithm computes the shortest part. Long stories short, we need to know that each shortest path is derived from the other shortest paths. The shortest-circuit path is still the shortest after cutting off the end (National Taiwan Normal University). Therefore, we just need to turn the task of adding checkpoints from a long path into a calculation of the shortest line between each node and connect them together.</dd>
+        <dd>
+          This task examines our ability to transform the problem. By changing the perspective of the problem, the difficulties can often be solved easier than expected.
   </dt>
   <dt>
     <a id="Task4-2"></a>
@@ -497,7 +498,15 @@ First, in the airline prospective, every commercial airline flight start begins 
       </dd>
       <dt>Discussion:</dt>
       <dd>
-        ......
+        To simplify, this task includes two main points. Firstly, the task requires us to introduce random numbers to create the environment; Secondly, it requires us to restrict some performance of the code to ensure accessibility. The first requirement enables the code to create a random environment, while the second requirement aims to test the algorithm's ability in planning for the shortest path.</dd>
+        <dd>
+    In the practical aspect, we agree that we have generated a simple idea to form a random environment, which is unneglectable in the flight simulation. The randomly generated environment is also a big challenge for the algorithm. However, although we limit the density of the barriers as well as create some "buff" for the path planner to prove the accessibility of the code, we still can not guarantee that there is always a path between the starting point and the endpoint. We generate the code to let it regenerate a new environment as well as recalculate the ideal path with the shortest distance. When you meet an error in finding the path, a funny message box containing a Chinese notification will be shown on the screen, which is due to the codes shown in the image below.</dd>
+
+![74d98c36aed4f4dd59631ac0649da08](https://user-images.githubusercontent.com/90883440/141282046-33f1ef05-5a31-40af-bf28-a285b11175e0.png)
+
+  
+ <dd>
+To make the programming more funny, we add a possibility for the code to automatically generate a "wall" to block any possible path. This is in fact related to the code's recauculation capability. However, the A* algorithm prefers to erase memories and regenerate the path due to its design, an update version called D* will be introduced below.
       </dd>
       </br>
   </dt>
@@ -697,19 +706,32 @@ First, in the airline prospective, every commercial airline flight start begins 
   - How to use VScode and Github
   - The Basics of Python
   - How to use Atsushi's A* algorithm to complete the task
-  - How to edit the A* algorithm to adapt other task
+  - How to edit the A* algorithm to adapt other tasks
   - Other more algorithms
-  - How to programmed through review literature papers (like D* algorithm)
+  - How to program through review literature papers (like D* algorithm)
   - How to use HTML to write the report
   - ...
   - However, the thing that most matters is that we cultivate the ability to learn on our own, to break through from internet resources and to work together as a team to complete tasks with an incredible 1+1>2 effect.
 
 
 <a id="Contributors"></a>
-## 5. Contributors
+## 5. Contributors & Reflections
 
 #### LIN Ju @Thorkee
-> Reflection: 
+> Reflection:
+> 
+> The process of completing this project was very rewarding. We spent many nights in the library discussing the project until the library closed. Although we did not learn much hard knowledge of path planning or the algorithm in class, we gradually cultivated our independent learning ability in this process, and kept learning from the previous experience and wisdom of the pioneers in this field under the requirements of each task, and created incredible results.
+> 
+> As the group leader of this group, I did not do a good job in many aspects of leadership. For instance, I did not do a good job in mobilizing members' motivation. I have been reflecting on this and learning from it. I believe I can do better in other tasks in the future. 
+> 
+> I would also like to take this opportunity to thank my friend QIN Qijun @QuintinUmi. He has a great passion and extraordinary understanding of algorithms and code. He has made a great contribution to the completion of the task. Without him, our task would not have been completed as well as it is now.
+> 
+> At the same time, I hope that other groupmates could be more motivated to participate in the task. You have done a good job but you could have been more involved in our tasks if you showed your passion earlier. Don't say that it's hard. Every difficulty can be conquered as long as we have passion for it. Equally important, taking a proactive attitude to approach the assigned task is the golden key to reaping great success.
+> 
+> Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
+
+
+
 #### Cheng PakHin @marcus2405
 > Reflection: 
 #### QIN Qijun @QuintinUmi
@@ -721,7 +743,8 @@ First, in the airline prospective, every commercial airline flight start begins 
 <a id="References"></a>
 ## 6. References
 
-1. An introduction to github. Digital.gov. (2020, June 18). Retrieved November 11, 2021, from https://digital.gov/resources/an-introduction-github/. 
+1. An introduction to GitHub. Digital.gov. (2020, June 18). Retrieved November 11, 2021, from https://digital.gov/resources/an-introduction-github/. 
 2. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
+3. 演算法筆記 - Path. National Taiwan Normal University. Retrieved November 11, 2021, from https://web.ntnu.edu.tw/~algo/Path.html
  
  
