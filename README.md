@@ -107,7 +107,23 @@ First, in the airline prospective, every commercial airline flight start begins 
   
   <a id="Python"></a>
 - ### Python
-  - #### (请在这里写)
+  <p> Python is the world’s fastest growing programming language, not just amongst software engineers, but also amongst mathematicians, data analysts, etc… since it’s very beginner friendly programming.</p>
+  <p> It is created by Guido van Rossum in 1990 as a way to write software for the Amoeba operating system. Python is a general purpose, high level, interpreted language with easy syntax and dynamic semantics programming language. Supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Its high-level built-in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms and can be freely distributed. </p> 
+  <p>It available on several Operating System including Windows, macOS and Linux.</p> 
+    <dd>
+      <ul>
+        <li> -->Why python is popular:</li>
+        <li>1. Easy to learn and use</li> 
+        <p>Python language is incredibly easy to use and learn for new beginners and newcomers. The python language is one of the most accessible programming languages available because it has simplified syntax and not complicated, which gives more emphasis on natural language. </p> 
+        <li>2.Hundreds of Python Libraries and Frameworks</li> 
+        <p>Due to its corporate sponsorship and big supportive community of python, python has excellent libraries that you can use to select and save your time and effort on the initial cycle of development. There are also lots of cloud media services that offer cross-platform support through library-like tools, which can be extremely beneficial.</p>
+        <li>3. Big data, Machine Learning and Cloud Computing</li>
+      Cloud Computing, Machine Learning, and Big Data are some of the hottest trends in the computer science world right now, which helps lots of organizations to transform and improve their processes and workflows.</p>
+        <li>4. Mature and Supportive Python Community</li>
+      </ul>
+      <p>Python was created more than 30 years ago, which is a lot of time for any community of programming language to grow and mature adequately to support developers ranging from beginner to expert levels. There are plenty of documentation, guides and Video Tutorials for Python language are available that learner and developer of any skill level or ages can use and receive the support required to enhance their knowledge in python programming language.</p>
+    </dd>
+    
   
   <a id="GitHub"></a>
 - ### GitHub
