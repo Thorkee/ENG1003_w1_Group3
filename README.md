@@ -497,7 +497,7 @@ First, in the airline prospective, every commercial airline flight start begins 
 
   
  <dd>
-To make the programming more funny, we add a possibility for the code to automatically generate a "wall" to block any possible path.
+To make the programming more funny, we add a possibility for the code to automatically generate a "wall" to block any possible path. This is in fact related to the code's recauculation capability. However, the A* algorithm prefers to erase memories and regenerate the path due to its design, an update version called D* will be introduced below.
       </dd>
       </br>
   </dt>
