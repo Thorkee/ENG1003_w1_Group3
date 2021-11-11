@@ -318,7 +318,7 @@ class DSTAR:
                 self.map[ox[i]][oy[i]].type = status
                 self.map[ox[i]][oy[i]].h = maxsize
                 self.modify_cost(self.map[ox[i]][oy[i]])
-                plt.plot(ox[i], oy[i], ".k")
+                plt.plot(ox[i], oy[i], ".", color = "purple")
             plt.pause(0.01)
 
             while(1):

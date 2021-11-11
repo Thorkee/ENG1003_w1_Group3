@@ -436,7 +436,10 @@ First, in the airline prospective, every commercial airline flight start begins 
   <dt>
       e) Discussion
       <dd>
-        ......
+        We used the method that traverse the path which had worked out step-by-step successfully find the most appropriate minus-cost area.
+      </dd>
+      <dd>
+        In order to achieve the goal, we have designed algorithms. These algorithms can calculate the path in 
       </dd>
   </dt>
 </dl>
@@ -449,47 +452,52 @@ First, in the airline prospective, every commercial airline flight start begins 
     <a id="Task4-1"></a>
     a) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Adding%20Checkpoints.py">Adding Checkpoints</a>
     <dd>
-      <dt>Introduction: </dt>
-      <dd>
-        This task simulates the planning of a multi-node route in a flight plan.
-      </dd>
-      <dt>Methodology:</dt>
-      <dd>
-        After the checkpoints were set, we can achieve it easily by planning between every two points：
-      </dd>
-      <dt>Result:</dt>
-      <dd>
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
-      </dd>
-      <dt>Discussion:</dt>
-      <dd>
-        ...
+      <dl>
+        <dt>Introduction: </dt>
+        <dd>
+          This task simulates the planning of a multi-node route in a flight plan.
+        </dd>
+        <dt>Methodology:</dt>
+        <dd>
+          After the checkpoints were set, we can achieve it easily by planning between every two points：
+        </dd>
+        <dt>Result:</dt>
+        <dd>
+          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
+        </dd>
+        <dt>Discussion:</dt>
+        <dd>
+          ...
+        </dd>
+      </dl>
     </dd>
   </dt>
   <dt>
     <a id="Task4-2"></a>
     b) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Changing%20Environment.py">Changing Environment</a>
     <dd>
-      <dt>Introduction: </dt>
-      <dd>
-        This task simulates the performance of the A* algorithm in a complex environment. 
-      </dd>
-      <dt>Methodology:</dt>
-      <dd>
-        a) Map generation: Use random numbers and set the probability for each point generation.</br>
-        b) Path calculation: use A* algorithm and remove the slash direction
-      </dd>
-      <dt>Result:</dt>
-      <dd>
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
-        <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
-        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
-      </dd>
-      <dt>Discussion:</dt>
-      <dd>
-        ......
-      </dd>
+      <dl>
+        <dt>Introduction: </dt>
+        <dd>
+          This task simulates the performance of the A* algorithm in a complex environment. 
+        </dd>
+        <dt>Methodology:</dt>
+        <dd>
+          a) Map generation: Use random numbers and set the probability for each point generation.</br>
+          b) Path calculation: use A* algorithm and remove the slash direction
+        </dd>
+        <dt>Result:</dt>
+        <dd>
+          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
+          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
+          <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
+          <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
+        </dd>
+        <dt>Discussion:</dt>
+        <dd>
+          ......
+        </dd>
+      </dl>
       </br>
   </dt>
   <dt>
@@ -657,7 +665,7 @@ First, in the airline prospective, every commercial airline flight start begins 
         </li> 
         <li>
           <dt>
-          Discussion
+          Discussion for comparing algorithms
             <dd>
               ......
             </dd>
