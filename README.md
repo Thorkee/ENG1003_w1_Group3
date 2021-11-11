@@ -248,20 +248,6 @@ First, in the airline prospective, every commercial airline flight start begins 
       </ul>
   </dt>
   <dt>
-      e) Discussion
-      <dd>
-        <p>
-          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
-        </p>
-        <p>
-          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
-        </p>
-        <p>
-          However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
-        </p>
-      </dd>
-  </dt>
-  <dt>
   <a id="T2_result"></a>
       d) Result
       <dd>
@@ -330,6 +316,20 @@ First, in the airline prospective, every commercial airline flight start begins 
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/af85185020bca6497db33ecd4020a62654ab06d0/Image%20Resources/T2-46....png" alt="4 Constraints with 6 Variables Result">
+      </dd>
+  </dt>
+  <dt>
+      e) Discussion
+      <dd>
+        <p>
+          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
+        </p>
+        <p>
+          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
+        </p>
+        <p>
+          However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
+        </p>
       </dd>
   </dt>
 </dl>
@@ -433,6 +433,12 @@ First, in the airline prospective, every commercial airline flight start begins 
         </ul>
       </dd>
   </dt>
+  <dt>
+      e) Discussion
+      <dd>
+        ......
+      </dd>
+  </dt>
 </dl>
 </br></br>
 
@@ -443,26 +449,48 @@ First, in the airline prospective, every commercial airline flight start begins 
     <a id="Task4-1"></a>
     a) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Adding%20Checkpoints.py">Adding Checkpoints</a>
     <dd>
-      <p>
-        This task simulates the planning of a multi-node route in a flight plan.</br>
-        We can achieve it by planning between every two points：</br>
-      </p>
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
+      <dt>Introduction: </dt>
+      <dd>
+        This task simulates the planning of a multi-node route in a flight plan.
+      </dd>
+      <dt>Methodology:</dt>
+      <dd>
+        After the checkpoints were set, we can achieve it easily by planning between every two points：
+      </dd>
+      <dt>Result:</dt>
+      <dd>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/Task4_1.gif" alt="continous area">
+      </dd>
+      <dt>Discussion:</dt>
+      <dd>
+        ...
     </dd>
   </dt>
   <dt>
     <a id="Task4-2"></a>
     b) <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/eb00ca37d02494c6ea3c81a997bc6d851c3657d0/Source%20codes/Task%204/Changing%20Environment.py">Changing Environment</a>
     <dd>
+      <dt>Introduction: </dt>
+      <dd>
+        This task simulates the performance of the A* algorithm in a complex environment. 
+      </dd>
+      <dt>Methodology:</dt>
+      <dd>
+        a) Map generation: Use random numbers and set the probability for each point generation.</br>
+        b) Path calculation: use A* algorithm and remove the slash direction
+      </dd>
+      <dt>Result:</dt>
+      <dd>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
+        <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
+      </dd>
+      <dt>Discussion:</dt>
+      <dd>
+        ......
+      </dd>
       </br>
-      This task simulates the performance of the A* algorithm in a complex environment. </br>
-      a) Map generation: Use random numbers and set the probability for each point generation.</br>
-      b) Path calculation: use A* algorithm and remove the slash direction</br>
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/changing%20environment.gif" alt="Changing Environment">
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/T4-2_Bad%20condition_.PNG?raw=true" alt="A* Bad Condition">      
-      <p></br>Of course, one day, there will be a chance that the map will then look like the following (www <p>
-      <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/ea954d27052beb3984081ce1d04cccbc777cbaf0/Image%20Resources/T4-2_oops....png" width="640px" height="520px" alt="oops...">
-    </dd>
   </dt>
   <dt>
     <a id="Task4-3"></a>
@@ -626,9 +654,18 @@ First, in the airline prospective, every commercial airline flight start begins 
                 </dl>
               </li>
             </ol>          
-        </li>   
+        </li> 
+        <li>
+          <dt>
+          Discussion
+            <dd>
+              ......
+            </dd>
+          </dt>
+        </li>
       </ul>
-    </dd>   
+    </dd> 
+  </dt>
 </dl>
 
 
@@ -651,15 +688,15 @@ First, in the airline prospective, every commercial airline flight start begins 
 ## 5. Contributors
 
 #### LIN Ju @Thorkee
-
+> Reflection: 
 #### Cheng PakHin @marcus2405
-
+> Reflection: 
 #### QIN Qijun @QuintinUmi
-
+> Reflection: 
 #### HUI CHIUMING @edmondhui04
-
+> Reflection: 
 #### CHENG Wai Ching @Chengmm565
-
+> Reflection: 
 <a id="References"></a>
 ## 6. References
 
