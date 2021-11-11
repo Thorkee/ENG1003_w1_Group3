@@ -739,10 +739,13 @@ To make the programming more funny, we add a possibility for the code to automat
 > 
 > In the future of my life, I will also continue to be looking for my goals, continue to pursue my passions, and devote my passions to the pursuit of my goals!
 #### HUI CHIUMING @edmondhui04
-> In the past few weeks, we worked together on our group project. Since we are freshman in PolyU, we might both have our own personal activities or school academic works to do, I appreciate all our groupmates are working very hard on this project and take the responsibility to join every group discussion and finish their own distributed works. Charles is very take care of us, he has the team leader characteristic to guide our works, when we are facing difficulties, he always picking times to give assistance or even troubleshooting for us. 
-Otherwise, in this project, I mainly focus for the collecting research or information for the path planning, writing some codes to form the images then data analysis, finally giving assists and providing some advices for my groupmates .
-I’ve learnt about the important of path planning, how to use the coding to form some images and using Github to work togethers.
-Finally, This project increase my interest about aviation engineering to learn more and read more.
+> In the past few weeks, we worked together on our group project. Since we are freshman in PolyU, we might both have our own personal activities or school academic works to do, I appreciate all our groupmates are working very hard on this project and take the responsibility to join every group discussion and finish their own distributed works.
+> 
+>  Charles is very take care of us, he has the team leader characteristic to guide our works, when we are facing difficulties, he always picking times to give assistance or even troubleshooting for us. 
+>  
+>  Otherwise, in this project, I mainly focus for the collecting research or information for the path planning, writing some codes to form the images then data analysis, finally giving assists and providing some advices for my groupmates. I’ve learnt about the important of path planning, how to use the coding to form some images and using Github to work togethers.
+>  
+>Finally, This project increase my interest about aviation engineering to learn more and read more.
 
 
 #### CHENG Wai Ching @Chengmm565
