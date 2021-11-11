@@ -118,11 +118,10 @@ First, in the airline prospective, every commercial airline flight start begins 
         <li>2.Hundreds of Python Libraries and Frameworks</li> 
         <p>Due to its corporate sponsorship and big supportive community of python, python has excellent libraries that you can use to select and save your time and effort on the initial cycle of development. There are also lots of cloud media services that offer cross-platform support through library-like tools, which can be extremely beneficial.</p>
         <li>3. Big data, Machine Learning and Cloud Computing</li>
-      Cloud Computing, Machine Learning, and Big Data are some of the hottest trends in the computer science world right now, which helps lots of organizations to transform and improve their processes and workflows.</p>
+        <p>Cloud Computing, Machine Learning, and Big Data are some of the hottest trends in the computer science world right now, which helps lots of organizations to transform and improve their processes and workflows.</p>
         <li>4. Mature and Supportive Python Community</li>
+        <p>Python was created more than 30 years ago, which is a lot of time for any community of programming language to grow and mature adequately to support developers ranging from beginner to expert levels. There are plenty of documentation, guides and Video Tutorials for Python language are available that learner and developer of any skill level or ages can use and receive the support required to enhance their knowledge in python programming language.</p>
       </ul>
-      </br>
-      <p>Python was created more than 30 years ago, which is a lot of time for any community of programming language to grow and mature adequately to support developers ranging from beginner to expert levels. There are plenty of documentation, guides and Video Tutorials for Python language are available that learner and developer of any skill level or ages can use and receive the support required to enhance their knowledge in python programming language.</p>
     </dd>
     
   
