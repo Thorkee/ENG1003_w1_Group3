@@ -127,8 +127,8 @@ First, in the airline prospective, every commercial airline flight start begins 
   
   <a id="GitHub"></a>
 - ### GitHub
-  - #### GitHub is a code hosting platform for version control and collaboration. It provide a web platform for multiple people to simultaneously write code and come up with new solutions to problems that may arise during the site development process. It lets you and others work together on projects from anywhere. In  GitHub, you may 1. create and use a repository 2. start and manage a new branch 3. make changes to a file and push them to GitHub as commits 4.open and merge a pull request. In this group report, we organise and store data in repositories in GitHub. Repositories can contain folders and files, images, videos, spreadsheets, and data sets. We can make and save changes to the files in our repository. GitHub makes it easy to add one at the same time you create a new repository and discuss thing with others.
-  
+  - GitHub is a code hosting platform for version control and collaboration. It provide a web platform for multiple people to simultaneously write code and come up with new solutions to problems that may arise during the site development process. It lets you and others work together on projects from anywhere. In GitHub, you may 1. create and use a repository 2. start and manage a new branch 3. make changes to a file and push them to GitHub as commits 4.open and merge a pull request. In this group report, we organise and store data in repositories in GitHub. Repositories can contain folders and files, images, videos, spreadsheets, and data sets. We can make and save changes to the files in our repository. GitHub makes it easy to add one at the same time you create a new repository and discuss thing with others.
+
   
 <a id="Task"></a>
 ## 3. Path Planning Algorithm (Group Task)
