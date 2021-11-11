@@ -657,7 +657,7 @@ First, in the airline prospective, every commercial airline flight start begins 
         </li> 
         <li>
           <dt>
-          Discussion
+          Discussion for comparing algorithms
             <dd>
               ......
             </dd>
