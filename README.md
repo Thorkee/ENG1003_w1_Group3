@@ -60,7 +60,7 @@
       <a href="#Summary">Summary</a>
     </li>
     <li>
-      <a href="#Contributors">Contributors</a>
+      <a href="#Contributors">Contributors & Reflections</a>
     </li>
     <li>
       <a href="#References">References</a>
@@ -715,25 +715,29 @@ To make the programming more funny, we add a possibility for the code to automat
 
 
 <a id="Contributors"></a>
-## 5. Contributors
+## 5. Contributors & Reflections
 
 #### LIN Ju @Thorkee
-> Reflection:
-
-The process of completing this project was very rewarding. We spent many nights in the library discussing the project until the library closed. Although we did not learn much hard knowledge of path planning or the algorithm in class, we gradually cultivated our independent learning ability in this process, and kept learning from the previous experience and wisdom of the pioneers in this field under the requirements of each task, and created incredible results.
-
-As the group leader of this group, I did not do a good job in many aspects of leadership. For instance, I did not do a good job in mobilizing members' motivation. I have been reflecting on this and learning from it. I believe I can do better in other tasks in the future. 
-
-I would also like to take this opportunity to thank my friend QIN Qijun @QuintinUmi. He has a great passion and extraordinary understanding of algorithms and code. He has made a great contribution to the completion of the task. Without him, our task would not have been completed as well as it is now.
-
-At the same time, I hope that other groupmates could be more motivated to participate in the task. You have done a good job but you could have been more involved in our tasks if you showed your passion earlier. Don't say that it's hard. Every difficulty can be conquered as long as we have passion for it. Equally important, taking a proactive attitude to approach the assigned task is the golden key to reaping great success.
-
-Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
+> The process of completing this project was very rewarding. We spent many nights in the library discussing the project until the library closed. Although we did not learn much hard knowledge of path planning or the algorithm in class, we gradually cultivated our independent learning ability in this process, and kept learning from the previous experience and wisdom of the pioneers in this field under the requirements of each task, and created incredible results.
+> 
+> As the group leader of this group, I did not do a good job in many aspects of leadership. For instance, I did not do a good job in mobilizing members' motivation. I have been reflecting on this and learning from it. I believe I can do better in other tasks in the future. 
+> 
+> I would also like to take this opportunity to thank my friend QIN Qijun @QuintinUmi. He has a great passion and extraordinary understanding of algorithms and code. He has made a great contribution to the completion of the task. Without him, our task would not have been completed as well as it is now.
+> 
+> At the same time, I hope that other groupmates could be more motivated to participate in the task. You have done a good job but you could have been more involved in our tasks if you showed your passion earlier. Don't say that it's hard. Every difficulty can be conquered as long as we have passion for it. Equally important, taking a proactive attitude to approach the assigned task is the golden key to reaping great success.
+> 
+> Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
 
 #### Cheng PakHin @marcus2405
 > Reflection: 
 #### QIN Qijun @QuintinUmi
-> Reflection: 
+> This project is the first one I have participated in since I started school.
+> 
+> This project brought me not only technical improvement, but also teamwork, self-learning ability, perseverance, ability to find solutions to problems... The combination of these qualities. It really makes a person grow and mature.
+> 
+> In the process of overcoming the project, there is nothing I have experienced more than the word "self-learning". When I was studying algorithms, writing programs and reports, I was often in a state of "learning by doing, learning from doing", not knowing how many difficulties were waiting ahead. But these challenges whetted my appetite for learning algorithm. The intensity and initiative of my study was comparable to my high school days. Finally, live up to expectations, achievements in lage numbers. In this sense, the way Dr. Li-Ta teaches is of great benefit to hardworking students. This way gives us space for independent thinking, self-learning, and teamwork, which can give great growth
+> 
+> In the future of my life, I will also continue to be looking for my goals, continue to pursue my passions, and devote my passions to the pursuit of my goals!
 #### HUI CHIUMING @edmondhui04
 > Reflection: 
 #### CHENG Wai Ching @Chengmm565
