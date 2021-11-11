@@ -677,7 +677,19 @@ To make the programming more funny, we add a possibility for the code to automat
           <dt>
           Discussion
             <dd>
-              ......
+              We have carried out a certain degree of comparison and study of these three algorithms, obtaining the advantages and disadvantages of these three algorithms as well as the scope of application.
+            </dd>
+            <dd>
+              During the development process, we created the same map model and ran the three algorithms in the model while comparing them. In addition, we specifically developed the D* program for representing the dynamic planning function of the D* algorithm. However, during the development process, we encountered a situation where the function could not be implemented referencing the literature. We used the "modeling and large-scale debugging" approach to modify the program based on the feedback from the debug data, and finally implemented the function successfully.
+            </dd>
+            <dd>
+              Furthermore, we have made a greater program design in this study. We improved the algorithm of D* literature to enable the algorithm to implement dynamic planning in more complex environments. Also in the D* program, we added min-heap data structure, which is able to optimize the processing of the minimum k values in the queue. This greatly improves the efficiency of the program in dynamic planning.
+            </dd>
+            <dd>
+              In real life, A* and D* algorithms (and their variants) have wide applications. For example, A* algorithm is often used for common pathfinding problems in applications such as video games and the variant of D* algorithm has used on the Mars rovers Opportunity and Spirit developed by NASA.
+            </dd>
+            <dd>
+              However, the current D* program is not complete and has many bugs, and is not as efficient as we expect it to be. In the future we will focus on fixing bugs and optimizing the program.
             </dd>
           </dt>
         </li>
