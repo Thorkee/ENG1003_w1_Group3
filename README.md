@@ -463,8 +463,9 @@ First, in the airline prospective, every commercial airline flight start begins 
       </dd>
       <dt>Discussion:</dt>
       <dd>
-        Adding checkpoint is a rather easy and straight-forward task compared to the others. The most critical part of it is to understand the basic principle that how the agorithm computes the shortest part. Long stories short, we need to know that each shortest path is derived from the other shortest paths. A shortest-circuit path is still a shortest-circuit path after cutting off the end (National Taiwan Normal University). Therefore, we just need to turn the task of adding checkpoints from a long path into a calculation of the shortest line between the each nodes and connect them together.
-        This task examines our ability to transform the problem. By changing the perspective of the problem, the difficulties can often be solved easier than expected.
+        Adding checkpoint is a rather easy and straight-forward task compared to the others. The most critical part of it is to understand the basic principle that how the agorithm computes the shortest part. Long stories short, we need to know that each shortest path is derived from the other shortest paths. A shortest-circuit path is still a shortest-circuit path after cutting off the end (National Taiwan Normal University). Therefore, we just need to turn the task of adding checkpoints from a long path into a calculation of the shortest line between the each nodes and connect them together.</dd>
+        <dd>
+          This task examines our ability to transform the problem. By changing the perspective of the problem, the difficulties can often be solved easier than expected.
   </dt>
   <dt>
     <a id="Task4-2"></a>
