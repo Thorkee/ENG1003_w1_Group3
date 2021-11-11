@@ -146,9 +146,9 @@ First, in the airline prospective, every commercial airline flight start begins 
       b) Designing Scheme
       <dd>  
         <p>For the first step, we changed the specific data(See <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Source%20codes/Task%201.py">here</a>) from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
-        <p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.
-        ![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
-        <p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.
+        <p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.</p>
+        <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif" alt="Animated gif demo of the path planning">
+        <p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.</p>
       </dd>
   </dt>
   <dt>
@@ -246,6 +246,20 @@ First, in the airline prospective, every commercial airline flight start begins 
           </ul>
         </li>
       </ul>
+  </dt>
+  <dt>
+      e) Discussion
+      <dd>
+        <p>
+          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
+        </p>
+        <p>
+          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
+        </p>
+        <p>
+          However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
+        </p>
+      </dd>
   </dt>
   <dt>
   <a id="T2_result"></a>
@@ -648,7 +662,6 @@ First, in the airline prospective, every commercial airline flight start begins 
 
 <a id="References"></a>
 ## 6. References
-
 
 1. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
  
