@@ -694,7 +694,7 @@ The process of completing this project was very reawrding. We spent many nights 
 
 As the group leader of this group, I did not do a good job in many aspects of leadership. For instance, I did not do a good job in mobilizing members' motivation. I have been reflecting on this and learning from it. I believe I can do better in other tasks in the future. 
 
-I would also like to take this opportunity to thank my friend Qin QIjun. He has a great passion and extraordinary understanding of algorithms and code. He has made a great contribution to the completion of the task. Without him, our task would not have been completed as well as it is now.
+I would also like to take this opportunity to thank my friend QIN Qijun @QuintinUmi. He has a great passion and extraordinary understanding of algorithms and code. He has made a great contribution to the completion of the task. Without him, our task would not have been completed as well as it is now.
 
 At the same time, I hope that other groupmates could be more motivated to participate in the task. You have done a good job but you could have been more involved in our tasks if you showed your passion earlier. Don't say that it's hard. Every difficulties can be conquered as long as we have passion for it. Equally important, taking a proactive attitude to approach the assigned task is the golden key to reap great success.
 
