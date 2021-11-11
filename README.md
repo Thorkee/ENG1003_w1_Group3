@@ -129,10 +129,7 @@ First, in the airline prospective, every commercial airline flight start begins 
 - ### GitHub
   - #### (请在这里写)
 
-  
-<a id="Task"></a>
-## 2. Path Planning Algorithm (Group Task)
-  
+
 <a id="Task"></a>  
 ## 3. Introduction of the Engineering Tools
    <dl>
