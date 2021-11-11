@@ -436,7 +436,16 @@ First, in the airline prospective, every commercial airline flight start begins 
   <dt>
       e) Discussion
       <dd>
-        ......
+        We used the method that traverse the path which had worked out and successfully find the most appropriate minus-cost area.
+      </dd>
+      <dd>
+        To achieve this goal, we have designed some algorithms that can calculate the path in any condition if only the path works out. Furthermore, we also considered two cases, one in which the area is continuous, another one in which the area is discontinous. In this way, we can get more diverse results.
+      </dd>
+      <dd>
+        If this method is improved, it can also be extended to other aspects of area settings, including but not limited to setting optimal climbing and descent areas and calculating the best areas to fly in complex weather conditions. In this sense, it is of great significance for a real flight planning.
+      </dd>
+      <dd>
+        However, in the course of our research, the program we developed is only applicable to the linear search & calculation, which has huge limitations. In the future study, we will focus on more situations, such as planning areas on a map where value is unevenly distributed, or planning two-dimensional areas on a map. We belive that the research in this direction will have greater significance.
       </dd>
   </dt>
 </dl>
