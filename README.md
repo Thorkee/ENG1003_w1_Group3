@@ -102,6 +102,34 @@ First, in the airline prospective, every commercial airline flight start begins 
 <p>While in this task, we need to design the shortest path in the map which has some obstacles with the basic concepts of flight path planning in the above, including flight safety, flight efficiency and other aircraft operation problem. We need to find a specific aircraft model that costs the minimum in the map, including the time cost, fuel cost and consuming of time, in order to design a cost-efficient flight which is very important in aviation engineering.</p>
 
   
+<a id="Tools"></a>  
+## 2. Background of Path Planning to Aviation Engineering
+  
+  <a id="Python"></a>
+- ### Python
+  <p> Python is the world’s fastest growing programming language, not just amongst software engineers, but also amongst mathematicians, data analysts, etc… since it’s very beginner friendly programming.</p>
+  <p> It is created by Guido van Rossum in 1990 as a way to write software for the Amoeba operating system. Python is a general purpose, high level, interpreted language with easy syntax and dynamic semantics programming language. Supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Its high-level built-in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms and can be freely distributed. </p> 
+  <p>It available on several Operating System including Windows, macOS and Linux.</p> 
+    <dd>
+      <ul>
+        <li> -->Why python is popular:</li>
+        <li>1. Easy to learn and use</li> 
+        <p>Python language is incredibly easy to use and learn for new beginners and newcomers. The python language is one of the most accessible programming languages available because it has simplified syntax and not complicated, which gives more emphasis on natural language. </p> 
+        <li>2.Hundreds of Python Libraries and Frameworks</li> 
+        <p>Due to its corporate sponsorship and big supportive community of python, python has excellent libraries that you can use to select and save your time and effort on the initial cycle of development. There are also lots of cloud media services that offer cross-platform support through library-like tools, which can be extremely beneficial.</p>
+        <li>3. Big data, Machine Learning and Cloud Computing</li>
+      Cloud Computing, Machine Learning, and Big Data are some of the hottest trends in the computer science world right now, which helps lots of organizations to transform and improve their processes and workflows.</p>
+        <li>4. Mature and Supportive Python Community</li>
+      </ul>
+      <p>Python was created more than 30 years ago, which is a lot of time for any community of programming language to grow and mature adequately to support developers ranging from beginner to expert levels. There are plenty of documentation, guides and Video Tutorials for Python language are available that learner and developer of any skill level or ages can use and receive the support required to enhance their knowledge in python programming language.</p>
+    </dd>
+    
+  
+  <a id="GitHub"></a>
+- ### GitHub
+  - #### (请在这里写)
+
+  
 <a id="Task"></a>
 ## 2. Path Planning Algorithm (Group Task)
   
@@ -135,7 +163,7 @@ Cloud Computing, Machine Learning, and Big Data are some of the hottest trends i
 <a id="Task1"></a>
 ## 4. Task1     
 ### i.Find the PolyU Aircraft Model that achieve minimum cost for the challenge assigned to your group (Task1)
-  <dl>
+<dl>
   <dt>
     a) Introduction 
     <dd>
@@ -145,27 +173,27 @@ Cloud Computing, Machine Learning, and Big Data are some of the hottest trends i
   <dt>
       b) Designing Scheme
       <dd>  
-<p>For the first step, we changed the specific data(See <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Source%20codes/Task%201.py">here</a>) from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
-
-<p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.
-
-![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
-
-<p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.
-</dd>
+        <p>For the first step, we changed the specific data(See <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Source%20codes/Task%201.py">here</a>) from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
+        <p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.
+        ![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
+        <p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.
+      </dd>
   </dt>
   <dt>
-      c) Reflection on Task 1
-  <dd> 
-   <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
-   <ol>
-     <li> The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.</li>
-     <li> Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. </li>
-     <li> In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.</li>
-     <li> In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.</li>
-    </ol>
-   </dd>
+      c) Discussion
+      <dd> 
+       <p>
+         We have used the A* algorithm to compare the costs generated by different aircraft models with the same start and end points, and finally obtain the best results. 
+        </p>
+        <p>
+         Such a research method can be extended and applied to the process of aircraft development: By setting different experimental conditions and using the A* algorithm to calculate the costs for different conditions, the most suitable aircraft parameters can be predicted in a comprehensive manner, providing a good reference for aircraft designers.
+       </p>
+        <p>
+          Hwoever, the code is not intelligent enough so far. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex. In addition, the path calculated by the A* algorithm may be not the best since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area. At a later day, we will continue to study in-depth.
+        </p>
+       </dd>
    </dt>
+</dl>
 
 <a id="Task2"></a>
 ### ii.Calculate the Minimum Cost Aircraft Model within the Constrains (Task2) 
