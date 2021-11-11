@@ -146,27 +146,12 @@ First, in the airline prospective, every commercial airline flight start begins 
       b) Designing Scheme
       <dd>  
         <p>For the first step, we changed the specific data(See <a href="https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Source%20codes/Task%201.py">here</a>) from the code downloaded from the class GitHub repository. By studying and analyzing the code, we found that the establishment of boundaries and barriers is based on mathematical function logic. 
-
         <p>After making proper modifications to the code, we obtained a satisfactory planning route as the graph shown below.
-
         ![Animated gif demo of the path planning](https://github.com/Thorkee/ENG1003_w1_Group3/blob/main/Image%20Resources/sample.gif)
-
         <p>Then, we embedded the data provided by Task 1 into the code and obtained the fuel consumption data of each of the four models in this model. After mathematical comparison and analysis, we agree that PolyU-A380 has the lowest fuel consumption in this model with the cost of 2396.23.
       </dd>
   </dt>
   <dt>
-      c) Reflection on Task 1
-    <dd> 
-     <p> After Task 1, we reflected on the content of the task and concluded the following issues that could be improved:
-     <ol>
-       <li> The code is not intelligent enough. We tried to let the code compare the data by itself, but failed to do so because the underlying code was too complex.</li>
-       <li> Since the mechanism of finding the optimal route is based on the closest path between each point itself and the end point, rather than considering the whole area and the consumption per unit of different area to get the lowest consumption route, this code logic is not promising enough to find the most ideal route of different models with least fuel consumption. </li>
-       <li> In the context of the situation mentioned in the second point, the logic of finding the best route is very rigid, causing inefficiencies in the code in complex environments.</li>
-       <li> In order to improve the problems mentioned in the second and third points, we tried the code of other logics. The results are presented in the last part.</li>
-      </ol>
-     </dd>
-   </dt>
-   <dt>
       c) Discussion
       <dd> 
        <p>
