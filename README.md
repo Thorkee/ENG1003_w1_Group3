@@ -745,8 +745,13 @@ To make the programming more funny, we add a possibility for the code to automat
 <a id="References"></a>
 ## 6. References
 
-1. An introduction to GitHub. Digital.gov. (2020, June 18). Retrieved November 11, 2021, from https://digital.gov/resources/an-introduction-github/. 
-2. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
-3. 演算法筆記 - Path. National Taiwan Normal University. Retrieved November 11, 2021, from https://web.ntnu.edu.tw/~algo/Path.html
+1. Atsushi, S., & Nikos, K. (2020). A* grid planning. Retrieved from https://github.com/AtsushiSakai/PythonRobotics/blob/master/PathPlanning/AStar/a_star.py
+2. Atsushi, S. (2020). Grid based Dijkstra planning. Retrieved from https://github.com/AtsushiSakai/PythonRobotics/blob/master/PathPlanning/Dijkstra/dijkstra.py
+3. Atsushi, S. (2020). D* grid planning. Retrieved from https://github.com/AtsushiSakai/PythonRobotics/blob/master/PathPlanning/DStar/dstar.py
+4. An introduction to GitHub. Digital.gov. (2020, June 18). Retrieved November 11, 2021, from https://digital.gov/resources/an-introduction-github/. 
+5. Tyagi, N. (2021, February 15). What is Dijkstra's algorithm? examples and applications of Dijkstra's algorithm. What is Dijkstra's Algorithm? Examples and Applications of Dijkstra's Algorithm. Retrieved November 10, 2021, from https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm. 
+6. 演算法筆記 - Path. National Taiwan Normal University. Retrieved November 11, 2021, from https://web.ntnu.edu.tw/~algo/Path.html
+7. Stentz, A. (1994). The D* Algorithm for Real-Time Planning of Optimal Traverses. CARNEGIE-MELLON UNIV PITTSBURGH PA ROBOTICS INST.
+8. Carsten, J., Rankin, A., Ferguson, D., & Stentz, A. (2007, March). Global path planning on board the mars exploration rovers. In 2007 IEEE Aerospace Conference (pp. 1-11). IEEE.
  
  
