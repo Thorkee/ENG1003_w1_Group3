@@ -436,7 +436,10 @@ First, in the airline prospective, every commercial airline flight start begins 
   <dt>
       e) Discussion
       <dd>
-        ......
+        We used the method that traverse the path which had worked out step-by-step successfully find the most appropriate minus-cost area.
+      </dd>
+      <dd>
+        In order to achieve the goal, we have designed algorithms. These algorithms can calculate the path in 
       </dd>
   </dt>
 </dl>
