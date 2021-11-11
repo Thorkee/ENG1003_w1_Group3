@@ -728,8 +728,6 @@ To make the programming more funny, we add a possibility for the code to automat
 > 
 > Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
 
-
-
 #### Cheng PakHin @marcus2405
 > Reflection: 
 #### QIN Qijun @QuintinUmi
