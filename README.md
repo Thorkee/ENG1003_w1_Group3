@@ -248,20 +248,6 @@ First, in the airline prospective, every commercial airline flight start begins 
       </ul>
   </dt>
   <dt>
-      e) Discussion
-      <dd>
-        <p>
-          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
-        </p>
-        <p>
-          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
-        </p>
-        <p>
-          However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
-        </p>
-      </dd>
-  </dt>
-  <dt>
   <a id="T2_result"></a>
       d) Result
       <dd>
@@ -330,6 +316,20 @@ First, in the airline prospective, every commercial airline flight start begins 
         On the left side, there is the progress of computing and the result of the paramaters.</br>
         On the right side, there is the path of new model(red) and the origin model(gray)
         <img src="https://github.com/Thorkee/ENG1003_w1_Group3/blob/af85185020bca6497db33ecd4020a62654ab06d0/Image%20Resources/T2-46....png" alt="4 Constraints with 6 Variables Result">
+      </dd>
+  </dt>
+  <dt>
+      e) Discussion
+      <dd>
+        <p>
+          We used linear programming algorithm as well as A* algorithm to study the aircraft model and successfully found a suitable aircraft model under the constraints. In the process of our research, we successfully developed the LP algorithm and implemented the automatic comparison function of the A* algorithm which means we have established a diversified evaluation system to calculate and predict aircraft design from various aspects. This has helped us tremendously in studying the aircraft model from different view.
+        </p>
+        <p>
+          Such a diversified research system is of great significance in the development of real aircraft. For example: Linear programming can find the most suitable combination of parameters within the constraints from the perspective of multi-parameter variables; The path planning can analyze the cost effectiveness of the aircraft model from the perspective of flight cost; Other different approaches can be used to analyze the aircraft model from different aspects. Therefore, diversified evaluation system can calculate and analyze the model comprehensively, which makes the aircraft design more rigorous, safe and economical.
+        </p>
+        <p>
+          However, we currently have many shortcomings. For instance: LP program is not well developed to handle some special cases correctly; The research method including LP program and A* program can currently only deal with a small number of simple parameters which cannot be synthesized to analyze a large number of aircraft parameters since these programs have narrow application scope, high specificity and poor adaptability. In future studies, we will aim at multifaceted analysis to design methods and programs that can take into account multiple parameters and conditions for evaluation.
+        </p>
       </dd>
   </dt>
 </dl>
