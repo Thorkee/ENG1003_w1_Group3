@@ -729,7 +729,8 @@ To make the programming more funny, we add a possibility for the code to automat
 > Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
 
 #### Cheng PakHin @marcus2405
-> Reflection: 
+> This my first group project to do studying in University, I have learnt a lot through this project. In the task, I and my groupmates are required to collaborate to design the shortest path for a flight plan without crashing on the obstacles. Also, we are needed to calculate the time and cost needed and find out which aircraft model is the most suitable for the flight. We used Python and GitHub to design the flight path. The task required us to read and analyze the code to find out the optimal aircraft model by modifying the data comparing the lowest fuel and time consumption. We used the A* algorithms to compare the costs of the different aircraft models to find out the most suitable aircraft model. Of course, we are not getting the result easily. We have attempted many times. Since this is the first time for me to use Python and typing code, it was quite hard for me typing code on Python at first. But now, I’ve already learnt the basic concept behind the code and how to use them. Besides the technical stuff, I have learnt more about collaboration. During the task, I and my groupmates had many discussions of what parts each of us should do and how to make the group project better in result. 
+
 #### QIN Qijun @QuintinUmi
 > This project is the first one I have participated in since I started school.
 > 
