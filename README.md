@@ -729,7 +729,7 @@ To make the programming more funny, we add a possibility for the code to automat
 > 
 > Lastly, I would like to thank Dr Li-Ta Hsu and Dr Wen as well as Teaching Assistants for giving us such a challenging task. I am very satisfied with the course setup and hope we can continue to work together in the future.
 
-#### Cheng PakHin @marcus2405
+#### CHENG Pak Hin @marcus2405
 > This my first group project to do studying in University, I have learnt a lot through this project. In the task, I and my groupmates are required to collaborate to design the shortest path for a flight plan without crashing on the obstacles. Also, we are needed to calculate the time and cost needed and find out which aircraft model is the most suitable for the flight. We used Python and GitHub to design the flight path. The task required us to read and analyze the code to find out the optimal aircraft model by modifying the data comparing the lowest fuel and time consumption. We used the A* algorithms to compare the costs of the different aircraft models to find out the most suitable aircraft model. Of course, we are not getting the result easily. We have attempted many times. Since this is the first time for me to use Python and typing code, it was quite hard for me typing code on Python at first. But now, I’ve already learnt the basic concept behind the code and how to use them. Besides the technical stuff, I have learnt more about collaboration. During the task, I and my groupmates had many discussions of what parts each of us should do and how to make the group project better in result. 
 
 #### QIN Qijun @QuintinUmi
@@ -740,7 +740,8 @@ To make the programming more funny, we add a possibility for the code to automat
 > In the process of overcoming the project, there is nothing I have experienced more than the word "self-learning". When I was studying algorithms, writing programs and reports, I was often in a state of "learning by doing, learning from doing", not knowing how many difficulties were waiting ahead. But these challenges whetted my appetite for learning algorithm. The intensity and initiative of my study was comparable to my high school days. Finally, live up to expectations, achievements in lage numbers. In this sense, the way Dr. Li-Ta teaches is of great benefit to hardworking students. This way gives us space for independent thinking, self-learning, and teamwork, which can give great growth
 > 
 > In the future of my life, I will also continue to be looking for my goals, continue to pursue my passions, and devote my passions to the pursuit of my goals!
-#### HUI CHIUMING @edmondhui04
+
+#### HUI Chiu Ming @edmondhui04
 > In the past few weeks, we worked together on our group project. Since we are freshman in PolyU, we might both have our own personal activities or school academic works to do, I appreciate all our groupmates are working very hard on this project and take the responsibility to join every group discussion and finish their own distributed works.
 > 
 >  Charles is very take care of us, he has the team leader characteristic to guide our works, when we are facing difficulties, he always picking times to give assistance or even troubleshooting for us. 
