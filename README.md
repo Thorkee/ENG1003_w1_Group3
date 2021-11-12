@@ -1,5 +1,5 @@
 # Group 3's Report on Program Tasks
->Click [here](https://youtu.be/kS_GVGX1kk8 "You will be redirected to YouTube") to watch the oral report.
+>Click [here](https://youtu.be/kS_GVGX1kk8 "You will be redirected to YouTube") to watch the presentation.
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
